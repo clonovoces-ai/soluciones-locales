@@ -1,0 +1,366 @@
+import type { StoreProfile } from './types';
+
+export const STORE_PROFILES: StoreProfile[] = [
+  {
+    id: 'fiambreria',
+    name: 'Don Pietro • Fiambrería & Picadas',
+    rubro: 'Fiambrería y Quesería Gourmet',
+    rubroIcon: '🧀',
+    tagline: 'Fiambres seleccionados, quesos artesanales y las mejores picadas de tu barrio.',
+    badgeText: '🟢 Abierto • Cortado en el momento • Envíos en 30 min',
+    phone: '5491155550101',
+    address: 'Av. Corrientes 3820, Almagro',
+    hours: 'Lun a Sáb: 09:00 a 21:00 hs | Dom: 10:00 a 14:30 hs',
+    deliveryEstimate: '25-40 min',
+    freeShippingThreshold: 12000,
+    shippingCost: 1500,
+    cashDiscountPercent: 10,
+    heroHeadline: 'Picadas listas y fiambres premium en tu mesa.',
+    heroSubtitle: 'Elegí tus favoritos, te los feteamos al instante y te lo enviamos a tu puerta.',
+    bannerNotice: '🔥 Promo de la semana: ¡Tabla "La Cumbre" para 4 personas con 15% OFF pagando en efectivo!',
+    themeColor: '#B45309', // Warm amber / rustic wood
+    accentColor: '#D97706',
+    categories: [
+      { name: 'Todos', icon: '✨' },
+      { name: 'Tablas de Picada', icon: '🥖' },
+      { name: 'Fiambres Feteados', icon: '🥓' },
+      { name: 'Quesos Especiales', icon: '🧀' },
+      { name: 'Encurtidos & Snacks', icon: '🫒' },
+      { name: 'Vinos & Bebidas', icon: '🍷' }
+    ],
+    products: [
+      {
+        id: 'fp-1',
+        code: 'TAB-01',
+        name: 'Picada Clásica Don Pietro (Para 4)',
+        category: 'Tablas de Picada',
+        price: 24500,
+        originalPrice: 28000,
+        unit: 'tabla lista',
+        description: 'Jamón crudo 12 meses, lomito ahumado, salame picado fino de Colonia, queso Gouda, Fontina, aceitunas verdes rellenas, maní tostado y pancitos saborizados.',
+        image: 'https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=700&q=80',
+        badge: '⭐ Más Vendido',
+        stock: true
+      },
+      {
+        id: 'fp-2',
+        code: 'TAB-02',
+        name: 'Picada Gourmet Premium (Para 2)',
+        category: 'Tablas de Picada',
+        price: 18900,
+        unit: 'tabla lista',
+        description: 'Prosciutto tipo Parma, jamón cocido natural braseado, queso brie artesanal, queso azul Santa Rosa, almendras tostadas y dip de olivas negras.',
+        image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=700&q=80',
+        badge: '🔥 Recomendado',
+        stock: true
+      },
+      {
+        id: 'fp-3',
+        code: 'FIA-01',
+        name: 'Jamón Crudo Estacionado Reserva',
+        category: 'Fiambres Feteados',
+        price: 3600,
+        unit: '200 gr',
+        description: 'Feteado fino a la vista. Textura suave, aroma intenso y estacionamiento mínimo de 14 meses.',
+        image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=700&q=80',
+        badge: 'Cortado al día',
+        stock: true
+      },
+      {
+        id: 'fp-4',
+        code: 'FIA-02',
+        name: 'Jamón Cocido Natural Extra',
+        category: 'Fiambres Feteados',
+        price: 2400,
+        unit: '200 gr',
+        description: 'El clásico de primera calidad para sándwiches y tostados. Bajo en sodio y de textura tierna.',
+        image: 'https://images.unsplash.com/photo-1524182576066-1be96137b5d3?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'fp-5',
+        code: 'FIA-03',
+        name: 'Salame Picado Fino de Colonia Caroya',
+        category: 'Fiambres Feteados',
+        price: 2900,
+        unit: '200 gr',
+        description: 'Receta tradicional friulana, condimentado con pimienta en grano y vino blanco.',
+        image: 'https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?auto=format&fit=crop&w=700&q=80',
+        badge: 'Artesanal',
+        stock: true
+      },
+      {
+        id: 'fp-6',
+        code: 'QUE-01',
+        name: 'Queso Gouda Holandés de Campo',
+        category: 'Quesos Especiales',
+        price: 2700,
+        unit: '250 gr',
+        description: 'Queso de pasta semidura, consistencia elástica y sabor suave ligeramente dulce.',
+        image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'fp-7',
+        code: 'QUE-02',
+        name: 'Queso Azul Santa Rosa Clásico',
+        category: 'Quesos Especiales',
+        price: 3400,
+        unit: '200 gr',
+        description: 'Sabor punzante, cremosidad justa y vetas azuladas intensas. Ideal para tablas o ensaladas.',
+        image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=700&q=80',
+        badge: 'Intenso',
+        stock: true
+      },
+      {
+        id: 'fp-8',
+        code: 'ENC-01',
+        name: 'Aceitunas Verdes Rellenas con Morrón',
+        category: 'Encurtidos & Snacks',
+        price: 1950,
+        unit: 'pote 250 gr',
+        description: 'Aceitunas carnosas descarozadas rellenas a mano con morrón dulce natural en salmuera suave.',
+        image: 'https://images.unsplash.com/photo-1541014741259-de529411b96a?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'fp-9',
+        code: 'BEB-01',
+        name: 'Vino Malbec Reserva Luigi Bosca 750ml',
+        category: 'Vinos & Bebidas',
+        price: 11500,
+        originalPrice: 13200,
+        unit: 'botella 750ml',
+        description: 'Notas a ciruela madura, taninos aterciopelados y crianza en roble. El maridaje perfecto para picadas.',
+        image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=700&q=80',
+        badge: '🍷 Maridaje Ideal',
+        stock: true
+      }
+    ]
+  },
+  {
+    id: 'kiosco',
+    name: 'Kiosco Open 24hs • Bebidas & Golosinas',
+    rubro: 'Kiosco, Drugstore & Bebidas',
+    rubroIcon: '🍫',
+    tagline: 'Todo lo que necesitás a cualquier hora: alfajores, chocolates, snacks y bebidas heladas.',
+    badgeText: '⚡ Abierto 24 Horas • Bebidas al instante • Envíos en 20 min',
+    phone: '5491144440202',
+    address: 'Av. Santa Fe 2150, Recoleta',
+    hours: 'Abierto las 24 horas, todos los días',
+    deliveryEstimate: '15-25 min',
+    freeShippingThreshold: 8000,
+    shippingCost: 1200,
+    cashDiscountPercent: 10,
+    heroHeadline: 'Tu antojo en tu puerta en menos de 20 minutos.',
+    heroSubtitle: 'Bebidas bajo cero, los mejores alfajores y chocolates sin moverte del sillón.',
+    bannerNotice: '❄️ ¡Todas las bebidas salen de cámara a 2°C! Promo: 2x1 en alfajores seleccionados.',
+    themeColor: '#7C3AED', // Vibrant violet/indigo for nightlife and 24h
+    accentColor: '#EC4899',
+    categories: [
+      { name: 'Todos', icon: '✨' },
+      { name: 'Bebidas Frías', icon: '🥤' },
+      { name: 'Cervezas & Aperitivos', icon: '🍺' },
+      { name: 'Alfajores & Dulces', icon: '🍫' },
+      { name: 'Snacks Salados', icon: '🥨' },
+      { name: 'Combos 24hs', icon: '🔥' }
+    ],
+    products: [
+      {
+        id: 'k-1',
+        code: 'BEB-10',
+        name: 'Coca Cola Sabor Original 1.5L (Bien Fría)',
+        category: 'Bebidas Frías',
+        price: 2950,
+        unit: 'botella 1.5L',
+        description: 'Sale directa de heladera bajo cero. Botella descartable 1.5L.',
+        image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=700&q=80',
+        badge: '❄️ Bajo Cero',
+        stock: true
+      },
+      {
+        id: 'k-2',
+        code: 'ALF-01',
+        name: 'Alfajor Havanna 70% Cacao Puro',
+        category: 'Alfajores & Dulces',
+        price: 2200,
+        unit: 'unidad 90g',
+        description: 'Relleno con abundante dulce de leche y cobertura de chocolate semiamargo 70% cacao puro.',
+        image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?auto=format&fit=crop&w=700&q=80',
+        badge: '⭐ El Más Vendido',
+        stock: true
+      },
+      {
+        id: 'k-3',
+        code: 'ALF-02',
+        name: 'Alfajor Capitán del Espacio Triple Negro',
+        category: 'Alfajores & Dulces',
+        price: 1650,
+        unit: 'unidad triple',
+        description: 'La leyenda de Quilmes. Tres galletitas, doble capa de dulce de leche y baño de chocolate.',
+        image: 'https://images.unsplash.com/photo-1548848221-0c2e497ed557?auto=format&fit=crop&w=700&q=80',
+        badge: 'Clásico',
+        stock: true
+      },
+      {
+        id: 'k-4',
+        code: 'CER-01',
+        name: 'Pack 4 Cervezas Corona 330ml (Heladas)',
+        category: 'Cervezas & Aperitivos',
+        price: 7900,
+        originalPrice: 9200,
+        unit: 'pack x4',
+        description: 'Listas para tomar. Incluye 2 limas frescas cortadas de cortesía.',
+        image: 'https://images.unsplash.com/photo-1608270191993-e408ec228c2e?auto=format&fit=crop&w=700&q=80',
+        badge: '🔥 Promo Noche',
+        stock: true
+      },
+      {
+        id: 'k-5',
+        code: 'SNA-01',
+        name: 'Papas Pringles Original 124g',
+        category: 'Snacks Salados',
+        price: 4300,
+        unit: 'tubo 124g',
+        description: 'Crujientes y perfectas. El tubo sellado que nunca falla para ver una serie o picar.',
+        image: 'https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'k-6',
+        code: 'CHO-01',
+        name: 'Chocolate Milka Oreo 100g',
+        category: 'Alfajores & Dulces',
+        price: 2800,
+        unit: 'tableta 100g',
+        description: 'Chocolate con leche de los Alpes con trozos crocantes de galletitas Oreo en su interior.',
+        image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'k-7',
+        code: 'COM-01',
+        name: 'Combo Fernet Branca 750ml + 2 Coca Cola 1.5L + Hielo',
+        category: 'Combos 24hs',
+        price: 19800,
+        originalPrice: 22500,
+        unit: 'combo completo',
+        description: 'El salvador de juntadas: 1 Botella Fernet Branca 750ml, 2 Coca Cola 1.5L heladas y bolsa de hielo 2kg.',
+        image: 'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=700&q=80',
+        badge: '👑 Rey de la Noche',
+        stock: true
+      },
+      {
+        id: 'k-8',
+        code: 'ENE-01',
+        name: 'Monster Energy Green 473ml (Helada)',
+        category: 'Bebidas Frías',
+        price: 2400,
+        unit: 'lata 473ml',
+        description: 'Máxima energía para estudiar, jugar o trabajar toda la noche.',
+        image: 'https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=700&q=80',
+        badge: '❄️ Fría',
+        stock: true
+      }
+    ]
+  },
+  {
+    id: 'almacen',
+    name: 'Almacén Don Mario • Almacén de Cercanía',
+    rubro: 'Almacén, Despensa & Limpieza',
+    rubroIcon: '🥖',
+    tagline: 'Las compras de la semana en tu puerta con los mejores precios de tu cuadra.',
+    badgeText: '🟢 Abierto • Precios de barrio • Envíos gratis desde $10.000',
+    phone: '5491133330303',
+    address: 'Calle San Martín 1420, Flores',
+    hours: 'Lun a Sáb: 08:30 a 20:30 hs (De corrido)',
+    deliveryEstimate: '30-50 min',
+    freeShippingThreshold: 10000,
+    shippingCost: 1000,
+    cashDiscountPercent: 10,
+    heroHeadline: 'Hacé el pedido de almacén sin cargar bolsas ni hacer cola.',
+    heroSubtitle: 'Pedí por WhatsApp lo que te falta en la alacena y pagalo cuando te llegue a tu casa.',
+    bannerNotice: '🛒 ¡Llegó la harina y yerba a precio congelado! Aceptamos Cuenta DNI, Mercado Pago y Efectivo.',
+    themeColor: '#059669', // Fresh supermarket green
+    accentColor: '#10B981',
+    categories: [
+      { name: 'Todos', icon: '✨' },
+      { name: 'Almacén Seco', icon: '🥫' },
+      { name: 'Lácteos & Huevos', icon: '🥛' },
+      { name: 'Desayuno & Merienda', icon: '☕' },
+      { name: 'Bebidas', icon: '🧃' },
+      { name: 'Limpieza del Hogar', icon: '🧼' }
+    ],
+    products: [
+      {
+        id: 'a-1',
+        code: 'LAC-01',
+        name: 'Leche La Serenísima Clásica 1L (Sachet)',
+        category: 'Lácteos & Huevos',
+        price: 1450,
+        unit: 'sachet 1L',
+        description: 'Leche entera fresca pasteurizada con vitaminas A y D.',
+        image: 'https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'a-2',
+        code: 'HUE-01',
+        name: 'Maple de Huevos Colorados de Campo (30 un)',
+        category: 'Lácteos & Huevos',
+        price: 5200,
+        unit: 'maple 30u',
+        description: 'Huevos grandes, frescos de granja seleccionados del día.',
+        image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?auto=format&fit=crop&w=700&q=80',
+        badge: 'Granja fresca',
+        stock: true
+      },
+      {
+        id: 'a-3',
+        code: 'YER-01',
+        name: 'Yerba Mate Playadito con Palo 1kg',
+        category: 'Desayuno & Merienda',
+        price: 4400,
+        originalPrice: 4900,
+        unit: 'paquete 1kg',
+        description: 'Secado tradicional de Colonia Liebig. Sabor suave y rendidor.',
+        image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=700&q=80',
+        badge: '⭐ El más pedido',
+        stock: true
+      },
+      {
+        id: 'a-4',
+        code: 'FID-01',
+        name: 'Fideos Tallarines Matarazzo 500g',
+        category: 'Almacén Seco',
+        price: 1850,
+        unit: 'paquete 500g',
+        description: 'Elaborados 100% con trigo candeal de alta calidad. Al dente siempre.',
+        image: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'a-5',
+        code: 'ACE-01',
+        name: 'Aceite de Girasol Cocinero 900ml',
+        category: 'Almacén Seco',
+        price: 2300,
+        unit: 'botella 900ml',
+        description: 'Puro de girasol refinado, rico en vitamina E.',
+        image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      },
+      {
+        id: 'a-6',
+        code: 'LIM-01',
+        name: 'Detergente Magistral Ultra Limón 500ml',
+        category: 'Limpieza del Hogar',
+        price: 3100,
+        unit: 'botella 500ml',
+        description: 'Poder desengrasante ultra concentrado con aroma a limón fresco.',
+        image: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=700&q=80',
+        stock: true
+      }
+    ]
+  }
+];
