@@ -602,11 +602,6 @@ function render() {
                   class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <!-- Badge flotante -->
-              <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-full px-3.5 py-1 shadow-md flex items-center gap-2 whitespace-nowrap">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                <span class="text-[11px] font-bold text-neutral-800 dark:text-neutral-200">Online en WhatsApp</span>
-              </div>
             </div>
 
             <div class="mt-6">
@@ -646,20 +641,6 @@ function render() {
                 <h5 class="text-xs font-bold text-neutral-900 dark:text-white">Puesta en marcha</h5>
                 <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1">Te entrego todo listo y te enseño a usarlo en 10 minutos. Cero vueltas.</p>
               </div>
-            </div>
-
-            <!-- Botón de acción -->
-            <div class="pt-2 flex flex-wrap items-center gap-3">
-              <a
-                href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola Adrián! Vi tu web y me gustaría consultarte para modernizar mi negocio.')}"
-                target="_blank"
-                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95"
-              >
-                <span>💬</span>
-                <span>Escribime un WhatsApp directo</span>
-                <span>→</span>
-              </a>
-              <span class="text-xs text-neutral-400 dark:text-neutral-500">Respuesta rápida en el día</span>
             </div>
           </div>
         </div>
