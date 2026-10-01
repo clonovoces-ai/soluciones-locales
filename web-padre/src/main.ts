@@ -59,12 +59,7 @@ function render() {
           >
             ¿Para quién es?
           </a>
-          <a
-            href="#planes"
-            class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
-          >
-            Planes
-          </a>
+
 
           <!-- Toggle Tema -->
           <button
@@ -574,89 +569,7 @@ function render() {
       </div>
     </section>
 
-    <!-- SECCIÓN DE PLANES Y MODALIDADES -->
-    <section id="planes" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
-      <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
-        <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white tracking-tight">
-          Planes y Modalidades
-        </h2>
-        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          Elegí la solución adecuada para el momento de tu local. Te asesoramos y armamos la propuesta a medida.
-        </p>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- PLAN 1 -->
-        <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-neutral-400">Opción 1</span>
-            <h3 class="text-lg font-bold text-neutral-900 dark:text-white mt-1">Landing Page Web</h3>
-            <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 mb-5">Para presencia online y reservas.</p>
-            <ul class="text-xs text-neutral-600 dark:text-neutral-400 space-y-2.5 pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
-              <li>✓ Dominio propio y SSL</li>
-              <li>✓ Carta / Menú interactivo</li>
-              <li>✓ Botón directo a WhatsApp</li>
-              <li>✓ Hosting y soporte incluido</li>
-            </ul>
-          </div>
-          <a
-            href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa consultar por la Landing Page para mi comercio.')}"
-            target="_blank"
-            class="mt-6 w-full py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 text-center text-xs font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
-          >
-            Consultar Landing
-          </a>
-        </div>
-
-        <!-- PLAN 2 (RECOMENDADO) -->
-        <div class="bg-neutral-900 text-white rounded-3xl p-6 border-2 border-emerald-500 shadow-xl flex flex-col justify-between relative">
-          <span class="absolute -top-3 right-6 bg-emerald-500 text-neutral-950 text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full">
-            El Más Elegido
-          </span>
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Opción 2</span>
-            <h3 class="text-lg font-bold text-white mt-1">E-commerce WhatsApp</h3>
-            <p class="text-xs text-neutral-400 mt-1 mb-5">Catálogo completo con carrito y pedidos.</p>
-            <ul class="text-xs text-neutral-300 space-y-2.5 pt-4 border-t border-neutral-800">
-              <li>✓ Todo lo de la Landing Page</li>
-              <li>✓ Carrito con cálculo de delivery</li>
-              <li>✓ Carga inicial de hasta 150 productos</li>
-              <li>✓ Actualizaciones por Excel ilimitadas</li>
-              <li>✓ Soporte técnico prioritario</li>
-            </ul>
-          </div>
-          <a
-            href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa consultar por el E-commerce con catálogo WhatsApp para mi comercio.')}"
-            target="_blank"
-            class="mt-6 w-full py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 text-center text-xs font-bold transition-colors shadow"
-          >
-            Consultar E-commerce
-          </a>
-        </div>
-
-        <!-- PLAN 3 -->
-        <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 border border-neutral-200 dark:border-neutral-800 flex flex-col justify-between">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-neutral-400">Opción 3</span>
-            <h3 class="text-lg font-bold text-neutral-900 dark:text-white mt-1">Combo Total Negocio</h3>
-            <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-1 mb-5">Web catálogo + Software POS mostrador.</p>
-            <ul class="text-xs text-neutral-600 dark:text-neutral-400 space-y-2.5 pt-4 border-t border-neutral-100 dark:border-neutral-800/80">
-              <li>✓ Catálogo Web WhatsApp completo</li>
-              <li>✓ Software POS instalado en su PC</li>
-              <li>✓ Configuración lector código de barras</li>
-              <li>✓ Copias de seguridad automáticas</li>
-            </ul>
-          </div>
-          <a
-            href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa el Combo Total Negocio (Web + POS) para mi local.')}"
-            target="_blank"
-            class="mt-6 w-full py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 text-center text-xs font-semibold hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors"
-          >
-            Consultar Combo
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- FOOTER / CTA FINAL -->
     <footer class="bg-white dark:bg-[#0E1015] border-t border-neutral-200 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-12 text-center transition-colors">
