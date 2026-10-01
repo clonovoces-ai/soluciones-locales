@@ -382,7 +382,7 @@ function render() {
         </a>
 
         <div class="pt-8 text-[11px] text-neutral-400">
-          © 2026 Soluciones Digitales para Comercios • Desarrollado con tecnología ultra liviana y costo de servidor $0.
+          © 2026 Soluciones Digitales para Comercios
         </div>
       </div>
     </footer>
