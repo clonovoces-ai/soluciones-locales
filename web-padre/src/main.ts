@@ -1,10 +1,12 @@
 // Portal Principal - Web Padre: Soluciones Digitales para Comercios
 let isDarkMode = true;
 
-// URL dinámica de los demos (soporta variables en Vercel y localhost/WiFi local)
+// URL dinámica de los demos (soporta variables en Vercel, subdominios adrianschuster.com.ar y localhost/WiFi local)
 const getHost = () => (typeof window !== 'undefined' ? window.location.hostname : 'localhost');
-const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || `http://${getHost()}:5173/`;
-const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || `http://${getHost()}:5175/`;
+const isCustomDomain = () => typeof window !== 'undefined' && window.location.hostname.includes('adrianschuster.com.ar');
+
+const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCustomDomain() ? 'https://ecommerce.adrianschuster.com.ar/' : `http://${getHost()}:5173/`);
+const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // Tu número de WhatsApp para recibir consultas
 
 function init() {

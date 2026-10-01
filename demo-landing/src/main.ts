@@ -2,9 +2,24 @@
 let isDarkMode = true;
 let activeCategory = 'all';
 
-// Detección dinámica de host (funciona en Vercel, localhost y en la red WiFi del celular)
-const getHost = () => (typeof window !== 'undefined' ? window.location.hostname : 'localhost');
-const HUB_URL = (import.meta as any).env?.VITE_HUB_URL || `http://${getHost()}:3000/`;
+// Detección dinámica de host (en producción conecta con sd.adrianschuster.com.ar, en local usa localhost:3000)
+const getHubUrl = () => {
+  if ((import.meta as any).env?.VITE_HUB_URL) {
+    return (import.meta as any).env.VITE_HUB_URL;
+  }
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    if (host.includes('adrianschuster.com.ar')) {
+      return 'https://sd.adrianschuster.com.ar/';
+    }
+    if (host !== 'localhost' && host !== '127.0.0.1' && !host.startsWith('192.168.')) {
+      return 'https://sd.adrianschuster.com.ar/';
+    }
+    return `http://${host}:3000/`;
+  }
+  return 'https://sd.adrianschuster.com.ar/';
+};
+const HUB_URL = getHubUrl();
 const RESTAURANT_WHATSAPP = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // WhatsApp del local
 
 interface MenuItem {
