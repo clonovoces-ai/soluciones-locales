@@ -184,16 +184,16 @@ function render() {
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
                 🍷
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300">
-                Página Web
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
+                Demo en Vivo
               </span>
             </div>
 
             <div>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 2. Landing Page Gastronómica & Menú
               </h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
@@ -203,16 +203,16 @@ function render() {
 
             <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Carta / Menú digital interactivo
+                <span class="text-emerald-500 font-bold">✓</span> Carta / Menú digital interactivo
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Botón directo para reservar mesa
+                <span class="text-emerald-500 font-bold">✓</span> Botón directo para reservar mesa
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Integración con Google Maps y Reseñas
+                <span class="text-emerald-500 font-bold">✓</span> Integración con Google Maps y Reseñas
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Posicionamiento SEO de cercanía
+                <span class="text-emerald-500 font-bold">✓</span> Posicionamiento SEO de cercanía
               </li>
             </ul>
           </div>
@@ -236,16 +236,16 @@ function render() {
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl">
+              <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
                 💈
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300">
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
                 Demo en Vivo
               </span>
             </div>
 
             <div>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 3. Turnos Online Barbería & Estética
               </h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
@@ -255,16 +255,16 @@ function render() {
 
             <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Reserva por profesional y servicio
+                <span class="text-emerald-500 font-bold">✓</span> Reserva por profesional y servicio
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Grilla de horarios interactiva
+                <span class="text-emerald-500 font-bold">✓</span> Grilla de horarios interactiva
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> Confirmación directa a WhatsApp
+                <span class="text-emerald-500 font-bold">✓</span> Confirmación directa a WhatsApp
               </li>
               <li class="flex items-center gap-2">
-                <span class="text-amber-500 font-bold">✓</span> 0% comisiones mensuales
+                <span class="text-emerald-500 font-bold">✓</span> 0% comisiones mensuales
               </li>
             </ul>
           </div>
