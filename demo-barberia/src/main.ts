@@ -316,12 +316,12 @@ function render() {
         </div>
 
         <div class="bg-white dark:bg-[#13151D] rounded-3xl p-6 sm:p-8 border border-neutral-200/80 dark:border-neutral-800 shadow-xl space-y-8">
-          <!-- PASO 1: ELEGIR SERVICIO -->
-          <div class="space-y-3">
+          <!-- PASO 1: ELEGIR SERVICIO & LISTA DE PRECIOS -->
+          <div id="servicios" class="space-y-3 scroll-mt-28">
             <div class="flex items-center justify-between">
               <span class="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
                 <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[10px]">1</span>
-                Elegí tu Servicio
+                Elegí tu Servicio & Precios
               </span>
               <span class="text-[11px] text-neutral-400">Paso 1 de 3</span>
             </div>
