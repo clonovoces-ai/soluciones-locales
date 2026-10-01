@@ -22,6 +22,22 @@ const getHubUrl = () => {
 const HUB_URL = getHubUrl();
 const RESTAURANT_WHATSAPP = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // WhatsApp del local
 
+const getCustomBusinessName = () => {
+  if (typeof window === 'undefined') return 'Fuego & Harina';
+  const params = new URLSearchParams(window.location.search);
+  const nameParam = params.get('demo') || params.get('local') || params.get('comercio') || params.get('nombre');
+  if (nameParam && nameParam.trim()) {
+    return nameParam.trim();
+  }
+  return 'Fuego & Harina';
+};
+
+const isCustomDemo = () => {
+  if (typeof window === 'undefined') return false;
+  const params = new URLSearchParams(window.location.search);
+  return !!(params.get('demo') || params.get('local') || params.get('comercio') || params.get('nombre'));
+};
+
 interface MenuItem {
   id: string;
   name: string;
@@ -153,7 +169,19 @@ function render() {
     ? MENU_ITEMS 
     : MENU_ITEMS.filter(item => item.category === activeCategory);
 
+  const businessName = getCustomBusinessName();
+  const hasCustomDemo = isCustomDemo();
+
   app.innerHTML = `
+    <!-- Banner de Vista Previa Personalizada (solo si tiene demo/local en la URL) -->
+    ${hasCustomDemo ? `
+      <div class="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-b border-amber-500/30 text-amber-900 dark:text-amber-200 py-2.5 px-4 text-xs font-semibold text-center flex items-center justify-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>🎨 <strong>Boceto de muestra interactivo</strong> para <strong>${businessName}</strong></span>
+        <span class="opacity-70 hidden sm:inline">• Desarrollado por Soluciones Digitales</span>
+      </div>
+    ` : ''}
+
     <!-- Navbar Principal -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0C0D11]/95 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800/80 transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between gap-4">
@@ -164,10 +192,10 @@ function render() {
           </div>
           <div>
             <span class="text-lg sm:text-xl font-black tracking-tight text-neutral-900 dark:text-white block leading-tight">
-              Fuego & Harina
+              ${businessName}
             </span>
             <span class="text-[10px] sm:text-[11px] text-neutral-500 dark:text-neutral-400 font-bold tracking-wider uppercase block">
-              Bodegón & Horno a Leña
+              ${hasCustomDemo ? 'Carta Digital & Menú Online' : 'Bodegón & Horno a Leña'}
             </span>
           </div>
         </a>

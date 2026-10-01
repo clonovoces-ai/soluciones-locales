@@ -42,6 +42,16 @@ function init() {
     if (found) currentProfile = found;
   }
 
+  // Detectar nombre personalizado de demo por URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const customDemoName = urlParams.get('demo') || urlParams.get('local') || urlParams.get('comercio') || urlParams.get('nombre');
+  if (customDemoName && customDemoName.trim()) {
+    currentProfile = {
+      ...currentProfile,
+      name: customDemoName.trim()
+    };
+  }
+
   // Inicializar Tema (Predeterminado: Oscuro)
   const savedTheme = localStorage.getItem('demo_theme');
   isDarkMode = savedTheme !== null ? savedTheme === 'dark' : true;

@@ -8,6 +8,22 @@ const isCustomDomain = () => typeof window !== 'undefined' && window.location.ho
 const HUB_URL = (import.meta as any).env?.VITE_HUB_URL || (isCustomDomain() ? 'https://sd.adrianschuster.com.ar/' : `http://${getHost()}:3000/`);
 const BARBERSHOP_WHATSAPP = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // WhatsApp del local
 
+const getCustomBusinessName = () => {
+  if (typeof window === 'undefined') return 'La Hermandad Barber Club';
+  const params = new URLSearchParams(window.location.search);
+  const nameParam = params.get('demo') || params.get('local') || params.get('comercio') || params.get('nombre');
+  if (nameParam && nameParam.trim()) {
+    return nameParam.trim();
+  }
+  return 'La Hermandad Barber Club';
+};
+
+const isCustomDemo = () => {
+  if (typeof window === 'undefined') return false;
+  const params = new URLSearchParams(window.location.search);
+  return !!(params.get('demo') || params.get('local') || params.get('comercio') || params.get('nombre'));
+};
+
 interface Service {
   id: string;
   name: string;
@@ -152,7 +168,19 @@ function render() {
   const app = document.getElementById('app');
   if (!app) return;
 
+  const businessName = getCustomBusinessName();
+  const hasCustomDemo = isCustomDemo();
+
   app.innerHTML = `
+    <!-- Banner de Vista Previa Personalizada (solo si tiene demo/local en la URL) -->
+    ${hasCustomDemo ? `
+      <div class="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-b border-amber-500/30 text-amber-900 dark:text-amber-200 py-2.5 px-4 text-xs font-semibold text-center flex items-center justify-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>🎨 <strong>Boceto de muestra interactivo</strong> para <strong>${businessName}</strong></span>
+        <span class="opacity-70 hidden sm:inline">• Desarrollado por Soluciones Digitales</span>
+      </div>
+    ` : ''}
+
     <!-- Navbar Principal -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0C0D11]/95 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800/80 transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between gap-4">
@@ -163,10 +191,10 @@ function render() {
           </div>
           <div>
             <span class="text-lg sm:text-xl font-black tracking-tight text-neutral-900 dark:text-white block leading-tight">
-              La Hermandad
+              ${businessName}
             </span>
             <span class="text-[10px] sm:text-[11px] text-neutral-500 dark:text-neutral-400 font-bold tracking-wider uppercase block">
-              Barber Club & Grooming
+              ${hasCustomDemo ? 'Turnos Online • Demo Personalizada' : 'Barber Club & Grooming'}
             </span>
           </div>
         </a>
@@ -214,7 +242,7 @@ function render() {
             </div>
 
             <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white leading-[1.12]">
-              Cortes impecables, café de cortesía y tu turno sin esperas.
+              ${hasCustomDemo ? `Reservá tu turno en ${businessName} sin esperas.` : 'Cortes impecables, café de cortesía y tu turno sin esperas.'}
             </h1>
 
             <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
@@ -709,7 +737,8 @@ function render() {
       const name = customerName.trim() || 'Cliente';
       const phoneText = customerPhone.trim() ? `%0A📞 *Teléfono:* ${encodeURIComponent(customerPhone.trim())}` : '';
 
-      const msg = `¡Hola La Hermandad Barber Club! Quiero confirmar la reserva de este turno:%0A%0A👤 *Cliente:* ${encodeURIComponent(name)}${phoneText}%0A✂️ *Servicio:* ${encodeURIComponent(selectedService.name)} (${formatMoney(selectedService.price)})%0A💈 *Barbero:* ${encodeURIComponent(selectedBarber.name)}%0A📅 *Fecha:* ${encodeURIComponent(selectedDay.label)} (${encodeURIComponent(selectedDay.date)})%0A🕒 *Horario:* ${encodeURIComponent(selectedTime)} hs%0A⏱️ *Duración estimada:* ${encodeURIComponent(selectedService.duration)}%0A%0A¿Me confirman la disponibilidad? ¡Muchas gracias!`;
+      const currentBiz = getCustomBusinessName();
+      const msg = `¡Hola ${encodeURIComponent(currentBiz)}! Quiero confirmar la reserva de este turno:%0A%0A👤 *Cliente:* ${encodeURIComponent(name)}${phoneText}%0A✂️ *Servicio:* ${encodeURIComponent(selectedService.name)} (${formatMoney(selectedService.price)})%0A💈 *Profesional:* ${encodeURIComponent(selectedBarber.name)}%0A📅 *Fecha:* ${encodeURIComponent(selectedDay.label)} (${encodeURIComponent(selectedDay.date)})%0A🕒 *Horario:* ${encodeURIComponent(selectedTime)} hs%0A⏱️ *Duración estimada:* ${encodeURIComponent(selectedService.duration)}%0A%0A¿Me confirman la disponibilidad? ¡Muchas gracias!`;
 
       window.open(`https://wa.me/${BARBERSHOP_WHATSAPP}?text=${msg}`, '_blank');
     });
