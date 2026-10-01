@@ -54,6 +54,12 @@ function render() {
             Soluciones
           </a>
           <a
+            href="#rubros"
+            class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          >
+            ¿Para quién es?
+          </a>
+          <a
             href="#planes"
             class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           >
@@ -329,54 +335,241 @@ function render() {
             </p>
           </div>
         </div>
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl">
-                💻
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-100 dark:bg-indigo-900/60 text-indigo-800 dark:text-indigo-300">
-                POS Mostrador
+      </div>
+    </section>
+
+    <!-- SECCIÓN: PARA QUIÉNES ESTÁ PENSADO (RUBROS & NEGOCIOS) -->
+    <section id="rubros" class="max-w-7xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-neutral-100 dark:border-neutral-800/60">
+      <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+          ✨ 100% Adaptable a tu modelo de trabajo
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          ¿Para qué tipo de comercios está pensado?
+        </h2>
+        <p class="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
+          No importa qué vendas ni el tamaño de tu local: desarrollamos soluciones personalizadas que resuelven los problemas diarios de atención, pedidos y turnos.
+        </p>
+      </div>
+
+      <!-- Grilla interactiva y visual de rubros -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- 1. Estética y Belleza -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">💅</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-pink-50 dark:bg-pink-950/60 text-pink-600 dark:text-pink-400 border border-pink-200 dark:border-pink-800/60">
+                Turnos Online
               </span>
             </div>
-
-            <div>
-              <h3 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                3. Software de Caja & POS Local
-              </h3>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
-                Para cobrar rápido en el mostrador físico del local. <strong>Funciona sin conexión a internet</strong> con lector de código de barras USB y control de caja diario.
-              </p>
-            </div>
-
-            <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
-              <li class="flex items-center gap-2">
-                <span class="text-indigo-500 font-bold">✓</span> 100% Offline (no depende de internet)
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-indigo-500 font-bold">✓</span> Compatible con lectores de código de barras
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-indigo-500 font-bold">✓</span> Control de stock y alerta de reposición
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-indigo-500 font-bold">✓</span> Arqueo de caja y totales al cierre
-              </li>
-            </ul>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
-            <a
-              href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa conocer más sobre el Sistema de Caja y POS para mi local.')}"
-              target="_blank"
-              class="w-full py-3 px-4 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-semibold text-xs text-center flex items-center justify-center gap-2 transition-all active:scale-95"
-            >
-              <span>Consultar por el POS</span>
-              <span>💬</span>
-            </a>
-            <p class="text-[10px] text-center text-neutral-400">
-              Instalación local en PC del comercio
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Estética, Barberías & Belleza
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Nailbars, peluquerías, barberías, centros de depilación, spas, estudios de tatuajes y masajes.
             </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Los clientes reservan horario y profesional directamente desde el celular sin llamadas ni esperas.
+            </div>
           </div>
+        </div>
+
+        <!-- 2. Gastronomía -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🍕</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800/60">
+                Menú & Pedidos
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Gastronomía, Bares & Rotiserías
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Restaurantes, pizzerías, cafeterías, cervecerías, hamburgueserías y food trucks.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Carta digital visual con fotos, botón de reservas y pedidos por WhatsApp con cálculo de delivery.
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Comercios de Barrio y Retail -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🛒</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
+                Catálogo WhatsApp
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Comercios de Barrio & Retail
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Almacenes, kioscos, dietéticas, fiambrerías, tiendas de ropa y ferreterías de barrio.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Catálogo autogestionado con Excel (.xlsx), carrito ágil y cobro en mostrador con POS offline.
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Deportes y Recreación -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🎾</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800/60">
+                Canchas & Cupos
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Deportes & Recreación
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Alquiler de canchas (fútbol, pádel, tenis), gimnasios, boxes de crossfit, yoga y pilates.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Reserva por franja horaria, gestión de señas y cupos máximos por clase en tiempo real.
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Mascotas y Veterinaria -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🐾</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800/60">
+                Agenda de Pacientes
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Mascotas & Veterinarias
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Peluquerías caninas, clínicas veterinarias, pet shops y guarderías.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Agendamiento de turnos para baño, corte y consultas clínicas con datos de la mascota.
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Talleres & Automotor -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🚗</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 border border-cyan-200 dark:border-cyan-800/60">
+                Service & Talleres
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Talleres & Servicios Automotores
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Talleres mecánicos, lavaderos de autos premium, lubricentros y gomerías.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Turnos ordenados para service y mantenimientos, evitando autos acumulados en el taller.
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Productoras de Eventos y Boliches -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🎟️</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800/60">
+                Acreditación QR
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Eventos, Fiestas & Boliches
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Salones de fiestas infantiles, productoras de eventos, boliches y recitales locales.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Venta de entradas, reserva de fechas con seña y validación rápida de accesos con QR en puerta.
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Electrónica, Tecnología & Reparaciones -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">🛠️</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800/60">
+                Servicio Técnico
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Tecnología & Reparaciones
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Service de celulares, locales de informática, electrónica y reparación de electrodomésticos.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Registro de equipos en reparación, estado del servicio para el cliente y control de garantías.
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Mayoristas y Distribuidores B2B -->
+        <div class="bg-white dark:bg-[#14171F] p-6 rounded-2xl border border-neutral-200/80 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 transition-all shadow-sm hover:shadow-md flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-3xl">📦</span>
+              <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 border border-teal-200 dark:border-teal-800/60">
+                Portal B2B
+              </span>
+            </div>
+            <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+              Mayoristas & Distribuidores
+            </h3>
+            <p class="text-xs text-neutral-400 dark:text-neutral-400 mt-1">
+              Proveedores de insumos gastronómicos, bebidas, artículos de limpieza y packaging.
+            </p>
+            <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Catálogo privado para clientes recurrentes que compran por bulto o lista de precios especial.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BANNER DESTACADO: ¿NO VES TU RUBRO? DESARROLLO A MEDIDA -->
+      <div class="mt-10 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-800 dark:from-[#181B24] dark:to-[#12141A] rounded-3xl p-8 sm:p-10 border border-neutral-800 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-2 text-center md:text-left max-w-xl">
+          <div class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            <span>💡</span> Soluciones a medida
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold">
+            ¿Tu rubro no está en la lista? Lo armamos para vos.
+          </h3>
+          <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed">
+            Cada comercio funciona de una manera única. Si atendés público, cobrás productos o brindás un servicio, adaptamos y construimos la herramienta exacta que necesita tu negocio.
+          </p>
+        </div>
+
+        <div class="flex-shrink-0">
+          <a
+            href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Tengo un comercio y me gustaría saber cómo podemos adaptar una solución digital a mi rubro.')}"
+            target="_blank"
+            class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-white text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-100 transition-all shadow-md active:scale-95 text-center"
+          >
+            <span>💬</span>
+            <span>Consultar por mi rubro</span>
+            <span>→</span>
+          </a>
         </div>
       </div>
     </section>
