@@ -154,22 +154,6 @@ function render() {
     : MENU_ITEMS.filter(item => item.category === activeCategory);
 
   app.innerHTML = `
-    <!-- Barra superior de Demo hacia la Web Padre -->
-    <aside class="bg-neutral-950 text-white text-xs py-2 px-4 border-b border-neutral-800">
-      <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2">
-          <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-neutral-400">Estás viendo una <strong>Demo en Vivo</strong> de Landing Page Gastronómica</span>
-        </div>
-        <a 
-          href="${HUB_URL}" 
-          class="font-semibold text-amber-400 hover:text-amber-300 underline underline-offset-2 flex items-center gap-1 text-[11px] sm:text-xs"
-        >
-          <span>← Volver al Portal de Soluciones</span>
-        </a>
-      </div>
-    </aside>
-
     <!-- Navbar Principal -->
     <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0C0D11]/95 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800/80 transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between gap-4">
