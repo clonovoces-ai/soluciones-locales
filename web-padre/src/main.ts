@@ -8,7 +8,7 @@ const isCustomDomain = () => typeof window !== 'undefined' && window.location.ho
 const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCustomDomain() ? 'https://ecommerce.adrianschuster.com.ar/' : `http://${getHost()}:5173/`);
 const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
 const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
-const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // Tu número de WhatsApp para recibir consultas
+const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp de Adrián Schuster
 
 function init() {
   const savedTheme = localStorage.getItem('hub_theme');
@@ -58,6 +58,12 @@ function render() {
             class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           >
             ¿Para quién es?
+          </a>
+          <a
+            href="#sobre-mi"
+            class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          >
+            Quién soy
           </a>
 
 
@@ -569,7 +575,96 @@ function render() {
       </div>
     </section>
 
+    <!-- SECCIÓN: QUIÉN ESTÁ DETRÁS / SOBRE MÍ -->
+    <section id="sobre-mi" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-neutral-100 dark:border-neutral-800/60">
+      <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/50">
+          👋 Trato personal y cercano
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          Quién está detrás del proyecto
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          Tecnología simple, atención personalizada y sin intermediarios para negocios locales.
+        </p>
+      </div>
 
+      <div class="bg-white dark:bg-[#14171F] rounded-3xl border border-neutral-200/80 dark:border-neutral-800 p-6 sm:p-10 shadow-sm">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <!-- Columna Foto -->
+          <div class="lg:col-span-5 flex flex-col items-center text-center">
+            <div class="relative group">
+              <div class="absolute -inset-1 bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+              <div class="relative w-52 h-52 sm:w-60 sm:h-60 rounded-3xl overflow-hidden border-2 border-white dark:border-neutral-800 shadow-xl bg-neutral-100 dark:bg-neutral-800">
+                <img
+                  src="/adrian.jpg"
+                  alt="Adrián Schuster - Creador de Soluciones Digitales"
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <!-- Badge flotante -->
+              <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 rounded-full px-3.5 py-1 shadow-md flex items-center gap-2 whitespace-nowrap">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="text-[11px] font-bold text-neutral-800 dark:text-neutral-200">Online en WhatsApp</span>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white">Adrián Schuster</h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400">Desarrollo Web & Soluciones para Comercios</p>
+              <p class="text-[11px] text-neutral-400 dark:text-neutral-500 mt-0.5">Buenos Aires, Argentina</p>
+            </div>
+          </div>
+
+          <!-- Columna Mensaje y Valores -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <h4 class="text-xl sm:text-2xl font-bold text-neutral-900 dark:text-white tracking-tight leading-snug">
+                "Creo herramientas simples para que los comercios locales vendan más y atiendan mejor, sin complicaciones ni costos ocultos."
+              </h4>
+              <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+                Sé lo demandante que es estar al frente de un local todos los días. Por eso no ofrezco sistemas enlatados difíciles de usar ni abonos mensuales abusivos. Mi trabajo es armarte una herramienta ágil que funcione directo desde el celular de tus clientes a tu WhatsApp, adaptada 100% a cómo trabajás vos.
+              </p>
+            </div>
+
+            <!-- 3 Pilares de confianza -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
+                <div class="text-lg mb-1.5">🤝</div>
+                <h5 class="text-xs font-bold text-neutral-900 dark:text-white">Trato directo 1 a 1</h5>
+                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1">Sin intermediarios ni robots. Hablás y coordinás todo directamente conmigo.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
+                <div class="text-lg mb-1.5">🛡️</div>
+                <h5 class="text-xs font-bold text-neutral-900 dark:text-white">0% Comisiones</h5>
+                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1">Lo que vendés o reservás es 100% tuyo. Sin porcentajes sorpresa por venta.</p>
+              </div>
+
+              <div class="p-4 rounded-2xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-100 dark:border-neutral-800">
+                <div class="text-lg mb-1.5">🚀</div>
+                <h5 class="text-xs font-bold text-neutral-900 dark:text-white">Puesta en marcha</h5>
+                <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1">Te entrego todo listo y te enseño a usarlo en 10 minutos. Cero vueltas.</p>
+              </div>
+            </div>
+
+            <!-- Botón de acción -->
+            <div class="pt-2 flex flex-wrap items-center gap-3">
+              <a
+                href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola Adrián! Vi tu web y me gustaría consultarte para modernizar mi negocio.')}"
+                target="_blank"
+                class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all active:scale-95"
+              >
+                <span>💬</span>
+                <span>Escribime un WhatsApp directo</span>
+                <span>→</span>
+              </a>
+              <span class="text-xs text-neutral-400 dark:text-neutral-500">Respuesta rápida en el día</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- FOOTER / CTA FINAL -->
     <footer class="bg-white dark:bg-[#0E1015] border-t border-neutral-200 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-12 text-center transition-colors">
@@ -590,7 +685,7 @@ function render() {
         </a>
 
         <div class="pt-8 text-[11px] text-neutral-400">
-          © 2026 Soluciones Digitales para Comercios
+          © 2026 Soluciones Digitales • Desarrollado por Adrián Schuster
         </div>
       </div>
     </footer>
