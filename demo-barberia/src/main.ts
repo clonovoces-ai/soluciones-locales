@@ -6,7 +6,7 @@ const getHost = () => (typeof window !== 'undefined' ? window.location.hostname 
 const isCustomDomain = () => typeof window !== 'undefined' && window.location.hostname.includes('adrianschuster.com.ar');
 
 const HUB_URL = (import.meta as any).env?.VITE_HUB_URL || (isCustomDomain() ? 'https://sd.adrianschuster.com.ar/' : `http://${getHost()}:3000/`);
-const BARBERSHOP_WHATSAPP = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // WhatsApp del local
+const BARBERSHOP_WHATSAPP = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp del local (+54 9 11 2335-1610)
 
 const getCustomBusinessName = () => {
   if (typeof window === 'undefined') return 'La Hermandad Barber Club';
