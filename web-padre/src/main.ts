@@ -7,6 +7,7 @@ const isCustomDomain = () => typeof window !== 'undefined' && window.location.ho
 
 const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCustomDomain() ? 'https://ecommerce.adrianschuster.com.ar/' : `http://${getHost()}:5173/`);
 const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
+const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491100000000'; // Tu número de WhatsApp para recibir consultas
 
 function init() {
@@ -50,7 +51,7 @@ function render() {
             href="#soluciones"
             class="hidden md:inline-block text-xs font-medium text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white px-3 py-1.5 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
           >
-            Las 3 Soluciones
+            Soluciones
           </a>
           <a
             href="#planes"
@@ -109,18 +110,18 @@ function render() {
       </div>
     </header>
 
-    <!-- SECCIÓN: LAS 3 SOLUCIONES DIGITALES (LAS TARJETAS PRINCIPALES) -->
-    <section id="soluciones" class="max-w-6xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
+    <!-- SECCIÓN: LAS SOLUCIONES DIGITALES (LAS TARJETAS PRINCIPALES) -->
+    <section id="soluciones" class="max-w-7xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
       <div class="text-center max-w-xl mx-auto mb-12 space-y-2">
         <h2 class="text-2xl sm:text-3xl font-bold text-neutral-900 dark:text-white tracking-tight">
-          Nuestras 3 Soluciones
+          Nuestras Soluciones Digitales
         </h2>
         <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
           Elegí el modelo que mejor se adapte al rubro y a las necesidades de tu comercio.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- SOLUCIÓN 1: E-COMMERCE & CATÁLOGO WHATSAPP -->
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
@@ -134,7 +135,7 @@ function render() {
             </div>
 
             <div>
-              <h3 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                 1. Catálogo & E-commerce WhatsApp
               </h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
@@ -186,11 +187,11 @@ function render() {
             </div>
 
             <div>
-              <h3 class="text-lg sm:text-xl font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                2. Landing Page de Alta Conversión
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                2. Landing Page Gastronómica & Menú
               </h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
-                Diseñada para <strong>rotiserías, pizzerías, cafeterías, veterinarias o servicios</strong>. Muestra tu carta visual, menú del día, fotos del local, opiniones y botón de reservas.
+                Diseñada para <strong>rotiserías, pizzerías, cafeterías y restaurantes</strong>. Muestra tu carta visual, menú del día, fotos del local, opiniones y botón de reservas.
               </p>
             </div>
 
@@ -225,8 +226,109 @@ function render() {
           </div>
         </div>
 
-        <!-- SOLUCIÓN 3: SOFTWARE DE CAJA & POS LOCAL -->
+        <!-- SOLUCIÓN 3: SISTEMA DE TURNOS ONLINE (BARBERÍA & ESTÉTICA) -->
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl">
+                💈
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300">
+                Demo en Vivo
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                3. Turnos Online Barbería & Estética
+              </h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+                Para <strong>barberías, peluquerías, salones de estética y consultorios</strong>. Tus clientes eligen profesional, servicio, día y horario sin esperas.
+              </p>
+            </div>
+
+            <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
+              <li class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold">✓</span> Reserva por profesional y servicio
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold">✓</span> Grilla de horarios interactiva
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold">✓</span> Confirmación directa a WhatsApp
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-amber-500 font-bold">✓</span> 0% comisiones mensuales
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
+            <a
+              href="${BARBERIA_DEMO_URL}"
+              target="_blank"
+              class="w-full py-3 px-4 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
+            >
+              <span>Abrir Demo de Turnos</span>
+              <span>→</span>
+            </a>
+            <p class="text-[10px] text-center text-neutral-400">
+              Barbería & estética sin intermediarios
+            </p>
+          </div>
+        </div>
+
+        <!-- SOLUCIÓN 4: SOFTWARE DE CAJA & POS LOCAL -->
+        <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl">
+                💻
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-100 dark:bg-indigo-900/60 text-indigo-800 dark:text-indigo-300">
+                POS Mostrador
+              </span>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                4. Software de Caja & POS Local
+              </h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+                Para cobrar rápido en el mostrador físico del local. <strong>Funciona sin conexión a internet</strong> con lector de código de barras USB y control de caja diario.
+              </p>
+            </div>
+
+            <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
+              <li class="flex items-center gap-2">
+                <span class="text-indigo-500 font-bold">✓</span> 100% Offline (no depende de internet)
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-indigo-500 font-bold">✓</span> Compatible con lectores de código de barras
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-indigo-500 font-bold">✓</span> Control de stock y alerta de reposición
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="text-indigo-500 font-bold">✓</span> Arqueo de caja y totales al cierre
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
+            <a
+              href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa conocer más sobre el Sistema de Caja y POS para mi local.')}"
+              target="_blank"
+              class="w-full py-3 px-4 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-800 dark:text-neutral-200 font-semibold text-xs text-center flex items-center justify-center gap-2 transition-all active:scale-95"
+            >
+              <span>Consultar por el POS</span>
+              <span>💬</span>
+            </a>
+            <p class="text-[10px] text-center text-neutral-400">
+              Instalación local en PC del comercio
+            </p>
+          </div>
+        </div>
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <div class="w-12 h-12 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-2xl">
