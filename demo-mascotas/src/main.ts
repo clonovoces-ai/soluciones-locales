@@ -1,4 +1,4 @@
-// Demo Sistema de Turnos Online para Pet Shops & Peluquerías Caninas
+// Demo Sistema de Turnos & Tienda E-commerce para Pet Shops & Peluquerías Caninas
 let isDarkMode = false; // Modo claro predeterminado
 
 // Detección dinámica de host (funciona en Vercel, localhost y celulares en red)
@@ -133,21 +133,28 @@ const SERVICES: Service[] = [
   }
 ];
 
+type ProductCategory = 'todos' | 'perros' | 'gatos' | 'farmacia' | 'snacks' | 'accesorios';
+
 interface Product {
   id: string;
   name: string;
-  category: string;
+  category: ProductCategory;
+  categoryLabel: string;
   price: number;
   weight: string;
   icon: string;
   badge?: string;
+  brand: string;
 }
 
-const FEATURED_PRODUCTS: Product[] = [
+const CATALOG_PRODUCTS: Product[] = [
+  // Perros
   {
     id: 'p1',
     name: 'Royal Canin Mini Adult',
-    category: 'Alimento Perros',
+    brand: 'Royal Canin',
+    category: 'perros',
+    categoryLabel: 'Perros',
     price: 36500,
     weight: 'Bolsa 7.5 kg',
     icon: '🥩',
@@ -155,8 +162,10 @@ const FEATURED_PRODUCTS: Product[] = [
   },
   {
     id: 'p2',
-    name: 'Purina Pro Plan OptiHealth Mediano',
-    category: 'Alimento Perros',
+    name: 'Purina Pro Plan OptiHealth Adulto Mediano',
+    brand: 'Pro Plan',
+    category: 'perros',
+    categoryLabel: 'Perros',
     price: 52000,
     weight: 'Bolsa 15 kg',
     icon: '🍖',
@@ -164,20 +173,147 @@ const FEATURED_PRODUCTS: Product[] = [
   },
   {
     id: 'p3',
-    name: 'Pastilla Antiparasitaria Nexgard Spectra',
-    category: 'Farmacia & Pulgas',
-    price: 18500,
-    weight: '1 Pastilla Masticable (10 a 30kg)',
-    icon: '💊',
-    badge: 'Top Ventas'
+    name: 'Vitalcan Balanced Adulto Raza Grande',
+    brand: 'Vitalcan',
+    category: 'perros',
+    categoryLabel: 'Perros',
+    price: 43000,
+    weight: 'Bolsa 20 kg',
+    icon: '🥩',
+    badge: 'Más Vendido'
   },
   {
     id: 'p4',
-    name: 'Royal Canin Feline Indoor',
-    category: 'Alimento Gatos',
+    name: 'Pedigree Pouch Carne en Salsa',
+    brand: 'Pedigree',
+    category: 'perros',
+    categoryLabel: 'Perros',
+    price: 11500,
+    weight: 'Caja x 12 sobres',
+    icon: '🍲'
+  },
+
+  // Gatos
+  {
+    id: 'p5',
+    name: 'Royal Canin Feline Indoor Adult',
+    brand: 'Royal Canin',
+    category: 'gatos',
+    categoryLabel: 'Gatos',
     price: 38900,
     weight: 'Bolsa 7.5 kg',
-    icon: '🐟'
+    icon: '🐟',
+    badge: 'Top Gatos'
+  },
+  {
+    id: 'p6',
+    name: 'Purina Excellent Gato Pollo & Arroz',
+    brand: 'Excellent',
+    category: 'gatos',
+    categoryLabel: 'Gatos',
+    price: 34500,
+    weight: 'Bolsa 10 kg',
+    icon: '🍗'
+  },
+  {
+    id: 'p7',
+    name: 'Piedras Sanitarias Aglomerantes Odor-Lock',
+    brand: 'Sanitarias',
+    category: 'gatos',
+    categoryLabel: 'Gatos',
+    price: 7800,
+    weight: 'Bolsa 10 kg',
+    icon: '✨'
+  },
+  {
+    id: 'p8',
+    name: 'Snack Churu Atún con Salmón',
+    brand: 'Inaba Churu',
+    category: 'gatos',
+    categoryLabel: 'Gatos',
+    price: 4800,
+    weight: 'Pack x 4 tubos',
+    icon: '🍣',
+    badge: 'Favorito'
+  },
+
+  // Farmacia & Antiparasitarios
+  {
+    id: 'p9',
+    name: 'Nexgard Spectra (10 a 30 kg)',
+    brand: 'Boehringer',
+    category: 'farmacia',
+    categoryLabel: 'Farmacia',
+    price: 18500,
+    weight: '1 Pastilla Masticable (Pulgas, Garrapatas y Parásitos)',
+    icon: '💊',
+    badge: 'Top Farmacia'
+  },
+  {
+    id: 'p10',
+    name: 'Bravecto Perros (20 a 40 kg)',
+    brand: 'MSD',
+    category: 'farmacia',
+    categoryLabel: 'Farmacia',
+    price: 32000,
+    weight: 'Protección x 12 Semanas',
+    icon: '🛡️'
+  },
+  {
+    id: 'p11',
+    name: 'Pipeta Antiparasitaria Frontline Plus Perro',
+    brand: 'Frontline',
+    category: 'farmacia',
+    categoryLabel: 'Farmacia',
+    price: 8900,
+    weight: '1 Pipeta Spot-on',
+    icon: '💧'
+  },
+
+  // Snacks & Juguetes
+  {
+    id: 'p12',
+    name: 'Juguete Kong Classic Rellenable',
+    brand: 'Kong',
+    category: 'snacks',
+    categoryLabel: 'Snacks & Juguetes',
+    price: 16500,
+    weight: 'Tamaño Large (Caucho natural)',
+    icon: '🎾',
+    badge: 'Indestructible'
+  },
+  {
+    id: 'p13',
+    name: 'Huesos de Cuero Prensado 100% Vacuno',
+    brand: 'Patitas Gourmet',
+    category: 'snacks',
+    categoryLabel: 'Snacks & Juguetes',
+    price: 6200,
+    weight: 'Pack x 3 unidades (15 cm)',
+    icon: '🦴'
+  },
+
+  // Accesorios
+  {
+    id: 'p14',
+    name: 'Pretal Antitirones Ergonómico Acolchado',
+    brand: 'Julius Style',
+    category: 'accesorios',
+    categoryLabel: 'Accesorios',
+    price: 19800,
+    weight: 'Talle Regulable M/L',
+    icon: '🦮',
+    badge: 'Recomendado'
+  },
+  {
+    id: 'p15',
+    name: 'Cama Colchón Antiestrés Lavable',
+    brand: 'Fluffy Pet',
+    category: 'accesorios',
+    categoryLabel: 'Accesorios',
+    price: 24500,
+    weight: 'Diámetro 70 cm',
+    icon: '🛏️'
   }
 ];
 
@@ -219,6 +355,14 @@ interface BookingState {
   ownerPhone: string;
   behaviorNotes: string;
   needsMattedHairCare: boolean;
+  
+  // E-commerce Tienda
+  selectedStoreCategory: ProductCategory;
+  searchQuery: string;
+  cart: { [productId: string]: number };
+  isCartOpen: boolean;
+  deliveryMethod: 'delivery' | 'retiro';
+  deliveryAddress: string;
 }
 
 const state: BookingState = {
@@ -231,7 +375,14 @@ const state: BookingState = {
   ownerName: '',
   ownerPhone: '',
   behaviorNotes: '',
-  needsMattedHairCare: false
+  needsMattedHairCare: false,
+
+  selectedStoreCategory: 'todos',
+  searchQuery: '',
+  cart: {},
+  isCartOpen: false,
+  deliveryMethod: 'delivery',
+  deliveryAddress: ''
 };
 
 function init() {
@@ -257,9 +408,37 @@ function calculateFinalPrice(basePrice: number, size: PetSize, needsMatted: bool
   const mult = sizeOption ? sizeOption.priceMultiplier : 1.0;
   let finalP = basePrice * mult;
   if (needsMatted) {
-    finalP += 3000; // Recargo por nudos severos
+    finalP += 3000;
   }
   return finalP;
+}
+
+// Acciones Carrito
+function addToCart(productId: string) {
+  state.cart[productId] = (state.cart[productId] || 0) + 1;
+  render();
+}
+
+function updateCartQty(productId: string, delta: number) {
+  if (!state.cart[productId]) return;
+  const newQty = state.cart[productId] + delta;
+  if (newQty <= 0) {
+    delete state.cart[productId];
+  } else {
+    state.cart[productId] = newQty;
+  }
+  render();
+}
+
+function getCartItemCount() {
+  return Object.values(state.cart).reduce((sum, q) => sum + q, 0);
+}
+
+function getCartSubtotal() {
+  return Object.entries(state.cart).reduce((sum, [pId, qty]) => {
+    const prod = CATALOG_PRODUCTS.find(p => p.id === pId);
+    return sum + (prod ? prod.price * qty : 0);
+  }, 0);
 }
 
 function handleConfirmBooking() {
@@ -300,10 +479,39 @@ _Enviado desde el sistema de turnos online de ${businessName}_`;
   window.open(waUrl, '_blank');
 }
 
-function handleOrderProduct(prod: Product) {
+function handleSendCartOrder() {
+  const items = Object.entries(state.cart);
+  if (items.length === 0) {
+    alert('Tu carrito está vacío.');
+    return;
+  }
+
   const businessName = getCustomBusinessName();
-  const message = `🐾 ¡Hola ${businessName}! Quisiera consultar o pedir a domicilio el siguiente producto:\n\n🥩 *${prod.name}* (${prod.weight})\n💰 *Precio:* ${formatPrice(prod.price)}\n\n¿Tienen stock para coordinar entrega?`;
-  window.open(`https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(message)}`, '_blank');
+  const subtotal = getCartSubtotal();
+  const deliveryCost = state.deliveryMethod === 'delivery' ? (subtotal >= 35000 ? 0 : 2500) : 0;
+  const total = subtotal + deliveryCost;
+
+  let lines = `🛒 *¡Hola ${businessName}! Quiero hacer el siguiente pedido de la tienda:*\n\n`;
+  items.forEach(([pId, qty]) => {
+    const p = CATALOG_PRODUCTS.find(prod => prod.id === pId);
+    if (p) {
+      lines += `▪️ *${qty}x* ${p.name} (${p.weight}) - ${formatPrice(p.price * qty)}\n`;
+    }
+  });
+
+  lines += `\n💵 *Subtotal:* ${formatPrice(subtotal)}`;
+  if (state.deliveryMethod === 'delivery') {
+    lines += `\n🛵 *Envío:* ${deliveryCost === 0 ? '¡GRATIS!' : formatPrice(deliveryCost)}`;
+    if (state.deliveryAddress.trim()) {
+      lines += `\n📍 *Dirección de Entrega:* ${state.deliveryAddress.trim()}`;
+    }
+  } else {
+    lines += `\n🏪 *Entrega:* Retiro en el local`;
+  }
+
+  lines += `\n💰 *TOTAL FINAL:* ${formatPrice(total)}\n\n_¿Tienen stock para despachar? ¡Muchas gracias!_`;
+
+  window.open(`https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(lines)}`, '_blank');
 }
 
 function render() {
@@ -315,6 +523,18 @@ function render() {
   const upcomingDays = getUpcomingDays();
   const selectedService = SERVICES.find(s => s.id === state.selectedServiceId);
   const selectedSizeOpt = PET_SIZES.find(s => s.id === state.selectedSize);
+
+  // Filtrado de productos para la tienda
+  const filteredProducts = CATALOG_PRODUCTS.filter(p => {
+    const matchesCat = state.selectedStoreCategory === 'todos' || p.category === state.selectedStoreCategory;
+    const q = state.searchQuery.toLowerCase().trim();
+    const matchesSearch = !q || p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q) || p.weight.toLowerCase().includes(q);
+    return matchesCat && matchesSearch;
+  });
+
+  const cartCount = getCartItemCount();
+  const cartSubtotal = getCartSubtotal();
+  const deliveryCost = state.deliveryMethod === 'delivery' ? (cartSubtotal >= 35000 ? 0 : 2500) : 0;
 
   app.innerHTML = `
     <!-- Barra Superior / Navbar -->
@@ -336,7 +556,7 @@ function render() {
                 </span>
               ` : ''}
             </div>
-            <span class="text-[11px] text-neutral-400 block -mt-0.5 font-medium">Pet Shop & Peluquería Canina • Turnos Online</span>
+            <span class="text-[11px] text-neutral-400 block -mt-0.5 font-medium">Pet Shop, Turnos & E-commerce</span>
           </div>
         </a>
 
@@ -344,16 +564,30 @@ function render() {
         <div class="flex items-center gap-2 sm:gap-3">
           <a
             href="#peluqueria"
-            class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800 transition-colors"
+            class="hidden md:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800 transition-colors"
           >
-            Peluquería Canina
+            Turnos Peluquería
           </a>
           <a
-            href="#alimentos"
-            class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800 transition-colors"
+            href="#tienda"
+            class="hidden md:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800 transition-colors"
           >
-            Alimentos & Tienda
+            Tienda Online 🥩
           </a>
+
+          <!-- Botón Carrito con Badge -->
+          <button
+            id="toggle-cart-btn"
+            class="relative px-3 sm:px-4 py-2 rounded-full bg-orange-50 dark:bg-neutral-800 hover:bg-orange-100 dark:hover:bg-neutral-700 text-orange-600 dark:text-orange-400 font-bold text-xs flex items-center gap-2 transition-all active:scale-95 border border-orange-200 dark:border-neutral-700"
+          >
+            <span>🛒</span>
+            <span class="hidden sm:inline">Carrito</span>
+            ${cartCount > 0 ? `
+              <span class="w-5 h-5 rounded-full bg-orange-500 text-white flex items-center justify-center text-[10px] font-black">
+                ${cartCount}
+              </span>
+            ` : ''}
+          </button>
 
           <!-- Toggle Dark Mode -->
           <button
@@ -366,7 +600,7 @@ function render() {
 
           <!-- Botón WhatsApp Consulta -->
           <a
-            href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacer una consulta sobre los turnos de peluquería o alimentos.`)}"
+            href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacer una consulta.`)}"
             target="_blank"
             class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white text-xs font-bold shadow-md shadow-orange-500/25 transition-all active:scale-95"
           >
@@ -392,18 +626,18 @@ function render() {
 
       <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80 shadow-sm">
         <span>🐶</span>
-        <span>Turnos de peluquería y delivery de alimentos en minutos</span>
+        <span>Peluquería canina con turnos online + E-commerce de alimentos</span>
       </div>
 
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 dark:text-white tracking-tight leading-[1.15]">
-        El cuidado y amor que <br class="hidden sm:inline" />
+        Todo para tu mascota, <br class="hidden sm:inline" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400">
-          tu mascota se merece.
+          a un clic de distancia.
         </span>
       </h1>
 
       <p class="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Agendá el baño o corte de tu perro o gato sin esperas, elegí su tamaño y confirmá el turno directo a nuestro WhatsApp.
+        Agendá el baño o corte de tu perro por tamaño, o pedí alimentos balanceados y farmacia con delivery a tu casa.
       </p>
 
       <!-- Botones de Acción Hero -->
@@ -415,10 +649,10 @@ function render() {
           Pedir Turno de Peluquería 🛁
         </a>
         <a
-          href="#alimentos"
+          href="#tienda"
           class="px-6 py-3 rounded-2xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md active:scale-95"
         >
-          Ver Alimentos & Tienda 🥩
+          Explorar Tienda Online 🛒
         </a>
       </div>
 
@@ -430,16 +664,16 @@ function render() {
         </div>
         <div class="flex items-center gap-1.5">
           <span class="text-orange-500 font-bold text-base">✓</span>
-          <span>Cosmética e higiene hipoalergénica</span>
+          <span>Envíos sin cargo desde $35.000</span>
         </div>
         <div class="flex items-center gap-1.5">
           <span class="text-orange-500 font-bold text-base">✓</span>
-          <span>Aviso directo a tu celular</span>
+          <span>Pedidos directos a WhatsApp</span>
         </div>
       </div>
     </header>
 
-    <!-- SECCIÓN: SELECTOR DE TAMAÑO & PELUQUERÍA CANINA -->
+    <!-- SECCIÓN: SELECTOR DE TAMAÑO & PELUQUERÍA CANINA (HOME ORIGINAL) -->
     <section id="peluqueria" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
       
       <!-- Paso 1: Tamaño de la mascota -->
@@ -781,67 +1015,341 @@ function render() {
       </div>
     </section>
 
-    <!-- SECCIÓN: ALIMENTOS Y TIENDA PET SHOP -->
-    <section id="alimentos" class="max-w-5xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Tienda Express</span>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
-            Alimentos Balanceados & Farmacia
-          </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-0.5">
-            Pedí tu bolsa o antiparasitario directo por WhatsApp con envío a domicilio.
-          </p>
+    <!-- SECCIÓN: TIENDA ONLINE / E-COMMERCE PET SHOP COMPLETO -->
+    <section id="tienda" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800">
+      
+      <!-- Encabezado de la tienda -->
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80">
+          🛍️ E-commerce Pet Shop con Carrito
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          Tienda Online & Delivery
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          Sumá al carrito alimentos balanceados, antiparasitarios y accesorios, y enviá tu pedido armado a WhatsApp.
+        </p>
+      </div>
+
+      <!-- Barra de herramientas: Buscador y Categorías -->
+      <div class="bg-white dark:bg-[#14151C] p-4 sm:p-5 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-8 space-y-4">
+        
+        <!-- Buscador -->
+        <div class="relative">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-neutral-400 text-base">
+            🔍
+          </span>
+          <input
+            type="text"
+            id="store-search-input"
+            placeholder="Buscar por marca (Royal Canin, Pro Plan), producto o peso..."
+            value="${state.searchQuery}"
+            class="w-full pl-11 pr-4 py-3 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/60 dark:bg-neutral-900/60 text-neutral-900 dark:text-white text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-orange-500 transition-all"
+          />
+          ${state.searchQuery ? `
+            <button
+              id="clear-search-btn"
+              class="absolute inset-y-0 right-0 pr-4 flex items-center text-xs text-neutral-400 hover:text-neutral-600"
+            >
+              ✕ Limpiar
+            </button>
+          ` : ''}
         </div>
 
-        <a
-          href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quisiera consultar precios de alimentos balanceados.`)}"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-bold shadow-sm hover:opacity-90 transition-all"
-        >
-          <span>📦</span>
-          <span>Consultar Lista Completa</span>
-        </a>
+        <!-- Categorías de la Tienda -->
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+          ${[
+            { id: 'todos', label: 'Todos' },
+            { id: 'perros', label: '🐶 Perros' },
+            { id: 'gatos', label: '🐱 Gatos' },
+            { id: 'farmacia', label: '💊 Farmacia' },
+            { id: 'snacks', label: '🦴 Snacks & Juguetes' },
+            { id: 'accesorios', label: '🦮 Accesorios' }
+          ].map(cat => {
+            const isSelected = state.selectedStoreCategory === cat.id;
+            return `
+              <button
+                class="store-cat-btn px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
+                  isSelected
+                    ? 'bg-orange-500 text-white shadow-sm'
+                    : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-orange-100 dark:hover:bg-neutral-700'
+                }"
+                data-cat="${cat.id}"
+              >
+                ${cat.label}
+              </button>
+            `;
+          }).join('')}
+        </div>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        ${FEATURED_PRODUCTS.map(p => `
-          <div class="bg-white dark:bg-[#14151C] rounded-3xl p-5 border border-amber-100/80 dark:border-neutral-800 shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
-            <div>
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-3xl p-2 rounded-2xl bg-amber-50 dark:bg-neutral-800">${p.icon}</span>
-                ${p.badge ? `
-                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
-                    ${p.badge}
+      <!-- Grilla de Productos del Catálogo E-commerce -->
+      ${filteredProducts.length > 0 ? `
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          ${filteredProducts.map(p => {
+            const inCartQty = state.cart[p.id] || 0;
+
+            return `
+              <div class="bg-white dark:bg-[#14151C] rounded-3xl p-5 border border-amber-100/80 dark:border-neutral-800 shadow-sm flex flex-col justify-between group hover:shadow-lg hover:border-orange-200 dark:hover:border-neutral-700 transition-all">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-3xl p-2.5 rounded-2xl bg-amber-50 dark:bg-neutral-800/80 group-hover:scale-110 transition-transform">
+                      ${p.icon}
+                    </span>
+                    ${p.badge ? `
+                      <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300">
+                        ${p.badge}
+                      </span>
+                    ` : `
+                      <span class="text-[10px] text-neutral-400 font-bold uppercase tracking-wider">
+                        ${p.brand}
+                      </span>
+                    `}
+                  </div>
+
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400 block mb-0.5">
+                    ${p.categoryLabel}
                   </span>
-                ` : ''}
+
+                  <h3 class="font-bold text-sm text-neutral-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors leading-snug">
+                    ${p.name}
+                  </h3>
+
+                  <p class="text-xs text-neutral-400 mt-1 font-medium">
+                    ${p.weight}
+                  </p>
+                </div>
+
+                <div class="mt-5 pt-3 border-t border-amber-100/60 dark:border-neutral-800/80">
+                  <div class="flex items-center justify-between mb-3">
+                    <div>
+                      <span class="text-[10px] text-neutral-400 block font-medium">Precio</span>
+                      <span class="font-black text-lg text-neutral-900 dark:text-white">
+                        ${formatPrice(p.price)}
+                      </span>
+                    </div>
+                  </div>
+
+                  ${inCartQty === 0 ? `
+                    <button
+                      class="btn-add-to-cart w-full py-2.5 px-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all"
+                      data-id="${p.id}"
+                    >
+                      <span>🛒</span>
+                      <span>Agregar al Carrito</span>
+                    </button>
+                  ` : `
+                    <div class="flex items-center justify-between bg-orange-50 dark:bg-neutral-800 rounded-xl p-1 border border-orange-200 dark:border-neutral-700">
+                      <button
+                        class="btn-cart-minus w-8 h-8 rounded-lg bg-white dark:bg-neutral-900 text-orange-600 dark:text-orange-400 font-black text-sm flex items-center justify-center shadow-xs active:scale-90 transition-transform"
+                        data-id="${p.id}"
+                      >
+                        -
+                      </button>
+                      <span class="text-xs font-black text-orange-950 dark:text-orange-200">
+                        ${inCartQty} en carrito
+                      </span>
+                      <button
+                        class="btn-cart-plus w-8 h-8 rounded-lg bg-orange-500 text-white font-black text-sm flex items-center justify-center shadow-xs active:scale-90 transition-transform"
+                        data-id="${p.id}"
+                      >
+                        +
+                      </button>
+                    </div>
+                  `}
+                </div>
               </div>
-              <span class="text-[10px] font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">
-                ${p.category}
-              </span>
-              <h3 class="font-bold text-sm text-neutral-900 dark:text-white mt-1 group-hover:text-orange-600 transition-colors leading-snug">
-                ${p.name}
-              </h3>
-              <p class="text-xs text-neutral-400 mt-1">
-                ${p.weight}
-              </p>
+            `;
+          }).join('')}
+        </div>
+      ` : `
+        <div class="text-center py-16 bg-white dark:bg-[#14151C] rounded-3xl border border-dashed border-neutral-300 dark:border-neutral-800 space-y-2">
+          <span class="text-3xl block">🔍</span>
+          <h4 class="font-bold text-sm text-neutral-700 dark:text-neutral-300">No encontramos productos con ese nombre</h4>
+          <p class="text-xs text-neutral-400">Probá con otra palabra o seleccioná otra categoría.</p>
+        </div>
+      `}
+    </section>
+
+    <!-- DRAWER / MODAL DEL CARRITO DE COMPRAS -->
+    ${state.isCartOpen ? `
+      <div id="cart-backdrop" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex justify-end">
+        <div class="w-full max-w-md bg-white dark:bg-[#12131A] h-full shadow-2xl flex flex-col justify-between overflow-hidden animate-in slide-in-from-right duration-200">
+          
+          <!-- Header Carrito -->
+          <div class="p-5 border-b border-amber-100 dark:border-neutral-800 flex items-center justify-between bg-amber-50/50 dark:bg-neutral-900/50">
+            <div class="flex items-center gap-2.5">
+              <span class="text-2xl">🛒</span>
+              <div>
+                <h3 class="font-extrabold text-base text-neutral-900 dark:text-white leading-tight">
+                  Tu Carrito de Compras
+                </h3>
+                <span class="text-[11px] text-neutral-400">
+                  ${cartCount} producto${cartCount === 1 ? '' : 's'} seleccionado${cartCount === 1 ? '' : 's'}
+                </span>
+              </div>
             </div>
 
-            <div class="mt-4 pt-3 border-t border-amber-100/60 dark:border-neutral-800/80 flex items-center justify-between">
-              <span class="font-black text-base text-neutral-900 dark:text-white">
-                ${formatPrice(p.price)}
-              </span>
+            <button
+              id="close-cart-btn"
+              class="w-8 h-8 rounded-full bg-neutral-200/60 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white flex items-center justify-center text-sm font-bold"
+            >
+              ✕
+            </button>
+          </div>
+
+          <!-- Items Carrito -->
+          <div class="p-5 flex-grow overflow-y-auto space-y-3 divide-y divide-neutral-100 dark:divide-neutral-800/60">
+            ${cartCount > 0 ? Object.entries(state.cart).map(([pId, qty]) => {
+              const prod = CATALOG_PRODUCTS.find(p => p.id === pId);
+              if (!prod) return '';
+
+              return `
+                <div class="pt-3 first:pt-0 flex items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl p-2 rounded-xl bg-amber-50 dark:bg-neutral-800">${prod.icon}</span>
+                    <div>
+                      <h4 class="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white leading-tight">
+                        ${prod.name}
+                      </h4>
+                      <span class="text-[10px] text-neutral-400 font-medium">${prod.weight}</span>
+                      <span class="text-xs font-black text-orange-600 dark:text-orange-400 block mt-0.5">
+                        ${formatPrice(prod.price * qty)}
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Controles de cantidad -->
+                  <div class="flex items-center gap-1.5 bg-neutral-100 dark:bg-neutral-800 p-1 rounded-xl">
+                    <button
+                      class="btn-cart-minus w-6 h-6 rounded-lg bg-white dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 font-bold text-xs flex items-center justify-center"
+                      data-id="${prod.id}"
+                    >
+                      -
+                    </button>
+                    <span class="text-xs font-black px-1.5 text-neutral-900 dark:text-white">
+                      ${qty}
+                    </span>
+                    <button
+                      class="btn-cart-plus w-6 h-6 rounded-lg bg-orange-500 text-white font-bold text-xs flex items-center justify-center"
+                      data-id="${prod.id}"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              `;
+            }).join('') : `
+              <div class="py-16 text-center text-neutral-400 space-y-2">
+                <span class="text-4xl block">🧺</span>
+                <p class="text-sm font-semibold">Tu carrito está vacío</p>
+                <p class="text-xs">Elegí productos de la tienda para sumarlos acá.</p>
+              </div>
+            `}
+          </div>
+
+          <!-- Checkout & Envío -->
+          ${cartCount > 0 ? `
+            <div class="p-5 border-t border-amber-100 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/50 space-y-4">
+              
+              <!-- Tipo de Entrega -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+                  Método de Entrega
+                </label>
+                <div class="grid grid-cols-2 gap-2 text-xs font-bold">
+                  <button
+                    class="delivery-method-btn py-2.5 px-3 rounded-xl border text-center transition-all ${
+                      state.deliveryMethod === 'delivery'
+                        ? 'bg-orange-500 text-white border-orange-500 shadow-sm'
+                        : 'border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300'
+                    }"
+                    data-method="delivery"
+                  >
+                    🛵 Envío a Domicilio
+                  </button>
+                  <button
+                    class="delivery-method-btn py-2.5 px-3 rounded-xl border text-center transition-all ${
+                      state.deliveryMethod === 'retiro'
+                        ? 'bg-orange-500 text-white border-orange-500 shadow-sm'
+                        : 'border-neutral-200 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300'
+                    }"
+                    data-method="retiro"
+                  >
+                    🏪 Retiro en Local
+                  </button>
+                </div>
+              </div>
+
+              ${state.deliveryMethod === 'delivery' ? `
+                <div>
+                  <label class="block text-[11px] text-neutral-500 dark:text-neutral-400 mb-1">
+                    Dirección de entrega y timbre
+                  </label>
+                  <input
+                    type="text"
+                    id="cart-address-input"
+                    placeholder="Ej: Av. Santa Fe 3420, 4B (Palermo)"
+                    value="${state.deliveryAddress}"
+                    class="w-full px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-xs text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  />
+                  <span class="text-[10px] text-neutral-400 block mt-1">
+                    ${cartSubtotal >= 35000 ? '🎉 ¡Genial! Tu compra califica para Envío Sin Cargo.' : '🛵 Envío estándar: $2.500 (Gratis superando $35.000)'}
+                  </span>
+                </div>
+              ` : ''}
+
+              <!-- Totales -->
+              <div class="space-y-1.5 text-xs pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                <div class="flex justify-between text-neutral-500 dark:text-neutral-400">
+                  <span>Subtotal:</span>
+                  <span class="font-bold text-neutral-900 dark:text-white">${formatPrice(cartSubtotal)}</span>
+                </div>
+                ${state.deliveryMethod === 'delivery' ? `
+                  <div class="flex justify-between text-neutral-500 dark:text-neutral-400">
+                    <span>Costo de Envío:</span>
+                    <span class="font-bold ${deliveryCost === 0 ? 'text-emerald-500' : 'text-neutral-900 dark:text-white'}">
+                      ${deliveryCost === 0 ? 'GRATIS' : formatPrice(deliveryCost)}
+                    </span>
+                  </div>
+                ` : ''}
+                <div class="flex justify-between text-base font-extrabold text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                  <span>Total:</span>
+                  <span class="text-orange-600 dark:text-orange-400 text-lg">
+                    ${formatPrice(cartSubtotal + deliveryCost)}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Botón Enviar WhatsApp -->
               <button
-                class="btn-order-product px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold shadow-sm transition-all active:scale-95"
-                data-id="${p.id}"
+                id="btn-send-cart-order"
+                class="w-full py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 active:scale-95 transition-all"
               >
-                Pedir 💬
+                <span>💬</span>
+                <span>Enviar Pedido por WhatsApp</span>
               </button>
             </div>
-          </div>
-        `).join('')}
+          ` : ''}
+        </div>
       </div>
-    </section>
+    ` : ''}
+
+    <!-- BARRA FLOTANTE DE CARRITO (SI TIENE ITEMS Y NO ESTÁ ABIERTO EL MODAL) -->
+    ${cartCount > 0 && !state.isCartOpen ? `
+      <div class="fixed bottom-6 right-6 z-40 animate-bounce-short">
+        <button
+          id="floating-cart-btn"
+          class="px-5 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-sm shadow-xl shadow-orange-500/30 flex items-center gap-3 active:scale-95 transition-transform"
+        >
+          <span>🛒</span>
+          <span>Ver Carrito (${cartCount})</span>
+          <span class="px-2 py-0.5 rounded-lg bg-black/20 text-xs">
+            ${formatPrice(cartSubtotal)}
+          </span>
+        </button>
+      </div>
+    ` : ''}
 
     <!-- FOOTER / BANNER DEL PROVEEDOR (ADRIÁN SCHUSTER) -->
     <footer class="bg-white dark:bg-[#0A0B0E] border-t border-amber-100 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-16 text-center transition-colors">
@@ -853,7 +1361,7 @@ function render() {
           ¿Tenés un Pet Shop, Veterinaria o Peluquería Canina?
         </h3>
         <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
-          Este sistema te ahorra horas de teléfono: tus clientes reservan turno para sus perros por tamaño o te piden alimento balanceado directo a tu WhatsApp. <strong>0% comisiones y 100% autogestionable.</strong>
+          Este sistema reúne lo mejor de dos mundos: <strong>turnos de baño por tamaño de perro y tienda online con carrito a WhatsApp</strong>. 0% comisiones y 100% autogestionable.
         </p>
 
         <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
@@ -865,7 +1373,7 @@ function render() {
             Ver más Soluciones Digitales
           </a>
           <a
-            href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola Adrián! Vi la demo para Pet Shops y Peluquerías Caninas (${businessName}) y quiero consultar para mi local.`)}"
+            href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola Adrián! Vi la demo completa para Pet Shops (${businessName}) y quiero consultar para mi local.`)}"
             target="_blank"
             class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-all"
           >
@@ -972,17 +1480,114 @@ function render() {
     confirmBtn.addEventListener('click', handleConfirmBooking);
   }
 
-  // Botones Pedir Producto
-  document.querySelectorAll('.btn-order-product').forEach(btn => {
+  // ---- TIENDA E-COMMERCE LISTENERS ----
+  // Buscador
+  const searchInput = document.getElementById('store-search-input') as HTMLInputElement;
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      state.searchQuery = (e.target as HTMLInputElement).value;
+      render();
+    });
+  }
+
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  if (clearSearchBtn) {
+    clearSearchBtn.addEventListener('click', () => {
+      state.searchQuery = '';
+      render();
+    });
+  }
+
+  // Categorías de la Tienda
+  document.querySelectorAll('.store-cat-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const target = e.currentTarget as HTMLElement;
-      const prodId = target.dataset.id;
-      const prod = FEATURED_PRODUCTS.find(p => p.id === prodId);
-      if (prod) {
-        handleOrderProduct(prod);
-      }
+      state.selectedStoreCategory = (target.dataset.cat as ProductCategory) || 'todos';
+      render();
     });
   });
+
+  // Agregar al Carrito
+  document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const pId = target.dataset.id;
+      if (pId) addToCart(pId);
+    });
+  });
+
+  // Cantidad + / -
+  document.querySelectorAll('.btn-cart-plus').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const pId = target.dataset.id;
+      if (pId) updateCartQty(pId, 1);
+    });
+  });
+
+  document.querySelectorAll('.btn-cart-minus').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      const pId = target.dataset.id;
+      if (pId) updateCartQty(pId, -1);
+    });
+  });
+
+  // Abrir / Cerrar Carrito
+  const toggleCartBtn = document.getElementById('toggle-cart-btn');
+  if (toggleCartBtn) {
+    toggleCartBtn.addEventListener('click', () => {
+      state.isCartOpen = !state.isCartOpen;
+      render();
+    });
+  }
+
+  const floatingCartBtn = document.getElementById('floating-cart-btn');
+  if (floatingCartBtn) {
+    floatingCartBtn.addEventListener('click', () => {
+      state.isCartOpen = true;
+      render();
+    });
+  }
+
+  const closeCartBtn = document.getElementById('close-cart-btn');
+  if (closeCartBtn) {
+    closeCartBtn.addEventListener('click', () => {
+      state.isCartOpen = false;
+      render();
+    });
+  }
+
+  const cartBackdrop = document.getElementById('cart-backdrop');
+  if (cartBackdrop) {
+    cartBackdrop.addEventListener('click', (e) => {
+      if (e.target === cartBackdrop) {
+        state.isCartOpen = false;
+        render();
+      }
+    });
+  }
+
+  // Método de entrega en Carrito
+  document.querySelectorAll('.delivery-method-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement;
+      state.deliveryMethod = (target.dataset.method as 'delivery' | 'retiro') || 'delivery';
+      render();
+    });
+  });
+
+  const addressInput = document.getElementById('cart-address-input') as HTMLInputElement;
+  if (addressInput) {
+    addressInput.addEventListener('input', (e) => {
+      state.deliveryAddress = (e.target as HTMLInputElement).value;
+    });
+  }
+
+  const sendCartBtn = document.getElementById('btn-send-cart-order');
+  if (sendCartBtn) {
+    sendCartBtn.addEventListener('click', handleSendCartOrder);
+  }
 }
 
 document.addEventListener('DOMContentLoaded', init);
