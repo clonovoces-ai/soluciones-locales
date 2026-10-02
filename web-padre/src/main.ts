@@ -1,15 +1,6 @@
 // Portal Principal - Web Padre: Soluciones Digitales para Comercios
 let isDarkMode = true;
 
-// URL dinámica de los demos (soporta variables en Vercel, subdominios adrianschuster.com.ar y localhost/WiFi local)
-const getHost = () => (typeof window !== 'undefined' ? window.location.hostname : 'localhost');
-const isCustomDomain = () => typeof window !== 'undefined' && window.location.hostname.includes('adrianschuster.com.ar');
-
-const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCustomDomain() ? 'https://ecommerce.adrianschuster.com.ar/' : `http://${getHost()}:5173/`);
-const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
-const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
-const UNAS_DEMO_URL = (import.meta as any).env?.VITE_UNAS_URL || (isCustomDomain() ? 'https://unas.adrianschuster.com.ar/' : `http://${getHost()}:5177/`);
-const MASCOTAS_DEMO_URL = (import.meta as any).env?.VITE_MASCOTAS_URL || (isCustomDomain() ? 'https://petshop.adrianschuster.com.ar/' : `http://${getHost()}:5178/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp de Adrián Schuster
 
 function init() {
@@ -139,7 +130,7 @@ function render() {
                 🛒
               </div>
               <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
-                Demo en Vivo
+                Catálogo Web
               </span>
             </div>
 
@@ -170,12 +161,12 @@ function render() {
 
           <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
             <a
-              href="${ECOMMERCE_DEMO_URL}"
+              href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa consultar por el Catálogo y E-commerce por WhatsApp para mi negocio.')}"
               target="_blank"
               class="w-full py-3 px-4 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
             >
-              <span>Abrir Demo de E-commerce</span>
-              <span>→</span>
+              <span>Consultar por Catálogo WhatsApp</span>
+              <span>💬</span>
             </a>
             <p class="text-[10px] text-center text-neutral-400">
               Catálogo interactivo con carrito y WhatsApp
@@ -187,11 +178,11 @@ function render() {
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
+              <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center text-2xl">
                 🍷
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
-                Demo en Vivo
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300">
+                Menú & Reservas
               </span>
             </div>
 
@@ -222,12 +213,12 @@ function render() {
 
           <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
             <a
-              href="${LANDING_DEMO_URL}"
+              href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola! Me interesa consultar por la Landing Page Gastronómica y Menú Digital.')}"
               target="_blank"
               class="w-full py-3 px-4 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
             >
-              <span>Abrir Demo Landing Page</span>
-              <span>→</span>
+              <span>Consultar por Menú Digital</span>
+              <span>💬</span>
             </a>
             <p class="text-[10px] text-center text-neutral-400">
               Menú interactivo y reservas
@@ -324,25 +315,6 @@ function render() {
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Los clientes reservan horario y profesional directamente desde el celular sin llamadas ni esperas.
             </div>
-            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-2">
-              <span class="text-[11px] text-neutral-400">Ver Demos:</span>
-              <div class="flex items-center gap-1.5">
-                <a
-                  href="${BARBERIA_DEMO_URL}"
-                  target="_blank"
-                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-[10px] font-bold shadow-sm transition-all active:scale-95"
-                >
-                  <span>💈 Barbería</span>
-                </a>
-                <a
-                  href="${UNAS_DEMO_URL}"
-                  target="_blank"
-                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-pink-500 hover:bg-pink-600 text-white text-[10px] font-bold shadow-sm transition-all active:scale-95"
-                >
-                  <span>💅 Uñas</span>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -364,17 +336,6 @@ function render() {
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Carta digital visual con fotos, botón de reservas y pedidos por WhatsApp con cálculo de delivery.
             </div>
-            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-              <span class="text-[11px] text-neutral-400">Carta & Delivery</span>
-              <a
-                href="${LANDING_DEMO_URL}"
-                target="_blank"
-                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
-              >
-                <span>Ver Demo Carta</span>
-                <span>→</span>
-              </a>
-            </div>
           </div>
         </div>
 
@@ -395,17 +356,6 @@ function render() {
             </p>
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Catálogo autogestionado con Excel (.xlsx), carrito ágil y cobro en mostrador con POS offline.
-            </div>
-            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-              <span class="text-[11px] text-neutral-400">Catálogo WhatsApp</span>
-              <a
-                href="${ECOMMERCE_DEMO_URL}"
-                target="_blank"
-                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
-              >
-                <span>Ver Demo Tienda</span>
-                <span>→</span>
-              </a>
             </div>
           </div>
         </div>
@@ -448,17 +398,6 @@ function render() {
             </p>
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Agendamiento de turnos para baño y corte por tamaño de perro, y delivery de alimentos balanceados.
-            </div>
-            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-              <span class="text-[11px] text-neutral-400">Peluquería & Alimentos</span>
-              <a
-                href="${MASCOTAS_DEMO_URL}"
-                target="_blank"
-                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
-              >
-                <span>Ver Demo Pet Shop</span>
-                <span>→</span>
-              </a>
             </div>
           </div>
         </div>

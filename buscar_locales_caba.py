@@ -5,6 +5,7 @@ import re
 import urllib.parse
 from playwright.async_api import async_playwright
 import pandas as pd
+from historial_manager import cargar_historial, es_duplicado, registrar_prospecto
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -24,10 +25,12 @@ async def scrape_google_maps_leads(queries, max_places_per_query=20, output_exce
     print("=" * 65)
     print("🚀 INICIANDO PROSPECCIÓN EN GOOGLE MAPS CABA")
     print("Filtro: COMERCIOS CON TELÉFONO Y SIN PÁGINA WEB")
+    historial = cargar_historial()
+    print(f"📚 Historial cargado: {len(historial)} comercios previos registrados para evitar duplicados.")
     print("=" * 65)
     
     leads = []
-    vistos = set() # evitar duplicados por nombre o direccion
+    vistos = set() # evitar duplicados en la misma sesion
     
     async with async_playwright() as p:
         browser = await p.chromium.launch(channel="msedge", headless=True)
@@ -106,6 +109,11 @@ async def scrape_google_maps_leads(queries, max_places_per_query=20, output_exce
                         
                         # Si no tiene website y tiene teléfono: ¡ES UN PROSPECTO!
                         if phone and not has_website:
+                            # Verificar si ya existe en el historial histórico
+                            if es_duplicado(name, phone, historial):
+                                print(f"   ⏩ [Omitido - Ya en historial]: {name} ({phone})")
+                                continue
+
                             key = f"{name.strip().lower()}_{phone}"
                             if key not in vistos:
                                 vistos.add(key)
@@ -131,7 +139,8 @@ async def scrape_google_maps_leads(queries, max_places_per_query=20, output_exce
                                     "Google Maps": page.url
                                 }
                                 leads.append(lead_data)
-                                print(f"   🎯 PROSPECTO #{len(leads)}: {name} | Tel: {phone} | Dir: {address[:40] if address else ''}")
+                                registrar_prospecto(name, phone, rubro, address)
+                                print(f"   🎯 NUEVO PROSPECTO #{len(leads)}: {name} | Tel: {phone} | Dir: {address[:40] if address else ''}")
                     except Exception as err:
                         # Si falla uno individual, continuar con el siguiente
                         continue
