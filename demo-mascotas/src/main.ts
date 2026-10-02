@@ -574,6 +574,12 @@ function render() {
           >
             Tienda Online 🥩
           </a>
+          <a
+            href="#contacto"
+            class="hidden md:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-orange-600 dark:hover:text-orange-400 px-3 py-1.5 rounded-full hover:bg-orange-50 dark:hover:bg-neutral-800 transition-colors"
+          >
+            Ubicación & Contacto 📍
+          </a>
 
           <!-- Botón Carrito con Badge -->
           <button
@@ -1350,6 +1356,148 @@ function render() {
         </button>
       </div>
     ` : ''}
+
+    <!-- SECCIÓN: CONTACTO, UBICACIÓN Y MAPA -->
+    <section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80">
+          📍 Estamos cerca tuyo
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          Ubicación, Horarios & Contacto
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          Vení a visitarnos con tu mascota a nuestro local o pedí alimentos con envío a domicilio.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Columna Izquierda: Tarjetas de Información -->
+        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+          
+          <!-- Dirección -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-orange-50 dark:bg-neutral-800 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xl flex-shrink-0">
+              📍
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Dirección del Local</h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Av. Coronel Díaz 2140, Palermo, CABA</p>
+              <a
+                href="https://www.google.com/maps/search/Av.+Coronel+D%C3%ADaz+2140,+Palermo,+CABA"
+                target="_blank"
+                class="inline-flex items-center gap-1 text-[11px] font-bold text-orange-600 dark:text-orange-400 hover:underline mt-2"
+              >
+                <span>Cómo llegar en Google Maps</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Teléfono y WhatsApp -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-neutral-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
+              📞
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Teléfono & WhatsApp</h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">+54 9 11 2335-1610</p>
+              <a
+                href="https://wa.me/${PETSHOP_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacerles una consulta.`)}"
+                target="_blank"
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95 mt-2"
+              >
+                <span>💬</span>
+                <span>Escribir por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Horarios -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-amber-50 dark:bg-neutral-800 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl flex-shrink-0">
+              ⏰
+            </div>
+            <div class="space-y-1 text-xs">
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Horarios de Atención</h3>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Lunes a Viernes:</span>
+                <span class="font-bold text-neutral-900 dark:text-white">09:00 a 19:30 hs</span>
+              </div>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Sábados:</span>
+                <span class="font-bold text-neutral-900 dark:text-white">09:30 a 18:00 hs</span>
+              </div>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Domingos y Feriados:</span>
+                <span class="font-bold text-rose-500">Cerrado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medios de Pago & Envíos -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-neutral-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl flex-shrink-0">
+              💳
+            </div>
+            <div class="text-xs space-y-1">
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Formas de Pago & Envíos</h3>
+              <p class="text-neutral-500 dark:text-neutral-400">
+                Aceptamos <strong>Efectivo (10% OFF en tienda)</strong>, Transferencia bancaria, Tarjetas de Débito/Crédito y Mercado Pago.
+              </p>
+              <p class="text-[11px] text-orange-600 dark:text-orange-400 font-semibold pt-0.5">
+                🛵 Delivery propio en Palermo, Recoleta, Almagro y Colegiales.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Columna Derecha: Mapa Google Maps Interactivo -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div class="bg-white dark:bg-[#14151C] p-3 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm h-full flex flex-col">
+            <div class="relative w-full h-80 lg:h-full min-h-[360px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800">
+              <iframe
+                title="Ubicación en Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13137.644342203875!2d-58.4190978!3d-34.5901777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca8f40775d79%3A0xb36ef20e3636f0e4!2sPalermo%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1711900000000!5m2!1ses-419!2sar"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full"
+              ></iframe>
+
+              <!-- Card Flotante sobre el Mapa -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#14151C]/95 backdrop-blur-md p-3.5 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 shadow-lg flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">🐾</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white leading-tight">
+                      ${businessName}
+                    </h4>
+                    <span class="text-[10px] text-neutral-500 dark:text-neutral-400">
+                      Palermo, CABA • Abierto de Lunes a Sábados
+                    </span>
+                  </div>
+                </div>
+
+                <a
+                  href="https://www.google.com/maps/search/Palermo,+CABA"
+                  target="_blank"
+                  class="px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-[11px] shadow-sm transition-all whitespace-nowrap active:scale-95"
+                >
+                  Abrir Mapa
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
     <!-- FOOTER / BANNER DEL PROVEEDOR (ADRIÁN SCHUSTER) -->
     <footer class="bg-white dark:bg-[#0A0B0E] border-t border-amber-100 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-16 text-center transition-colors">
