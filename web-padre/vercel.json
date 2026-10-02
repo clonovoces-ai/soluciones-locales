@@ -1,7 +1,0 @@
-{
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/precios", "destination": "/precios.html" },
-    { "source": "/cotizador", "destination": "/precios.html" }
-  ]
-}
