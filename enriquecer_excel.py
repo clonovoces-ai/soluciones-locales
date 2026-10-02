@@ -47,7 +47,7 @@ def generar_mensaje_y_demo(comercio, solucion, rubro):
     
     # 1. Rubro Mascotas, Pet Shop, Veterinaria & Peluquería Canina
     if any(k in rubro_lower or k in comercio_lower for k in ["mascota", "pet", "veterin", "canin", "felin", "perr"]):
-        demo_url = f"https://mascotas.adrianschuster.com.ar/?demo={encoded_name}"
+        demo_url = f"https://petshop.adrianschuster.com.ar/?demo={encoded_name}"
         msg = (
             f"¡Hola gente de {nombre_limpio}! ¿Cómo andan? Vi su local en Google Maps y me gustó mucho la propuesta que tienen para las mascotas del barrio.\n\n"
             f"Me tomé unos minutos para armarles un boceto interactivo de prueba para que vean cómo sus clientes podrían pedir turnos de baño y peluquería canina por tamaño de perro, o pedir bolsas de alimento directo a este WhatsApp:\n"

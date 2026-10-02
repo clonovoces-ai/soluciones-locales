@@ -9,7 +9,7 @@ const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCu
 const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
 const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
 const UNAS_DEMO_URL = (import.meta as any).env?.VITE_UNAS_URL || (isCustomDomain() ? 'https://unas.adrianschuster.com.ar/' : `http://${getHost()}:5177/`);
-const MASCOTAS_DEMO_URL = (import.meta as any).env?.VITE_MASCOTAS_URL || (isCustomDomain() ? 'https://mascotas.adrianschuster.com.ar/' : `http://${getHost()}:5178/`);
+const MASCOTAS_DEMO_URL = (import.meta as any).env?.VITE_MASCOTAS_URL || (isCustomDomain() ? 'https://petshop.adrianschuster.com.ar/' : `http://${getHost()}:5178/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp de Adrián Schuster
 
 function init() {
