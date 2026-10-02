@@ -130,7 +130,7 @@ function render() {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- SOLUCIÓN 1: E-COMMERCE & CATÁLOGO WHATSAPP -->
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
@@ -235,67 +235,7 @@ function render() {
           </div>
         </div>
 
-        <!-- SOLUCIÓN 3: SISTEMA DE TURNOS ONLINE (BARBERÍA & ESTÉTICA) -->
-        <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl">
-                💈
-              </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-emerald-100 dark:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300">
-                Demo en Vivo
-              </span>
-            </div>
-
-            <div>
-              <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                3. Turnos Online Barbería & Estética
-              </h3>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
-                Para <strong>barberías, peluquerías, salones de estética y consultorios</strong>. Tus clientes eligen profesional, servicio, día y horario sin esperas.
-              </p>
-            </div>
-
-            <ul class="space-y-2 text-xs text-neutral-600 dark:text-neutral-400 pt-2 border-t border-neutral-100 dark:border-neutral-800">
-              <li class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✓</span> Reserva por profesional y servicio
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✓</span> Grilla de horarios interactiva
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✓</span> Confirmación directa a WhatsApp
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="text-emerald-500 font-bold">✓</span> 0% comisiones mensuales
-              </li>
-            </ul>
-          </div>
-
-          <div class="pt-6 mt-6 border-t border-neutral-100 dark:border-neutral-800 space-y-2">
-            <a
-              href="${BARBERIA_DEMO_URL}"
-              target="_blank"
-              class="w-full py-2.5 px-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-1.5 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
-            >
-              <span>💈 Demo Barbería</span>
-              <span>→</span>
-            </a>
-            <a
-              href="${UNAS_DEMO_URL}"
-              target="_blank"
-              class="w-full py-2.5 px-3 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-95"
-            >
-              <span>💅 Demo Uñas & Estética</span>
-              <span>→</span>
-            </a>
-            <p class="text-[10px] text-center text-neutral-400">
-              Turnos por WhatsApp sin intermediarios
-            </p>
-          </div>
-        </div>
-
-        <!-- SOLUCIÓN 4: SOFTWARE DE CAJA & POS LOCAL -->
+        <!-- SOLUCIÓN 3: SOFTWARE DE CAJA & POS LOCAL -->
         <div class="bg-white dark:bg-[#14171F] rounded-3xl p-6 sm:p-7 border border-neutral-200/80 dark:border-neutral-800 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
@@ -309,7 +249,7 @@ function render() {
 
             <div>
               <h3 class="text-lg font-bold text-neutral-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                4. Software de Caja & POS Local
+                3. Software de Caja & POS Local
               </h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
                 Para cobrar rápido en el mostrador físico del local. <strong>Funciona sin conexión a internet</strong> con lector de código de barras USB y control de caja diario.
@@ -384,16 +324,24 @@ function render() {
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Los clientes reservan horario y profesional directamente desde el celular sin llamadas ni esperas.
             </div>
-            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
-              <span class="text-[11px] text-neutral-400">Peluquerías & Uñas</span>
-              <a
-                href="${UNAS_DEMO_URL}"
-                target="_blank"
-                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
-              >
-                <span>Ver Demo Uñas</span>
-                <span>→</span>
-              </a>
+            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between gap-2">
+              <span class="text-[11px] text-neutral-400">Ver Demos:</span>
+              <div class="flex items-center gap-1.5">
+                <a
+                  href="${BARBERIA_DEMO_URL}"
+                  target="_blank"
+                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-[10px] font-bold shadow-sm transition-all active:scale-95"
+                >
+                  <span>💈 Barbería</span>
+                </a>
+                <a
+                  href="${UNAS_DEMO_URL}"
+                  target="_blank"
+                  class="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-pink-500 hover:bg-pink-600 text-white text-[10px] font-bold shadow-sm transition-all active:scale-95"
+                >
+                  <span>💅 Uñas</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
