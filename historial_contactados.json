@@ -1,0 +1,562 @@
+[
+  {
+    "nombre": "leitokids peluquería infantil",
+    "telefono": "011 5754-8677",
+    "rubro": "Barbería / Peluquería",
+    "direccion": "Pje. Craig 826, C1424 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Maximos barberia",
+    "telefono": "011 4546-1834",
+    "rubro": "Barbería / Peluquería",
+    "direccion": "Riglos 573, C1424 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Blue Peluqueria - Unisex",
+    "telefono": "011 5504-2611",
+    "rubro": "Barbería / Peluquería",
+    "direccion": "Av. José María Moreno 789, C1426 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Adriano Il Barbiere",
+    "telefono": "011 3871-8138",
+    "rubro": "Barbería / Peluquería",
+    "direccion": "Av. Pedro Goyena 360, C1424 C1424BSN, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Rotisería Vicente",
+    "telefono": "011 4983-0008",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Venezuela 3829, C1211 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Rotisería de Mar",
+    "telefono": "011 4958-7088",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Yatay 25, C1184ACA Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Rotiseria sanabria",
+    "telefono": "011 4801-6426",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Sarmiento 4400, C1197AAN Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "JOSMAR Comidas Caseras",
+    "telefono": "011 7543-7129",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Bulnes 556, C1176 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Granja Tabares",
+    "telefono": "7536-1674",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Av. Hipólito Yrigoyen 3502, C1206 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Magaly",
+    "telefono": "011 4862-9517",
+    "rubro": "Gastronomía / Rotisería",
+    "direccion": "Gral, Tte. Gral. Juan Domingo Perón 3647, C1176 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Dietética Naturalezia | Almacén Saludable",
+    "telefono": "011 3298-0139",
+    "rubro": "Dietética / Almacén",
+    "direccion": "Julián Álvarez 516, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Dietética Nito",
+    "telefono": "011 3564-6463",
+    "rubro": "Dietética / Almacén",
+    "direccion": "Juan Ramírez de Velasco 199, C1414AQC Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Coquito's",
+    "telefono": "011 5165-0108",
+    "rubro": "Dietética / Almacén",
+    "direccion": "Av. Corrientes 5061, C1414AJD Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "DAMBER Alimentos naturales Mayorista y Dietética",
+    "telefono": "011 2625-5699",
+    "rubro": "Dietética / Almacén",
+    "direccion": "Hidalgo 1606, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "dietética",
+    "telefono": "011 6492-0777",
+    "rubro": "Dietética / Almacén",
+    "direccion": "Av. Raúl Scalabrini Ortiz 25, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Biovita",
+    "telefono": "011 5625-1434",
+    "rubro": "Estética / Peluquería",
+    "direccion": "José Bonifacio 1320, C1406GXF C1406GXF, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Miriam Nuñez Coiffeur Peluqueria",
+    "telefono": "011 5406-2028",
+    "rubro": "Estética / Peluquería",
+    "direccion": "Emilio Mitre 626, C1424AYN Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Club del Corte",
+    "telefono": "011 4631-7792",
+    "rubro": "Estética / Peluquería",
+    "direccion": "Av. Coronel Esteban Bonorino 106, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "GS Studio De Gustavo Sidorkevich",
+    "telefono": "011 6283-2133",
+    "rubro": "Estética / Peluquería",
+    "direccion": "Del Barco Centenera 651 1424, C1424BZO Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Edgar Greco Estilista",
+    "telefono": "011 4433-5858",
+    "rubro": "Estética / Peluquería",
+    "direccion": "Av. Pedro Goyena 1396, C1406GWP Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Luz&Sami Peluquería",
+    "telefono": "011 6469-6315",
+    "rubro": "Estética / Peluquería",
+    "direccion": "Pumacahua 85, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "\"3 Brujas\" Pizza and Coffee",
+    "telefono": "011 2237-3776",
+    "rubro": "Gastronomía / Pizzería",
+    "direccion": "Cap. Gral. Ramón Freire 922, C1426 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Totti - Pinsa di Roma",
+    "telefono": "011 3423-5482",
+    "rubro": "Gastronomía / Pizzería",
+    "direccion": "Calle Jorge Newbery 3001, C1426 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "El Imperio de la Pizza",
+    "telefono": "011 4553-0875",
+    "rubro": "Gastronomía / Pizzería",
+    "direccion": "Av. Corrientes 6891, C1427BPG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pizzamania",
+    "telefono": "011 6847-4702",
+    "rubro": "Gastronomía / Pizzería",
+    "direccion": "Conde 884, C1426AYQ Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Veterinaria Pet Mundo",
+    "telefono": "011 4903-4976",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Rojas 62, C1405AAB Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Palermo Pet Store",
+    "telefono": "011 15-4960-2797",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Julián Álvarez 2097, C1425 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Araoz",
+    "telefono": "011 15-5823-3688",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Aráoz 2436, C1425DGL Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Como Perro&Gato Petshop Palermo",
+    "telefono": "011 2899-4358",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Fray Justo Sta. María de Oro 2599, C1425FOK Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "ANIMAL POINT",
+    "telefono": "011 4444-0943",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Paraguay 4488, C1425 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "CDR mecanica integral",
+    "telefono": "011 4937-6857",
+    "rubro": "Taller Mecánico",
+    "direccion": "Av. Álvarez Thomas 2565, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "ASL multiservice",
+    "telefono": "4523-1826",
+    "rubro": "Taller Mecánico",
+    "direccion": "Ceretti 2410, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Taller Donado",
+    "telefono": "011 4543-3395",
+    "rubro": "Taller Mecánico",
+    "direccion": "Donado 2646, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Taller Hernán",
+    "telefono": "011 15-3669-5369",
+    "rubro": "Taller Mecánico",
+    "direccion": "José Pascual Tamborini 6181, C1431AHE Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Taller Nahuel Huapi",
+    "telefono": "011 6497-8495",
+    "rubro": "Taller Mecánico",
+    "direccion": "Tomás A. Le Bretón 4278, C1430 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "TALLER MECANICO STREE CARS . INYECCIÓN ELECTRÓNICA",
+    "telefono": "011 15-6141-7042",
+    "rubro": "Taller Mecánico",
+    "direccion": "Iberá 5940, C1431AFB C1431AFB, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Mecánica Integral VTI Pro - Race",
+    "telefono": "011 4541-2323",
+    "rubro": "Taller Mecánico",
+    "direccion": "Galván 3305, C1431FVG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Mecanica Urquiza",
+    "telefono": "011 4542-6618",
+    "rubro": "Taller Mecánico",
+    "direccion": "Capdevila 3196, C1431 FKJ, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "RAUL Mecánico Villa Urquiza, CABA",
+    "telefono": "011 15-4086-0329",
+    "rubro": "Taller Mecánico",
+    "direccion": "Av. Combatientes de Malvinas 3613, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Maxi Kiosco/Almacen My.Laye",
+    "telefono": "011 2372-6679",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "México 2542, C1223ABB Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Maxikiosco Del Once",
+    "telefono": "011 4866-2522",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "Av. Rivadavia 3089, C1203 AAC, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Rapikiosko",
+    "telefono": "011 15-5850-7708",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "1181, Tucumán 2900, C1189 AAD, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Kiosco almacén lupita",
+    "telefono": "011 3164-6590",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "Agüero 580, C1903 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Almacén los nietos",
+    "telefono": "011 3022-0694",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "La Rioja 432, C1617 General pacheci, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "PagoFácil kiosco",
+    "telefono": "011 5377-2300",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "México 1902, C1222 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "El kiosko",
+    "telefono": "011 6486-5731",
+    "rubro": "Kiosco / Almacén",
+    "direccion": "Av. San Juan 3004, C1233 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Barberia Only Barbers",
+    "telefono": "011 2567-9508",
+    "rubro": "Barbería",
+    "direccion": "Bulnes 1922, C1425DKH Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Buffalos BarbershoPalermo",
+    "telefono": "011 7361-1574",
+    "rubro": "Barbería",
+    "direccion": "Humboldt 2308, C1425FUE Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Jack Barbers",
+    "telefono": "011 3146-9543",
+    "rubro": "Barbería",
+    "direccion": "Charcas 4275, C1425 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Rufianes Barberia Cramer",
+    "telefono": "011 2283-0472",
+    "rubro": "Barbería",
+    "direccion": "Av. Crámer 1861, C1428 C1428CTA, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Hacha Brava Barbería Recoleta",
+    "telefono": "011 5144-9797",
+    "rubro": "Barbería",
+    "direccion": "Av. Callao 2070, C1112 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "AM BARBERIA",
+    "telefono": "011 3925-2468",
+    "rubro": "Barbería",
+    "direccion": "Blanco Encalada 5188, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "The New Barber Shop",
+    "telefono": "011 5342-5712",
+    "rubro": "Barbería",
+    "direccion": "Av. Lope de Vega 3389, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "BARBER 72 Suc Gualeguaychú Devoto",
+    "telefono": "011 3482-8987",
+    "rubro": "Barbería",
+    "direccion": "Gualeguaychú 3312, C1419BJB C1419bjb, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "GastónPaglia HairStudio",
+    "telefono": "011 15-4166-7863",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "GastónPaglia HairStudio, José Bonifacio 1676 2c, C1424 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Tendencias Urbanas",
+    "telefono": "011 5596-5815",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Av. Juan Bautista Alberdi 1172, C1424 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Peluquería Paulino Acosta",
+    "telefono": "011 2104-8443",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Av. Tte. Gral. Donato Álvarez 43, C1406BNA Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Parisiennes",
+    "telefono": "011 15-5920-1016",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Av. Rivadavia 6007, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Ana Ferrer Peluquería",
+    "telefono": "011 3680-4460",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Francisco Bilbao 2343, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Especio de belleza unisex",
+    "telefono": "011 3978-2562",
+    "rubro": "Estilista / Salón de Belleza",
+    "direccion": "Lavalle 3665, C1190AAS Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Estilo F",
+    "telefono": "4867-0341",
+    "rubro": "Estilista / Salón de Belleza",
+    "direccion": "Virrey Liniers 84, C1174ACB Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Julio Pan",
+    "telefono": "011 6882-2759",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Julián Álvarez 327, C1414DRG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "punto de belleza",
+    "telefono": "011 4914-3368",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Gurruchaga 517 Planta Baja, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "San Sandra Arguello.salón",
+    "telefono": "011 6356-9323",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Gurruchaga 645, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Mario Escobar",
+    "telefono": "011 3264-8092",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Juan Ramírez de Velasco 131, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "FRANCO trends & Beauty salon",
+    "telefono": "011 4509-4046",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Aguirre 99, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "7Stars Barbería — Villa Crespo",
+    "telefono": "011 6490-9371",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Av. Raúl Scalabrini Ortiz 142, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "ER Hair Style - Salon Edith Rodriguez",
+    "telefono": "011 2507-0429",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Arcos 2015, C1428 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Blondest Salón Boutique",
+    "telefono": "011 15-5009-6622",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Cdad. de la Paz 2941 Piso 3, Departamento 'A, C1429ACA Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Ricardo Coiffeur",
+    "telefono": "011 3248-3760",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Av. Eva Perón 2313, C1406 HML, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "PELUQUERIA \"ATELIER M&W\"",
+    "telefono": "011 15-4084-3275",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Pumacahua 981, C1406DCS Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Alicia Peluquería Unisex",
+    "telefono": "011 15-6307-8486",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Pedernera 395, C1406EEG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Marcelo Gardella Estilistas",
+    "telefono": "011 4611-4703",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Caracas 64, C1406 AYB, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "La Maja - Peluquería",
+    "telefono": "011 4612-8004",
+    "rubro": "Peluquería / Estilista",
+    "direccion": "Cnel. Ramón L. Falcón 2330, C1406GNV Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Belleza en detalle",
+    "telefono": "011 6409-4642",
+    "rubro": "Uñas & Manicuría",
+    "direccion": "Dorrego 2103, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Nani Nails Caballito",
+    "telefono": "011 3651-1111",
+    "rubro": "Uñas & Manicuría",
+    "direccion": "Av. Pedro Goyena 1753, C1406GWG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Margaritina - Centro de Podología y Estética",
+    "telefono": "011 3447-1933",
+    "rubro": "Uñas & Manicuría",
+    "direccion": "Gregorio de Laferrère 1933, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "My sweet Nails",
+    "telefono": "011 15-6432-4192",
+    "rubro": "Uñas & Manicuría",
+    "direccion": "Dr. Tomás Manuel de Anchorena 1270, C1425EMU Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Shirapolinario.nails",
+    "telefono": "011 6486-0498",
+    "rubro": "Uñas & Manicuría",
+    "direccion": "C1414 Autonoma de Buenos Aires, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Miguemua Studio - Peluqueria, Especialista en Cejas y Maquillador",
+    "telefono": "011 3622-8301",
+    "rubro": "Estética & Pestañas",
+    "direccion": "Malabia 2319, C1425EZG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  }
+]

@@ -8,6 +8,7 @@ const isCustomDomain = () => typeof window !== 'undefined' && window.location.ho
 const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCustomDomain() ? 'https://ecommerce.adrianschuster.com.ar/' : `http://${getHost()}:5173/`);
 const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
 const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
+const UNAS_DEMO_URL = (import.meta as any).env?.VITE_UNAS_URL || (isCustomDomain() ? 'https://unas.adrianschuster.com.ar/' : `http://${getHost()}:5177/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp de Adrián Schuster
 
 function init() {
@@ -274,13 +275,21 @@ function render() {
             <a
               href="${BARBERIA_DEMO_URL}"
               target="_blank"
-              class="w-full py-3 px-4 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-2 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
+              class="w-full py-2.5 px-3 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-semibold text-xs text-center flex items-center justify-center gap-1.5 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm active:scale-95"
             >
-              <span>Abrir Demo de Turnos</span>
+              <span>💈 Demo Barbería</span>
+              <span>→</span>
+            </a>
+            <a
+              href="${UNAS_DEMO_URL}"
+              target="_blank"
+              class="w-full py-2.5 px-3 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-semibold text-xs text-center flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-95"
+            >
+              <span>💅 Demo Uñas & Estética</span>
               <span>→</span>
             </a>
             <p class="text-[10px] text-center text-neutral-400">
-              Barbería & estética sin intermediarios
+              Turnos por WhatsApp sin intermediarios
             </p>
           </div>
         </div>

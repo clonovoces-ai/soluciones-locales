@@ -42,8 +42,22 @@ def limpiar_nombre(comercio):
 def generar_mensaje_y_demo(comercio, solucion, rubro):
     nombre_limpio = limpiar_nombre(comercio)
     encoded_name = urllib.parse.quote_plus(nombre_limpio)
+    rubro_lower = str(rubro).lower()
+    comercio_lower = str(comercio).lower()
     
-    if "Turnos" in str(solucion):
+    # 1. Rubro Uñas, Manicuría, Nail Art, Pestañas & Belleza
+    if any(k in rubro_lower or k in comercio_lower for k in ["uña", "nail", "manicur", "pedicur", "pestaña", "ceja", "estética", "estetica", "belleza"]):
+        demo_url = f"https://unas.adrianschuster.com.ar/?demo={encoded_name}"
+        msg = (
+            f"¡Hola chicas de {nombre_limpio}! ¿Cómo están? Vi su estudio en Google Maps y me encantaron sus trabajos.\n\n"
+            f"Me tomé unos minutos para armarles un boceto interactivo de prueba para que vean cómo sus clientas podrían reservar turnos de manicuría, kapping, esculpidas y pestañas desde el celular directo a este WhatsApp:\n"
+            f"👉 {demo_url}\n\n"
+            f"Es una muestra rápida para que vean lo simple que funciona (con selección de especialista, día, horario y opción de retiro previo). Si les gustaría tenerlo activo para su estudio, avísenme y les paso una propuesta súper accesible. ¡Que tengan un lindo día!"
+        )
+        return msg, demo_url
+
+    # 2. Rubro Barbería & Peluquería
+    elif "Turnos" in str(solucion) or "barber" in rubro_lower or "peluquer" in rubro_lower:
         demo_url = f"https://turnos.adrianschuster.com.ar/?demo={encoded_name}"
         msg = (
             f"¡Hola! ¿Cómo están en {nombre_limpio}? Vi su local en Google Maps y me gustó mucho lo que hacen.\n\n"
