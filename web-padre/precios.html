@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Cotizador & Tarifario en Vivo • Soluciones Digitales</title>
+    <meta name="description" content="Calculadora de precios en pesos con cotización del dólar blue en tiempo real para comercios locales." />
+    
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+      body {
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Custom minimal scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 9999px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: #334155;
+      }
+      @keyframes pulse-subtle {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.85; transform: scale(1.02); }
+      }
+      .animate-pulse-subtle {
+        animation: pulse-subtle 3s infinite ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-[#F8FAFC] dark:bg-[#0E1015] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
+    <div id="app" class="flex-grow flex flex-col w-full overflow-x-hidden min-w-0"></div>
+    <script type="module" src="/src/precios.ts"></script>
+  </body>
+</html>
