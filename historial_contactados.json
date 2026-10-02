@@ -558,5 +558,404 @@
     "rubro": "Estética & Pestañas",
     "direccion": "Malabia 2319, C1425EZG Cdad. Autónoma de Buenos Aires",
     "fecha_registro": ""
+  },
+  {
+    "nombre": "PELUQUERÍA Y PETSHOP FULLMASKOTAS",
+    "telefono": "011 15-7656-6041",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Malabia 2284, C1425 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Petba Pet Shop - Veterinaria - Peluquería Canina - Av. Belgrano 1737",
+    "telefono": "011 4381-0359",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Belgrano 1737, C1093AAF Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Bírichini pet",
+    "telefono": "011 4901-0380",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Rosario 751 C1424CCO, C1424CCO Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Caninos",
+    "telefono": "011 6496-7250",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Juan Bautista Alberdi 931, C1424BYJ Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Huesitos Pet shop",
+    "telefono": "011 4319-7506",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Yerbal 887, C1405 C1405CDQ, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "AREA PET",
+    "telefono": "011 4853-2549",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Juncal 2731, C1425AYG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "King & Queen Pet Shop",
+    "telefono": "011 15-2165-6136",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Sánchez de Bustamante 1661, C1425DUG Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Kiki Pet Shop & Bath",
+    "telefono": "011 15-4029-6216",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Laprida 1290, C1425 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Petshop Leo y Axel",
+    "telefono": "011 7358-3408",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Juan Ramírez de Velasco 175, C1414 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Friendly",
+    "telefono": "011 2359-9913",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Vera 21, C1414AOA Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "DISTRICAN",
+    "telefono": "011 4857-1441",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Warnes 342, C1414 AAQ, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Grandes Amigos",
+    "telefono": "011 3119-1969",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Quintino Bocayuva 224, C1181 AAF, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Don Simon Pet Shop",
+    "telefono": "011 6139-3016",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Castro Barros 787, C1217 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop León Urquiza",
+    "telefono": "011 15-6980-1155",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Blanco Encalada 5075, Villa Urquiza, Juramento 5032, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "FOR PET VETERINARIA",
+    "telefono": "011 4523-2216",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Altolaguirre 1803, C1431ECI Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Veterinaria y Pet Shop PuntoVet Villa Urquiza",
+    "telefono": "011 3183-5444",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Olazábal 5601, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Estación Mascotas",
+    "telefono": "011 2462-0653",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Blanco Encalada 4760, C1431CDH Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "petshop leon",
+    "telefono": "011 6825-7391",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Triunvirato 4842, C1431 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Tinto Pet Louis",
+    "telefono": "011 2766-3489",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Bucarelli 2592, C1431DRD Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Tinto Pet",
+    "telefono": "011 2382-9939",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Mariano Acha 2719, C1430 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Animal Beauty",
+    "telefono": "011 7525-5634",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Quesada 4500, C1430AYH Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Planeta Mascota Flores",
+    "telefono": "011 15-5334-4473",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Cnel. Ramón L. Falcón 2212, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop El bulldog - Huellitas",
+    "telefono": "011 6977-0605",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Directorio 1508, C1406 Buenos Aires, C.f.",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "La Porteña Pet Shop & Gardening",
+    "telefono": "2055-9104",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Juan Bautista Alberdi 927, C1424BYJ Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Multimascota Flores",
+    "telefono": "011 2326-0222",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Camacuá 27, C1406DOA Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "PET SHOP Del Parque",
+    "telefono": "011 3793-7921",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Eva Perón 1571, C1406 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Lucky PET SHOP",
+    "telefono": "011 3434-8141",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Sanabria 2750, C1417 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "GINEBRA PET SHOP",
+    "telefono": "011 15-3080-4293",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Chivilcoy 2590, C1417 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Lucky Pets",
+    "telefono": "011 7064-2536",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Francisco Beiró 5047, C1419HZM Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Sky Vet Pet Shop y Clínica Veterinaria",
+    "telefono": "011 3135-4597",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "C. Llavallol 4393, C1419 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Bros Hermanos Risso",
+    "telefono": "011 6002-5050",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Nogoyá 3688, C1417 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet shop Peluquería Canina \"Don Fleco\"",
+    "telefono": "011 2480-2127",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Olleros 4145, C1427 EEM, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Del Carril Pet Shop Colegiales",
+    "telefono": "011 7148-2124",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Elcano 3088, C1428 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Huellas de Luz",
+    "telefono": "011 3006-9299",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Forest 409, C1427 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Piccoli Pet",
+    "telefono": "011 4765-6892",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Dorrego 1541, C1414CKK Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Menta Spa canino",
+    "telefono": "011 6224-4416",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Manzanares 4078, C1430AEN Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "COQUETES PET-SHOP",
+    "telefono": "011 4546-0024",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Crisólogo Larralde 3652, C1430 AIF, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Lumi",
+    "telefono": "011 4704-9942",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. García del Río 2487, C1429 DEA, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Peluqueria canina Pulguitas saavedra",
+    "telefono": "011 5799-1340",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Ruiz Huidobro 3890, C1430 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "La Mascoteria",
+    "telefono": "011 5752-7066",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Vuelta de Obligado 3217, C1429 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop La Tata",
+    "telefono": "011 3006-2509",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Crisólogo Larralde 4699, C1430 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Adrian Peluqueria Canina y Pet Shop",
+    "telefono": "011 5967-7343",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Roque Pérez 2753, C1430FBE C1430FBE C1430FBE, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Huesitos",
+    "telefono": "011 4867-6060",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Rivadavia 3207, C1203 AAE, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Veterinaria y Pet Shop \"Los Canarios de Balvanera\" - Asociación Argentina de Canaricultura Roller",
+    "telefono": "011 2147-7696",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Av. Rivadavia 2317, C1034ACC Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Puppy Shop",
+    "telefono": "011 4373-2034",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Moreno 1819, C1094 ABA, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Veterinaria Spinetto",
+    "telefono": "011 4952-5910",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Moreno 2301, C1082 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Veterinaria del Centro",
+    "telefono": "011 4954-0981",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "C. Pres. Jose E. Uriburu 662, C1027 AAN, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "CLINICA VETERINARIA PLUTO",
+    "telefono": "011 4030-0979",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "La Rioja 488, C1214 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet shop y baño canino/ Free Pet",
+    "telefono": "011 7081-8915",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Comuna 11, Av. Nazca 3271, C1417CVC Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Zona Mascotas",
+    "telefono": "011 2805-1496",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Tinogasta 3289, C1417 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet's Club. \"El club de las Mascotas\"",
+    "telefono": "4828-2674",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "C1417AAG, Cuenca 2550, C1417 AAH, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "PETSHOP JACUZZICAN",
+    "telefono": "011 5045-1451",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Nogoyá 3579, C1417FNO Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "PET'S FOOD",
+    "telefono": "011 4588-1951",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Álvarez Jonte 2401, C1416EXJ Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Acuario Willy's Pet Shop",
+    "telefono": "011 2403-9338",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Nogoyá 3397, C1417FNK Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pet Shop Frodo",
+    "telefono": "4504-1996",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Baigorria 2320, C1417FQA C1417FQA, Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Pupipet",
+    "telefono": "011 5370-3822",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Emilio Lamarca 2036, C1407DGP Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
+  },
+  {
+    "nombre": "Lo de Diógenes",
+    "telefono": "011 2302-0260",
+    "rubro": "Mascotas / Pet Shop",
+    "direccion": "Cuenca 2695, C1417 Cdad. Autónoma de Buenos Aires",
+    "fecha_registro": ""
   }
 ]
