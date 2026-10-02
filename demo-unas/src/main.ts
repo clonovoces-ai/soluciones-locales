@@ -1,5 +1,5 @@
 // Demo Sistema de Turnos Online para Uñas, Manicuría & Estética
-let isDarkMode = true;
+let isDarkMode = false; // Modo claro predeterminado
 
 // Detección dinámica de host (funciona en Vercel, localhost y celulares en red)
 const getHost = () => (typeof window !== 'undefined' ? window.location.hostname : 'localhost');
@@ -193,7 +193,7 @@ const state: BookingState = {
 
 function init() {
   const savedTheme = localStorage.getItem('glow_theme');
-  isDarkMode = savedTheme !== null ? savedTheme === 'dark' : true;
+  isDarkMode = savedTheme !== null ? savedTheme === 'dark' : false; // Por defecto modo claro
   document.documentElement.classList.toggle('dark', isDarkMode);
   render();
 }
