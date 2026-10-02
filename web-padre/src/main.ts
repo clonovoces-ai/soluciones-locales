@@ -9,6 +9,7 @@ const ECOMMERCE_DEMO_URL = (import.meta as any).env?.VITE_ECOMMERCE_URL || (isCu
 const LANDING_DEMO_URL = (import.meta as any).env?.VITE_LANDING_URL || (isCustomDomain() ? 'https://landing.adrianschuster.com.ar/' : `http://${getHost()}:5175/`);
 const BARBERIA_DEMO_URL = (import.meta as any).env?.VITE_BARBERIA_URL || (isCustomDomain() ? 'https://turnos.adrianschuster.com.ar/' : `http://${getHost()}:5176/`);
 const UNAS_DEMO_URL = (import.meta as any).env?.VITE_UNAS_URL || (isCustomDomain() ? 'https://unas.adrianschuster.com.ar/' : `http://${getHost()}:5177/`);
+const MASCOTAS_DEMO_URL = (import.meta as any).env?.VITE_MASCOTAS_URL || (isCustomDomain() ? 'https://mascotas.adrianschuster.com.ar/' : `http://${getHost()}:5178/`);
 const WHATSAPP_CONSULTA = (import.meta as any).env?.VITE_WHATSAPP_NUM || '5491123351610'; // WhatsApp de Adrián Schuster
 
 function init() {
@@ -383,6 +384,17 @@ function render() {
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Los clientes reservan horario y profesional directamente desde el celular sin llamadas ni esperas.
             </div>
+            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+              <span class="text-[11px] text-neutral-400">Peluquerías & Uñas</span>
+              <a
+                href="${UNAS_DEMO_URL}"
+                target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
+              >
+                <span>Ver Demo Uñas</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -404,6 +416,17 @@ function render() {
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Carta digital visual con fotos, botón de reservas y pedidos por WhatsApp con cálculo de delivery.
             </div>
+            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+              <span class="text-[11px] text-neutral-400">Carta & Delivery</span>
+              <a
+                href="${LANDING_DEMO_URL}"
+                target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
+              >
+                <span>Ver Demo Carta</span>
+                <span>→</span>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -424,6 +447,17 @@ function render() {
             </p>
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
               <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Catálogo autogestionado con Excel (.xlsx), carrito ágil y cobro en mostrador con POS offline.
+            </div>
+            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+              <span class="text-[11px] text-neutral-400">Catálogo WhatsApp</span>
+              <a
+                href="${ECOMMERCE_DEMO_URL}"
+                target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
+              >
+                <span>Ver Demo Tienda</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </div>
@@ -455,7 +489,7 @@ function render() {
             <div class="flex items-center justify-between mb-3">
               <span class="text-3xl">🐾</span>
               <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-orange-50 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800/60">
-                Agenda de Pacientes
+                Peluquería & Tienda
               </span>
             </div>
             <h3 class="text-base font-bold text-neutral-900 dark:text-white">
@@ -465,7 +499,18 @@ function render() {
               Peluquerías caninas, clínicas veterinarias, pet shops y guarderías.
             </p>
             <div class="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800 text-xs text-neutral-600 dark:text-neutral-300">
-              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Agendamiento de turnos para baño, corte y consultas clínicas con datos de la mascota.
+              <strong class="text-neutral-900 dark:text-white font-semibold">Beneficio:</strong> Agendamiento de turnos para baño y corte por tamaño de perro, y delivery de alimentos balanceados.
+            </div>
+            <div class="mt-3 pt-3 border-t border-neutral-100 dark:border-neutral-800 flex items-center justify-between">
+              <span class="text-[11px] text-neutral-400">Peluquería & Alimentos</span>
+              <a
+                href="${MASCOTAS_DEMO_URL}"
+                target="_blank"
+                class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95"
+              >
+                <span>Ver Demo Pet Shop</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </div>

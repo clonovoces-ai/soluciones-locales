@@ -45,8 +45,19 @@ def generar_mensaje_y_demo(comercio, solucion, rubro):
     rubro_lower = str(rubro).lower()
     comercio_lower = str(comercio).lower()
     
-    # 1. Rubro Uñas, Manicuría, Nail Art, Pestañas & Belleza
-    if any(k in rubro_lower or k in comercio_lower for k in ["uña", "nail", "manicur", "pedicur", "pestaña", "ceja", "estética", "estetica", "belleza"]):
+    # 1. Rubro Mascotas, Pet Shop, Veterinaria & Peluquería Canina
+    if any(k in rubro_lower or k in comercio_lower for k in ["mascota", "pet", "veterin", "canin", "felin", "perr"]):
+        demo_url = f"https://mascotas.adrianschuster.com.ar/?demo={encoded_name}"
+        msg = (
+            f"¡Hola gente de {nombre_limpio}! ¿Cómo andan? Vi su local en Google Maps y me gustó mucho la propuesta que tienen para las mascotas del barrio.\n\n"
+            f"Me tomé unos minutos para armarles un boceto interactivo de prueba para que vean cómo sus clientes podrían pedir turnos de baño y peluquería canina por tamaño de perro, o pedir bolsas de alimento directo a este WhatsApp:\n"
+            f"👉 {demo_url}\n\n"
+            f"Es una muestra rápida para que vean la idea funcionando en vivo (con selector de tamaño pequeño/mediano/grande y notas del peludito). Si les interesa tenerlo activo para {nombre_limpio}, avísenme y les paso una propuesta súper accesible. ¡Saludos a los peluditos!"
+        )
+        return msg, demo_url
+
+    # 2. Rubro Uñas, Manicuría, Nail Art, Pestañas & Belleza
+    elif any(k in rubro_lower or k in comercio_lower for k in ["uña", "nail", "manicur", "pedicur", "pestaña", "ceja", "estética", "estetica", "belleza"]):
         demo_url = f"https://unas.adrianschuster.com.ar/?demo={encoded_name}"
         msg = (
             f"¡Hola chicas de {nombre_limpio}! ¿Cómo están? Vi su estudio en Google Maps y me encantaron sus trabajos.\n\n"
@@ -56,7 +67,7 @@ def generar_mensaje_y_demo(comercio, solucion, rubro):
         )
         return msg, demo_url
 
-    # 2. Rubro Barbería & Peluquería
+    # 3. Rubro Barbería & Peluquería
     elif "Turnos" in str(solucion) or "barber" in rubro_lower or "peluquer" in rubro_lower:
         demo_url = f"https://turnos.adrianschuster.com.ar/?demo={encoded_name}"
         msg = (
