@@ -541,22 +541,22 @@ function render() {
     <nav class="sticky top-0 z-40 bg-white/95 dark:bg-[#0E0F14]/95 backdrop-blur-md border-b border-amber-100 dark:border-neutral-800/80 transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <!-- Logo / Marca -->
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 text-white flex items-center justify-center text-xl shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform">
+        <a href="#" class="flex items-center gap-2.5 group min-w-0">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 text-white flex items-center justify-center text-xl shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
             🐾
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-extrabold text-base sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight">
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="font-extrabold text-sm sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight truncate">
                 ${businessName}
               </span>
               ${isCustom ? `
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 flex-shrink-0">
                   Demo
                 </span>
               ` : ''}
             </div>
-            <span class="text-[11px] text-neutral-400 block -mt-0.5 font-medium">Pet Shop, Turnos & E-commerce</span>
+            <span class="text-[10px] sm:text-[11px] text-neutral-400 block -mt-0.5 font-medium truncate">Pet Shop, Turnos & E-commerce</span>
           </div>
         </a>
 
@@ -680,7 +680,7 @@ function render() {
     </header>
 
     <!-- SECCIÓN: SELECTOR DE TAMAÑO & PELUQUERÍA CANINA (HOME ORIGINAL) -->
-    <section id="peluqueria" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
+    <section id="peluqueria" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
       
       <!-- Paso 1: Tamaño de la mascota -->
       <div class="bg-white dark:bg-[#14151C] p-6 sm:p-8 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-10 space-y-4">
@@ -802,7 +802,7 @@ function render() {
     </section>
 
     <!-- SECCIÓN INTERACTIVA DE FECHA, DATOS Y CONFIRMACIÓN -->
-    <section id="reservar" class="max-w-5xl mx-auto px-4 sm:px-6 py-8 scroll-mt-20">
+    <section id="reservar" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8 scroll-mt-20 min-w-0">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         
         <!-- COLUMNA IZQUIERDA: CONFIGURADOR DEL TURNO -->
@@ -1022,7 +1022,7 @@ function render() {
     </section>
 
     <!-- SECCIÓN: TIENDA ONLINE / E-COMMERCE PET SHOP COMPLETO -->
-    <section id="tienda" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800">
+    <section id="tienda" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800 overflow-hidden min-w-0">
       
       <!-- Encabezado de la tienda -->
       <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
@@ -1038,10 +1038,10 @@ function render() {
       </div>
 
       <!-- Barra de herramientas: Buscador y Categorías -->
-      <div class="bg-white dark:bg-[#14151C] p-4 sm:p-5 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-8 space-y-4">
+      <div class="w-full max-w-full bg-white dark:bg-[#14151C] p-4 sm:p-5 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-8 space-y-4 overflow-hidden min-w-0">
         
         <!-- Buscador -->
-        <div class="relative">
+        <div class="relative w-full">
           <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-neutral-400 text-base">
             🔍
           </span>
@@ -1063,7 +1063,7 @@ function render() {
         </div>
 
         <!-- Categorías de la Tienda -->
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-semibold scrollbar-none">
+        <div class="w-full max-w-full flex items-center gap-1.5 overflow-x-auto pb-2 text-xs font-semibold scrollbar-none no-scrollbar touch-pan-x min-w-0">
           ${[
             { id: 'todos', label: 'Todos' },
             { id: 'perros', label: '🐶 Perros' },
@@ -1075,7 +1075,7 @@ function render() {
             const isSelected = state.selectedStoreCategory === cat.id;
             return `
               <button
-                class="store-cat-btn px-3.5 py-2 rounded-xl whitespace-nowrap transition-all ${
+                class="store-cat-btn px-3.5 py-2 rounded-xl whitespace-nowrap transition-all flex-shrink-0 ${
                   isSelected
                     ? 'bg-orange-500 text-white shadow-sm'
                     : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-400 hover:bg-orange-100 dark:hover:bg-neutral-700'
@@ -1091,7 +1091,7 @@ function render() {
 
       <!-- Grilla de Productos del Catálogo E-commerce -->
       ${filteredProducts.length > 0 ? `
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 min-w-0">
           ${filteredProducts.map(p => {
             const inCartQty = state.cart[p.id] || 0;
 
@@ -1358,7 +1358,7 @@ function render() {
     ` : ''}
 
     <!-- SECCIÓN: CONTACTO, UBICACIÓN Y MAPA -->
-    <section id="contacto" class="max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800">
+    <section id="contacto" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-amber-100 dark:border-neutral-800 min-w-0">
       <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80">
           📍 Estamos cerca tuyo
