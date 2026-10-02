@@ -263,22 +263,22 @@ function render() {
     <nav class="sticky top-0 z-40 bg-white/95 dark:bg-[#0E0F14]/95 backdrop-blur-md border-b border-rose-100 dark:border-neutral-800/80 transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <!-- Logo / Marca -->
-        <a href="#" class="flex items-center gap-2.5 group">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-400 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/20 group-hover:scale-105 transition-transform">
+        <a href="#" class="flex items-center gap-2.5 group min-w-0">
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-400 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
             💅
           </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-extrabold text-base sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight">
+          <div class="min-w-0">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <span class="font-extrabold text-sm sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight truncate">
                 ${businessName}
               </span>
               ${isCustom ? `
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 flex-shrink-0">
                   Demo
                 </span>
               ` : ''}
             </div>
-            <span class="text-[11px] text-neutral-400 block -mt-0.5 font-medium">Nails & Beauty Studio • Turnos Online</span>
+            <span class="text-[10px] sm:text-[11px] text-neutral-400 block -mt-0.5 font-medium truncate">Nails & Beauty Studio • Turnos Online</span>
           </div>
         </a>
 
@@ -289,6 +289,12 @@ function render() {
             class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
           >
             Servicios & Precios
+          </a>
+          <a
+            href="#contacto"
+            class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
+          >
+            Ubicación & Contacto 📍
           </a>
 
           <!-- Toggle Dark Mode -->
@@ -376,7 +382,7 @@ function render() {
     </header>
 
     <!-- SECCIÓN: SERVICIOS Y LISTA DE PRECIOS -->
-    <section id="servicios" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
+    <section id="servicios" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
         <div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
@@ -472,7 +478,7 @@ function render() {
     </section>
 
     <!-- SECCIÓN INTERACTIVA DE RESERVA -->
-    <section id="reservar" class="max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20">
+    <section id="reservar" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
       <div class="text-center max-w-xl mx-auto mb-8 space-y-1">
         <span class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Paso a Paso</span>
         <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
@@ -701,6 +707,147 @@ function render() {
               <p class="text-[10px] text-center text-neutral-400 mt-2">
                 Te abrirá la conversación con todos los datos listos. No requiere descargar apps.
               </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CONTACTO, UBICACIÓN Y MAPA -->
+    <section id="contacto" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-rose-100 dark:border-neutral-800 min-w-0">
+      <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800/80">
+          📍 Estamos cerca tuyo
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          Ubicación, Horarios & Contacto
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          Vení a disfrutar de tu momento de cuidado y belleza en nuestro estudio en Recoleta o reservá tu turno online.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Columna Izquierda: Tarjetas de Información -->
+        <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
+          
+          <!-- Dirección -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-rose-50 dark:bg-neutral-800 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl flex-shrink-0">
+              📍
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Dirección del Estudio</h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Av. Santa Fe 1940, Piso 2, Recoleta, CABA</p>
+              <a
+                href="https://www.google.com/maps/search/Av.+Santa+Fe+1940,+Recoleta,+CABA"
+                target="_blank"
+                class="inline-flex items-center gap-1 text-[11px] font-bold text-rose-600 dark:text-rose-400 hover:underline mt-2"
+              >
+                <span>Cómo llegar en Google Maps</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Teléfono y WhatsApp -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-neutral-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
+              📞
+            </div>
+            <div>
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Teléfono & WhatsApp</h3>
+              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">+54 9 11 2335-1610</p>
+              <a
+                href="https://wa.me/${BEAUTY_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacerles una consulta sobre los turnos.`)}"
+                target="_blank"
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95 mt-2"
+              >
+                <span>💬</span>
+                <span>Escribir por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Horarios -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-pink-50 dark:bg-neutral-800 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl flex-shrink-0">
+              ⏰
+            </div>
+            <div class="space-y-1 text-xs">
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Horarios de Atención</h3>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Lunes a Viernes:</span>
+                <span class="font-bold text-neutral-900 dark:text-white">10:00 a 20:00 hs</span>
+              </div>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Sábados:</span>
+                <span class="font-bold text-neutral-900 dark:text-white">10:00 a 19:00 hs</span>
+              </div>
+              <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
+                <span>Domingos y Feriados:</span>
+                <span class="font-bold text-rose-500">Cerrado</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Medios de Pago & Políticas -->
+          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+            <div class="w-11 h-11 rounded-2xl bg-purple-50 dark:bg-neutral-800 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl flex-shrink-0">
+              💳
+            </div>
+            <div class="text-xs space-y-1">
+              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Formas de Pago & Políticas</h3>
+              <p class="text-neutral-500 dark:text-neutral-400">
+                Aceptamos <strong>Efectivo (10% OFF)</strong>, Transferencia bancaria, Débito/Crédito y Mercado Pago.
+              </p>
+              <p class="text-[11px] text-rose-600 dark:text-rose-400 font-semibold pt-0.5">
+                ✨ Atención únicamente con turno previo para asegurar tu horario sin demoras.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Columna Derecha: Mapa Google Maps Interactivo -->
+        <div class="lg:col-span-7 flex flex-col">
+          <div class="bg-white dark:bg-[#14151C] p-3 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm h-full flex flex-col">
+            <div class="relative w-full h-80 lg:h-full min-h-[360px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800">
+              <iframe
+                title="Ubicación en Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13137.644342203875!2d-58.3950978!3d-34.5941777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccaa6708322e3%3A0xdb19edc85b546344!2sRecoleta%2C%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1711900000000!5m2!1ses-419!2sar"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="w-full h-full"
+              ></iframe>
+
+              <!-- Card Flotante sobre el Mapa -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#14151C]/95 backdrop-blur-md p-3.5 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 shadow-lg flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5">
+                  <span class="text-2xl">💅</span>
+                  <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white leading-tight">
+                      ${businessName}
+                    </h4>
+                    <span class="text-[11px] text-neutral-500 dark:text-neutral-400">
+                      Recoleta, CABA • Estudio Boutique
+                    </span>
+                  </div>
+                </div>
+
+                <a
+                  href="#servicios"
+                  class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-[11px] shadow-sm transition-all whitespace-nowrap active:scale-95"
+                >
+                  Pedir Turno
+                </a>
+              </div>
             </div>
           </div>
         </div>
