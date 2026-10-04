@@ -1,93 +1,230 @@
-# 🏪 Plantilla Web & Catálogo para Comercios Locales
+# 🚀 Soluciones Digitales para Comercios Locales (Suite & Ecosistema)
 
-Esta plantilla está pensada para **vender y desplegar sitios web con catálogo y pedidos por WhatsApp en menos de 10 minutos** a comercios de tu zona (kioscos, almacenes, fiambrerías, rotiserías, dietéticas, pet shops, etc.).
-
----
-
-## 🚀 Características incluidas
-
-1. **Catálogo Mobile-First**: 100% responsivo, diseñado para comprar desde celulares en segundos.
-2. **Carrito de Compras con Envío a WhatsApp**:
-   - Calcula subtotal, descuentos por pago en efectivo y total.
-   - Pide nombre, forma de entrega (retiro en local o delivery a domicilio) y método de pago.
-   - Genera un mensaje formateado y prolijo que se abre directo en el WhatsApp del comerciante.
-3. **Buscador en tiempo real & Filtro por Categorías**: Busca por nombre, descripción o código de barras.
-4. **Carga Masiva con Excel (.xlsx)**:
-   - Permite que el comerciante o vos suban un archivo Excel para actualizar todos los productos y precios al instante.
-   - Botón para descargar una planilla modelo `.xlsx` pre-configurada.
-5. **Configuración Rápida en 1 solo archivo**: En `src/config.ts` cambiás nombre, WhatsApp, redes, dirección y horarios.
-6. **Costo de Servidor \$0**: Compila a HTML/JS/CSS estático ultraliviano, ideal para **Vercel** o **Cloudflare Pages**.
+> Plataforma integral de captación, prospección automatizada y soluciones digitales llave en mano para comercios locales de barrio (Barberías, Salones de Belleza/Uñas, Pet Shops, Gastronomía, Comercios de Indumentaria y Comercios con Venta de Mostrador).
 
 ---
 
-## 🛠️ Cómo probarla en tu computadora
+## 📌 Tabla de Contenidos
+1. [Estructura del Proyecto](#-estructura-del-proyecto)
+2. [Soluciones Incluidas en el Repositorio](#-soluciones-incluidas-en-el-repositorio)
+3. [Requisitos Previos](#-requisitos-previos)
+4. [Instalación y Configuración](#-instalación-y-configuración)
+5. [Ejecución en Entorno Local](#-ejecución-en-entorno-local)
+6. [Sistema de Demostraciones Dinámicas (?demo=Nombre)](#-sistema-de-demostraciones-dinámicas-demonombredelocal)
+7. [Scripts de Prospección y Enriquecimiento](#-scripts-de-prospección-y-enriquecimiento-python)
+8. [Software de Caja Offline (Tauri + React)](#-software-de-caja-offline-software_para_caja)
+9. [Despliegue a Producción (Vercel)](#-despliegue-a-producción-vercel)
+10. [Flujo de Trabajo para Nuevos Clientes](#-flujo-de-trabajo-para-nuevos-clientes)
 
-```bash
-# 1. Entrar a la carpeta
-cd plantilla-comercio-local
+---
 
-# 2. Instalar dependencias (si no lo hiciste)
-npm install
+## 📂 Estructura del Proyecto
 
-# 3. Iniciar el servidor local
-npm run dev
+```text
+comercios_locales/
+├── web-padre/                 # Portal central SaaS (sd.adrianschuster.com.ar)
+├── demo-barberia/             # Sistema de turnos para Barberías (turnos.adrianschuster.com.ar)
+├── demo-unas/                 # Sistema de turnos para Belleza & Uñas (unas.adrianschuster.com.ar)
+├── demo-mascotas/             # Pet Shop & Peluquería Canina (petshop.adrianschuster.com.ar)
+├── demo-landing/              # Landing gastronómica & Carta digital (landing.adrianschuster.com.ar)
+├── demo-ecommerce/            # Catálogo online & Pedidos WhatsApp (ecommerce.adrianschuster.com.ar)
+├── software_para_caja/        # Sistema POS Desktop offline (Tauri 2 + React + Tailwind)
+├── cotizador_privado/         # Calculadora de presupuestos y márgenes comerciales
+├── clientes/                  # Bases de prospectos y tarifarios en Excel (.xlsx) y CSV
+├── buscar_locales_caba.py     # Scraper/prospector de comercios en Google Maps/OSM
+├── buscar_belleza_caba.py     # Scraper específico para salones de belleza y uñas
+├── buscar_petshops_caba.py    # Scraper específico para pet shops y veterinarias
+├── enriquecer_excel.py        # Generador de links demo y mensajes WhatsApp personalizados
+├── flyer_publicitario.txt     # Copy y material gráfico para folletería de calle
+├── README.md                  # Documentación del proyecto
+└── .gitignore                 # Configuración de exclusiones de Git
 ```
 
-Abrí el navegador en la URL que muestra la consola (por ejemplo, `http://localhost:5173`).
+---
+
+## 💼 Soluciones Incluidas en el Repositorio
+
+| Módulo | Tipo | Tecnologías | Propósito Comercial |
+| :--- | :--- | :--- | :--- |
+| **`web-padre`** | Web Portal | HTML, Tailwind CSS, TypeScript, Vite | Portal de agencia que consolida la propuesta de valor y las demos en vivo. |
+| **`demo-barberia`** | Web App | TypeScript, Vite, Tailwind CSS (Bebas Neue) | Turnero rápido en 3 pasos con selección de barbero, día y horario, directo a WhatsApp. |
+| **`demo-unas`** | Web App | TypeScript, Vite, Tailwind CSS (Playfair Display) | Turnos estética con voucher visual, retiro previo y confirmación instantánea. |
+| **`demo-mascotas`** | Web App | TypeScript, Vite, Tailwind CSS (Varela Round) | Pet Shop + Turnero de peluquería canina por tamaño (chico, mediano, grande). |
+| **`demo-landing`** | Web App | TypeScript, Vite, Tailwind CSS (Fraunces) | Carta digital y reserva de mesas para bodegones y gastronomía. |
+| **`demo-ecommerce`** | Web App | TypeScript, Vite, Tailwind CSS (Plus Jakarta Sans) | Catálogo para comercios minoristas con carrito y checkout por WhatsApp. |
+| **`software_para_caja`**| Desktop POS | Rust, Tauri 2.0, React 18, Tailwind CSS | Sistema de punto de venta offline, lector de código de barras, turnos de caja y auditoría. |
 
 ---
 
-## 🎨 Cómo personalizarla para un cliente nuevo (en 2 minutos)
+## ⚙️ Requisitos Previos
 
-1. Abrí [`src/config.ts`](file:///C:/Users/Adrian/.gemini/antigravity/scratch/plantilla-comercio-local/src/config.ts):
-   - Cambiá `name`: Nombre de la tienda.
-   - Cambiá `whatsapp`: Número con código de país y de área (ej: `5491122334455`).
-   - Cambiá `address`, `mapsUrl`, `hours`, `instagram`.
-2. Abrí [`src/products.ts`](file:///C:/Users/Adrian/.gemini/antigravity/scratch/plantilla-comercio-local/src/products.ts) o usá el botón **"Cargar Excel"** en la web para cargar los productos reales del cliente.
+Antes de comenzar, asegurate de tener instalado en tu sistema:
+
+1. **Node.js** (versión 18.x o 20.x LTS recomendada).
+   - Descarga: [nodejs.org](https://nodejs.org/)
+   - Verificá con: `node -v` y `npm -v`
+2. **Python** (versión 3.9 o superior para ejecutar los scripts de prospección).
+   - Descarga: [python.org](https://python.org/)
+   - Verificá con: `python --version`
+3. **Git** para clonar el repositorio.
+4. *(Opcional - solo para compilar el Software de Caja Desktop)*:
+   - **Rust & Cargo**: [rustup.rs](https://rustup.rs/)
+   - Build Tools de C++ (Visual Studio Build Tools en Windows con "Desktop development with C++").
 
 ---
 
-## ☁️ Cómo desplegarla a Producción
+## 📥 Instalación y Configuración
 
-### Opción A: Vercel (Recomendada y más rápida)
-1. Subí tu código a un repositorio de GitHub (público o privado).
-2. Entrá en [vercel.com](https://vercel.com) e iniciá sesión con GitHub.
-3. Hacé clic en **"Add New Project"** y seleccioná el repositorio.
-4. Vercel detectará automáticamente que es un proyecto **Vite** (Framework Preset: Vite, Build Command: `npm run build`, Output: `dist`).
-5. Hacé clic en **"Deploy"**. En 30 segundos tenés una URL gratis `tu-proyecto.vercel.app` con certificado SSL incluido.
-
-### Opción B: Cloudflare Pages (Directo o Drag & Drop)
-1. Ejecutá en tu consola:
+1. **Clonar el repositorio:**
    ```bash
-   npm run build
+   git clone https://github.com/clonovoces-ai/soluciones-locales.git
+   cd soluciones-locales
    ```
-   Esto generará la carpeta `dist/`.
-2. En tu panel de Cloudflare, andá a **Workers & Pages** > **Create application** > **Pages**.
-3. Podés conectar tu repositorio de GitHub o simplemente arrastrar y soltar la carpeta `dist/`.
+
+2. **Instalar dependencias de los proyectos web:**
+   Cada subdirectorio es una aplicación Vite independiente:
+   ```bash
+   # Portal central
+   cd web-padre && npm install && cd ..
+
+   # Demos
+   cd demo-barberia && npm install && cd ..
+   cd demo-unas && npm install && cd ..
+   cd demo-mascotas && npm install && cd ..
+   cd demo-landing && npm install && cd ..
+   cd demo-ecommerce && npm install && cd ..
+
+   # Software de caja (opcional)
+   cd software_para_caja && npm install && cd ..
+   ```
+
+3. **Instalar librerías de Python (para prospección):**
+   ```bash
+   pip install pandas openpyxl requests
+   ```
 
 ---
 
-## 🌐 Cómo vincular un Dominio propio (ej: `.com` o `.com.ar`)
+## 💻 Ejecución en Entorno Local
 
-1. **Si es `.com` en Cloudflare / Namecheap / Porkbun:**
-   - En Vercel o Cloudflare Pages andá a **Settings** > **Domains**.
-   - Ingresá el dominio del cliente (ej: `kioscosantelmo.com`).
-   - Te indicará agregar un registro CNAME o A en tu proveedor de DNS.
-2. **Si es `.com.ar` en NIC.ar:**
-   - Creá una cuenta gratis en **Cloudflare** y agregá el dominio del cliente.
-   - Cloudflare te dará 2 DNS (ej: `dns1.cloudflare.com` y `dns2.cloudflare.com`).
-   - En **NIC.ar**, delegá el dominio apuntando a esos 2 DNS de Cloudflare.
-   - Luego, desde Cloudflare Pages o Vercel vinculás el dominio con 1 clic.
+Cada demo y portal puede levantarse individualmente con su script de desarrollo:
+
+| Proyecto | Comando | Puerto Local |
+| :--- | :--- | :--- |
+| **Portal General (`web-padre`)** | `cd web-padre && npm run dev` | `http://localhost:3000` |
+| **Demo Belleza & Uñas (`demo-unas`)** | `cd demo-unas && npm run dev` | `http://localhost:5175` |
+| **Demo Barbería (`demo-barberia`)** | `cd demo-barberia && npm run dev` | `http://localhost:5176` |
+| **Demo Catálogo E-Commerce (`demo-ecommerce`)**| `cd demo-ecommerce && npm run dev` | `http://localhost:5177` |
+| **Demo Pet Shop (`demo-mascotas`)** | `cd demo-mascotas && npm run dev` | `http://localhost:5178` |
+| **Demo Gastronomía (`demo-landing`)** | `cd demo-landing && npm run dev` | `http://localhost:5174` |
+
+> 💡 **Tip:** Todas las aplicaciones cuentan con resolución de links automática. Si corren en `localhost`, el portal principal enlaza a los puertos locales (`5174`-`5178`), y en producción enlaza a sus respectivos subdominios de forma transparente.
 
 ---
 
-## 💼 Checklist comercial para cerrar ventas
+## 🎯 Sistema de Demostraciones Dinámicas (`?demo=NombreDelLocal`)
 
-1. **Armate una Demo con tu celular**:
-   - Abrí esta plantilla en tu teléfono.
-   - Andá al local y mostrale cómo se ve: cargá 2 alfajores y una gaseosa en el carrito, tocá "Pedir por WhatsApp" y mostrale cómo le llega el pedido impecable a su WhatsApp.
-2. **Propuesta de Precio:**
-   - **Setup Inicial (Diseño + Carga inicial de productos):** Cobro único accesible.
-   - **Abono mensual de Mantenimiento:** Para cubrir dominio, pequeños cambios de precios y soporte técnico.
-3. **El argumento clave**:
-   - *"No pagás comisiones del 25% como en las apps de delivery (PedidosYa / Rappi), el cliente te compra directo a vos por WhatsApp y vos te quedás con el 100% de la ganancia."*
+Uno de los mayores diferenciadores comerciales de este proyecto es que **no requiere compilar ni duplicar código para cada cliente nuevo**.
+
+Todas las demos leen los parámetros `?demo=`, `?local=` o `?nombre=` en la URL:
+- `https://turnos.adrianschuster.com.ar/?demo=Leitokids+Peluquer%C3%ADa+Infantil`
+- `https://petshop.adrianschuster.com.ar/?demo=Mi+Veterinaria`
+- `https://unas.adrianschuster.com.ar/?demo=Studio+Bella`
+
+### ¿Qué hace automáticamente?
+1. Reemplaza el título y la marca por el nombre real del cliente.
+2. Muestra un banner flotante personalizado: *"Boceto interactivo de demostración preparado para [Nombre del Cliente]"*.
+3. Permite al cliente probar la experiencia como si ya fuera su propia página web.
+
+---
+
+## 🔍 Scripts de Prospección y Enriquecimiento (Python)
+
+El proyecto incluye un pipeline automatizado para encontrar comercios locales en Google Maps / OpenStreetMap y generar propuestas personalizadas:
+
+1. **Búsqueda de prospectos en CABA / GBA:**
+   ```bash
+   python buscar_belleza_caba.py
+   python buscar_petshops_caba.py
+   python buscar_locales_caba.py
+   ```
+   *Genera planillas `.csv` y `.xlsx` filtrando por comercios con teléfono y sin sitio web propio.*
+
+2. **Enriquecimiento con enlaces y copys de WhatsApp:**
+   ```bash
+   python enriquecer_excel.py
+   ```
+   *Agrega una columna con la URL interactiva personalizada (`?demo=...`) y el mensaje exacto sugerido para enviar por WhatsApp al dueño del negocio.*
+
+3. **Gestión de historial:**
+   - [`historial_manager.py`](file:///c:/Users/Adrian/Desktop/comercios_locales/historial_manager.py) y [`historial_contactados.json`](file:///c:/Users/Adrian/Desktop/comercios_locales/historial_contactados.json) evitan contactar dos veces al mismo comercio.
+
+---
+
+## 🖥️ Software de Caja Offline (`software_para_caja`)
+
+Un sistema de punto de venta desarrollado con **React**, **Vite**, **Tailwind CSS** y empaquetado como aplicación de escritorio nativa mediante **Tauri 2.0 (Rust)**.
+
+### Características:
+- 100% offline (sin necesidad de conexión a internet para operar).
+- Lector de código de barras USB/Bluetooth en tiempo real.
+- Control de caja ciega, aperturas, retiros y arqueo de turnos.
+- Control de stock, alertas de reposición y actualización masiva de precios por porcentaje.
+- Historial y registro de auditoría con PIN para supervisores.
+
+### Cómo ejecutarlo:
+```bash
+cd software_para_caja
+
+# Modo Web en navegador
+npm run dev
+
+# Modo Desktop Nativo (requiere Rust instalado)
+npm run tauri:dev
+```
+
+### Cómo compilar el instalador para Windows (.exe):
+```bash
+cd software_para_caja
+npm run tauri:build
+```
+*El ejecutable resultante se genera en `software_para_caja/src-tauri/target/release/bundle/nsis/`.*
+
+---
+
+## ☁️ Despliegue a Producción (Vercel)
+
+El proyecto está diseñado para desplegarse con costo de infraestructura \$0 en **Vercel**:
+
+1. Subir los cambios a GitHub en la rama `main`:
+   ```bash
+   git add .
+   git commit -m "feat: nuevas mejoras en el ecosistema"
+   git push origin main
+   ```
+2. En [Vercel Dashboard](https://vercel.com/):
+   - Importá el repositorio de GitHub.
+   - Creá un proyecto por cada subdirectorio especificando el **Root Directory**:
+     - Proyecto 1: `web-padre` -> Dominio: `sd.adrianschuster.com.ar`
+     - Proyecto 2: `demo-barberia` -> Dominio: `turnos.adrianschuster.com.ar`
+     - Proyecto 3: `demo-unas` -> Dominio: `unas.adrianschuster.com.ar`
+     - Proyecto 4: `demo-mascotas` -> Dominio: `petshop.adrianschuster.com.ar`
+     - Proyecto 5: `demo-landing` -> Dominio: `landing.adrianschuster.com.ar`
+     - Proyecto 6: `demo-ecommerce` -> Dominio: `ecommerce.adrianschuster.com.ar`
+3. Framework Preset: **Vite** (Build command: `npm run build`, Output directory: `dist`).
+
+---
+
+## 📋 Flujo de Trabajo para Nuevos Clientes
+
+1. **Prospectar:** Correr el script del rubro deseado (ej. `python buscar_petshops_caba.py`).
+2. **Generar Propuesta:** Abrir el Excel generado en `clientes/`, verificar el teléfono del comercio y copiar el link con la demo personalizada.
+3. **Enviar Mensaje:** Contactar al comercio ofreciendo el boceto sin costo de visualización.
+4. **Cierre:** Al confirmar el servicio, se configuran sus servicios, precios y horarios reales en el archivo del proyecto correspondiente o se duplica como cliente dedicado.
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso privado para comercialización y despliegue de soluciones para comercios locales.
+Desarrollado y mantenido por **Adrián Schuster**.
