@@ -182,29 +182,29 @@ function render() {
       </div>
     ` : ''}
 
-    <!-- Navbar Principal -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0C0D11]/95 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800/80 transition-colors">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3 flex items-center justify-between gap-4">
+    <!-- Barra Superior / Floating Culinary Capsule Navbar -->
+    <header class="sticky top-3 z-40 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+      <nav class="bg-[#181412]/90 backdrop-blur-xl border border-wood-border rounded-2xl sm:rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 shadow-2xl transition-all">
         <!-- Logo & Identidad -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">
+        <a href="#" class="flex items-center gap-3 group min-w-0">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 text-amber-400 border border-amber-500/40 flex items-center justify-center text-xl shadow-ember-glow group-hover:scale-105 transition-transform flex-shrink-0">
             🔥
           </div>
-          <div>
-            <span class="text-lg sm:text-xl font-black tracking-tight text-neutral-900 dark:text-white block leading-tight">
+          <div class="min-w-0">
+            <span class="font-serif-culinary font-bold text-base sm:text-xl tracking-tight text-white block leading-tight truncate">
               ${businessName}
             </span>
-            <span class="text-[10px] sm:text-[11px] text-neutral-500 dark:text-neutral-400 font-bold tracking-wider uppercase block">
+            <span class="text-[10px] sm:text-[11px] text-amber-400/80 font-medium tracking-wide uppercase block truncate">
               ${hasCustomDemo ? 'Carta Digital & Menú Online' : 'Bodegón & Horno a Leña'}
             </span>
           </div>
         </a>
 
         <!-- Enlaces Desktop -->
-        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-600 dark:text-neutral-300">
-          <a href="#carta" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Nuestra Carta</a>
-          <a href="#experiencia" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">La Experiencia</a>
-          <a href="#ubicacion" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Horarios & Ubicación</a>
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-300">
+          <a href="#carta" class="hover:text-amber-400 transition-colors">Nuestra Carta</a>
+          <a href="#experiencia" class="hover:text-amber-400 transition-colors">La Experiencia</a>
+          <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Horarios & Ubicación</a>
         </nav>
 
         <!-- Acciones -->
@@ -212,7 +212,7 @@ function render() {
           <!-- Switch Dark Mode -->
           <button
             id="landing-theme-toggle"
-            class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
+            class="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
             title="Cambiar tema"
           >
             ${isDarkMode ? '☀️' : '🌙'}
@@ -221,38 +221,38 @@ function render() {
           <!-- Botón de Reserva Directa WhatsApp -->
           <a
             href="#reserva"
-            class="px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs shadow-md shadow-amber-500/20 transition-all active:scale-95 flex items-center gap-1.5"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-neutral-950 font-bold text-xs shadow-ember-glow transition-all active:scale-95 flex items-center gap-1.5"
           >
-            <span>📅</span>
+            <span>🍷</span>
             <span>Reservar Mesa</span>
           </a>
         </div>
-      </div>
+      </nav>
     </header>
 
-    <main class="space-y-16 sm:space-y-24">
+    <main class="space-y-16 sm:space-y-24 mt-4">
       <!-- HERO SECTION -->
-      <section class="relative pt-12 sm:pt-20 pb-16 px-4 sm:px-6 max-w-6xl mx-auto overflow-hidden">
+      <section class="relative pt-10 sm:pt-16 pb-16 px-4 sm:px-6 max-w-6xl mx-auto overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           <!-- Columna Texto -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-semibold">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>Abierto hoy • Mediodía 12:00 a 16:00 | Noche 19:30 a 01:00</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white leading-[1.12]">
-              Cocina de fuegos, masa madre y momentos compartidos.
+            <h1 class="font-serif-culinary text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.12]">
+              Cocina de fuegos, masa madre y <span class="italic font-normal text-amber-400">momentos compartidos</span>.
             </h1>
 
-            <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p class="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Un homenaje a los grandes bodegones porteños con materias primas de estación, carnes maduradas al quebracho blanco y pizzas artesanales con 48 hs de fermentación lenta.
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <a
                 href="#carta"
-                class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs text-center shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white text-neutral-950 font-bold text-xs text-center shadow-lg hover:bg-neutral-200 transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>📖</span>
                 <span>Explorar la Carta Digital</span>
@@ -260,7 +260,7 @@ function render() {
 
               <a
                 href="#reserva"
-                class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs text-center shadow-lg shadow-amber-500/20 transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-neutral-950 font-bold text-xs text-center shadow-ember-glow transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>🍷</span>
                 <span>Reservar Mesa Online</span>
@@ -268,44 +268,44 @@ function render() {
             </div>
 
             <!-- Badges de Confianza Local -->
-            <div class="pt-4 grid grid-cols-3 gap-3 border-t border-neutral-100 dark:border-neutral-800">
+            <div class="pt-4 grid grid-cols-3 gap-3 border-t border-wood-border">
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-amber-500 font-mono">4.9 ★</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">+450 opiniones Google</span>
+                <span class="block text-xl sm:text-2xl font-black text-amber-400 font-mono">4.9 ★</span>
+                <span class="text-[11px] text-neutral-400">+450 opiniones Google</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">100%</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Horno a leña propio</span>
+                <span class="block text-xl sm:text-2xl font-black text-white font-mono">100%</span>
+                <span class="text-[11px] text-neutral-400">Horno a leña propio</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">0 Intermediarios</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Atención directa</span>
+                <span class="block text-xl sm:text-2xl font-black text-white font-mono">0 Intermediarios</span>
+                <span class="text-[11px] text-neutral-400">Atención directa</span>
               </div>
             </div>
           </div>
 
           <!-- Columna Imagen Hero -->
           <div class="lg:col-span-5 relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800 group">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-wood-border group">
               <img
                 src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80"
                 alt="Parrilla y fuegos Fuego & Harina"
                 class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                <span class="text-xs uppercase tracking-wider text-amber-400 font-bold">Plato Insignia</span>
-                <p class="text-lg font-bold">Vacío del Centro al Asador al Quebracho</p>
-                <p class="text-xs text-neutral-300 mt-1">4 horas de cocción lenta y salsa criolla ahumada</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0E0C0A] via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+                <span class="text-xs uppercase tracking-wider text-amber-400 font-bold font-mono">Plato Insignia</span>
+                <p class="font-serif-culinary text-lg font-bold">Vacío del Centro al Asador al Quebracho</p>
+                <p class="text-xs text-neutral-300 mt-1">4 horas de cocción lenta y salsa criolla ahumada.</p>
               </div>
             </div>
 
             <!-- Floating mini badge -->
-            <div class="absolute -bottom-4 -left-4 sm:bottom-6 sm:-left-6 bg-white dark:bg-neutral-900 p-3.5 rounded-2xl shadow-xl border border-neutral-100 dark:border-neutral-800 flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-xl">
+            <div class="absolute -bottom-4 -left-4 sm:bottom-6 sm:-left-6 bg-wood-card p-4 rounded-2xl shadow-xl border border-wood-border flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
                 🥖
               </div>
               <div>
-                <span class="text-xs font-bold text-neutral-900 dark:text-white block leading-tight">Masa Madre 48hs</span>
+                <span class="text-xs font-bold text-white block leading-tight">Masa Madre 48hs</span>
                 <span class="text-[10px] text-neutral-400">Harinas orgánicas molidas a piedra</span>
               </div>
             </div>

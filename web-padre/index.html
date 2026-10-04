@@ -6,10 +6,10 @@
     <title>Soluciones Digitales para Comercios Locales</title>
     <meta name="description" content="Tu negocio en internet en 24hs sin intermediarios ni comisiones abusivas. Catálogos digitales, webs y software de caja para comercios locales." />
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN con Dark Mode -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,16 +19,33 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            },
+            colors: {
+              hub: {
+                dark: '#0A0D14',
+                card: '#121622',
+                cardhover: '#181E2E',
+                border: '#1E2538'
+              }
+            },
+            boxShadow: {
+              'hub-glow': '0 0 35px -5px rgba(59, 130, 246, 0.25)',
+              'emerald-glow': '0 0 30px -5px rgba(16, 185, 129, 0.25)',
             }
           }
         }
       }
     </script>
     <style>
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
       body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         -webkit-font-smoothing: antialiased;
+        letter-spacing: -0.01em;
       }
       /* Custom minimal scrollbar */
       ::-webkit-scrollbar {
@@ -39,16 +56,16 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #e5e5e5;
+        background: #273046;
         border-radius: 9999px;
       }
       .dark ::-webkit-scrollbar-thumb {
-        background: #262626;
+        background: #1e2538;
       }
     </style>
   </head>
-  <body class="bg-[#FAFAFA] dark:bg-[#0E1015] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-neutral-900 dark:selection:bg-neutral-100 selection:text-white dark:selection:text-neutral-900 transition-colors duration-200">
-    <div id="app" class="flex-grow flex flex-col"></div>
+  <body class="bg-[#0A0D14] text-neutral-100 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
+    <div id="app" class="flex-grow flex flex-col w-full overflow-x-hidden min-w-0"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

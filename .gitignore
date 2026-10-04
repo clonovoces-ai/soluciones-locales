@@ -33,3 +33,10 @@ Thumbs.db
 
 # Herramientas privadas internas
 cotizador_privado/
+
+# Python
+__pycache__/
+*.pyc
+
+# Binaries
+*.exe

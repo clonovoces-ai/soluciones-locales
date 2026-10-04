@@ -172,39 +172,34 @@ function render() {
   const hasCustomDemo = isCustomDemo();
 
   app.innerHTML = `
-    <!-- Banner de Vista Previa Personalizada (solo si tiene demo/local en la URL) -->
-    ${hasCustomDemo ? `
-      <div class="bg-gradient-to-r from-amber-500/20 via-amber-500/10 to-amber-500/20 border-b border-amber-500/30 text-amber-900 dark:text-amber-200 py-2.5 px-4 text-xs font-semibold text-center flex items-center justify-center gap-2">
-        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-        <span>🎨 <strong>Boceto de muestra interactivo</strong> para <strong>${businessName}</strong></span>
-        <span class="opacity-70 hidden sm:inline">• Desarrollado por Soluciones Digitales</span>
-      </div>
-    ` : ''}
-
-    <!-- Navbar Principal -->
-    <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#0C0D11]/95 backdrop-blur-md border-b border-neutral-100 dark:border-neutral-800/80 transition-colors">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 py-3.5 flex items-center justify-between gap-4">
+    <!-- Barra Superior / Floating Industrial Capsule Navbar -->
+    <header class="sticky top-3 z-40 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+      <nav class="bg-[#101218]/90 dark:bg-[#101218]/90 backdrop-blur-xl border border-neutral-800 rounded-2xl sm:rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 shadow-2xl transition-all">
         <!-- Logo & Identidad -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-2xl bg-amber-500/10 dark:bg-amber-400/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 flex items-center justify-center text-xl shadow-sm group-hover:scale-105 transition-transform">
+        <a href="#" class="flex items-center gap-3 group min-w-0">
+          <div class="relative w-10 h-10 rounded-xl bg-gradient-to-br from-neutral-800 to-neutral-900 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xl shadow-amber-glow group-hover:scale-105 transition-transform flex-shrink-0">
             💈
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping opacity-75"></span>
           </div>
-          <div>
-            <span class="text-lg sm:text-xl font-black tracking-tight text-neutral-900 dark:text-white block leading-tight">
+          <div class="min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-white block leading-tight truncate">
               ${businessName}
             </span>
-            <span class="text-[10px] sm:text-[11px] text-neutral-500 dark:text-neutral-400 font-bold tracking-wider uppercase block">
-              ${hasCustomDemo ? 'Turnos Online • Demo Personalizada' : 'Barber Club & Grooming'}
-            </span>
+            <div class="flex items-center gap-2">
+              <span class="text-[10px] sm:text-[11px] text-amber-500/80 font-mono font-bold uppercase tracking-wider truncate">
+                ${hasCustomDemo ? 'Demo Exclusiva' : 'Barber Club & Grooming'}
+              </span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block flex-shrink-0"></span>
+            </div>
           </div>
         </a>
 
         <!-- Enlaces Desktop -->
-        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-600 dark:text-neutral-300">
-          <a href="#turnos" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Sacar Turno</a>
-          <a href="#servicios" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Servicios & Precios</a>
-          <a href="#barberos" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Nuestro Equipo</a>
-          <a href="#ubicacion" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Ubicación</a>
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-300">
+          <a href="#turnos" class="hover:text-amber-400 transition-colors">Sacar Turno</a>
+          <a href="#servicios" class="hover:text-amber-400 transition-colors">Servicios & Precios</a>
+          <a href="#barberos" class="hover:text-amber-400 transition-colors">Equipo</a>
+          <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Ubicación</a>
         </nav>
 
         <!-- Acciones -->
@@ -212,7 +207,7 @@ function render() {
           <!-- Toggle Tema -->
           <button
             id="barber-theme-toggle"
-            class="w-9 h-9 rounded-full bg-neutral-100 dark:bg-neutral-800 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
+            class="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
             title="Cambiar tema"
           >
             ${isDarkMode ? '☀️' : '🌙'}
@@ -221,80 +216,93 @@ function render() {
           <!-- Botón Directo Reservar -->
           <a
             href="#turnos"
-            class="px-4 py-2 rounded-full bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs shadow-md shadow-amber-500/20 transition-all active:scale-95 flex items-center gap-1.5"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-display font-black text-xs shadow-amber-glow transition-all active:scale-95 flex items-center gap-1.5 flex-shrink-0"
           >
-            <span>📅</span>
-            <span>Reservar Ahora</span>
+            <span>✂️</span>
+            <span>Reservar Turno</span>
           </a>
         </div>
-      </div>
+      </nav>
     </header>
 
-    <main class="space-y-16 sm:space-y-24">
+    ${hasCustomDemo ? `
+      <!-- Alerta demo personalizada -->
+      <div class="max-w-4xl mx-auto px-4 mt-6">
+        <div class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-3 text-center text-xs text-amber-200 font-medium flex items-center justify-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Boceto interactivo de demostración preparado para <strong>${businessName}</strong>.</span>
+        </div>
+      </div>
+    ` : ''}
+
+    <main class="space-y-16 sm:space-y-24 mt-6">
       <!-- HERO SECTION -->
-      <section class="relative pt-10 sm:pt-16 pb-12 px-4 sm:px-6 max-w-6xl mx-auto">
+      <section class="relative pt-8 sm:pt-14 pb-12 px-4 sm:px-6 max-w-6xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <!-- Columna Texto -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-700 dark:text-amber-300 text-xs font-semibold">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold shadow-inner">
               <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span>Abierto hoy • Turnos disponibles de 10:00 a 20:30 hs</span>
             </div>
 
-            <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-neutral-900 dark:text-white leading-[1.12]">
-              ${hasCustomDemo ? `Reservá tu turno en ${businessName} sin esperas.` : 'Cortes impecables, café de cortesía y tu turno sin esperas.'}
+            <h1 class="font-display text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-white leading-[1.12]">
+              ${hasCustomDemo ? `Tu turno en <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">${businessName}</span> sin esperas.` : 'Cortes impecables, <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500">tu turno en 30 segundos.</span>'}
             </h1>
 
-            <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Elegí tu barbero de confianza, seleccioná el horario que más te convenga y confirmá tu turno en 30 segundos directo a nuestro WhatsApp.
+            <p class="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              Elegí tu barbero favorito, seleccioná el horario que más te convenga y confirmá tu turno al instante directo por WhatsApp. Sin aplicaciones ni intermediarios.
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <a
                 href="#turnos"
-                class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs text-center shadow-lg shadow-amber-500/20 transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-display font-black text-xs text-center shadow-amber-glow transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>✂️</span>
-                <span>Sacar Turno Online</span>
+                <span>Agendar Turno Online</span>
               </a>
 
               <a
                 href="#servicios"
-                class="w-full sm:w-auto px-6 py-3.5 rounded-2xl bg-white dark:bg-neutral-900 text-neutral-900 dark:text-white border border-neutral-200 dark:border-neutral-800 font-bold text-xs text-center shadow-sm transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 font-bold text-xs text-center transition-all active:scale-95 flex items-center justify-center gap-2"
               >
-                <span>Ver Lista de Precios</span>
+                <span>Ver Precios & Servicios</span>
               </a>
             </div>
 
             <!-- Badges de Confianza -->
-            <div class="pt-4 grid grid-cols-3 gap-3 border-t border-neutral-100 dark:border-neutral-800">
+            <div class="pt-6 grid grid-cols-3 gap-3 border-t border-neutral-800/80">
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-amber-500 font-mono">4.9 ★</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">+380 reseñas en Google</span>
+                <span class="block text-xl sm:text-2xl font-black text-amber-400 font-mono">4.9 ★</span>
+                <span class="text-[11px] text-neutral-400">+380 reseñas en Google</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">30 seg</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Reserva sin registro</span>
+                <span class="block text-xl sm:text-2xl font-black text-white font-mono">30 seg</span>
+                <span class="text-[11px] text-neutral-400">Reserva sin registro</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">🍺 ☕</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Bebida de cortesía</span>
+                <span class="block text-xl sm:text-2xl font-black text-white font-mono">🍺 ☕</span>
+                <span class="text-[11px] text-neutral-400">Bebida de cortesía</span>
               </div>
             </div>
           </div>
 
           <!-- Columna Imagen Hero -->
           <div class="lg:col-span-5 relative">
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-neutral-800 group">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-neutral-800 group">
               <img
                 src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=80"
-                alt="Barbería La Hermandad"
+                alt="Barbería Tradicional"
                 class="w-full h-80 sm:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                <span class="text-xs uppercase tracking-wider text-amber-400 font-bold">Experiencia Tradicional</span>
-                <p class="text-lg font-bold">Toalla caliente y afeitado clásico a navaja</p>
-                <p class="text-xs text-neutral-300 mt-1">Sillones hidráulicos vintage y música ambiente</p>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#08090C] via-black/40 to-transparent flex flex-col justify-end p-6 text-white">
+                <div class="inline-flex items-center gap-2 mb-1">
+                  <span class="w-3 h-3 rounded-full barber-pole-stripes border border-white/20"></span>
+                  <span class="text-xs uppercase tracking-wider text-amber-400 font-mono font-bold">Experiencia Premium</span>
+                </div>
+                <p class="font-display text-lg font-bold">Toalla caliente y afeitado tradicional a navaja</p>
+                <p class="text-xs text-neutral-300 mt-1">Sillones hidráulicos vintage, música ambiente y café de especialidad.</p>
               </div>
             </div>
           </div>
@@ -304,195 +312,225 @@ function render() {
       <!-- SECCIÓN PRINCIPAL: MOTOR INTERACTIVO DE TURNOS (EL SISTEMA) -->
       <section id="turnos" class="max-w-5xl mx-auto px-4 sm:px-6 py-6 scroll-mt-24">
         <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+          <span class="text-xs font-mono font-extrabold uppercase tracking-widest text-amber-400">
             Reserva Fácil & Rápida
           </span>
-          <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-neutral-900 dark:text-white">
+          <h2 class="font-display text-2xl sm:text-4xl font-black tracking-tight text-white">
             Sistema de Turnos Online
           </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-            Completá los 3 pasos y confirmá directo a nuestro WhatsApp sin intermediarios ni tarjetas.
+          <p class="text-xs sm:text-sm text-neutral-400">
+            Completá los 3 pasos y confirmá directo a nuestro WhatsApp sin intermediarios ni señas obligatorias.
           </p>
         </div>
 
-        <div class="bg-white dark:bg-[#13151D] rounded-3xl p-6 sm:p-8 border border-neutral-200/80 dark:border-neutral-800 shadow-xl space-y-8">
+        <div class="bg-[#101218] rounded-3xl p-6 sm:p-8 border border-neutral-800 shadow-2xl space-y-8">
           <!-- PASO 1: ELEGIR SERVICIO & LISTA DE PRECIOS -->
-          <div id="servicios" class="space-y-3 scroll-mt-28">
+          <div id="servicios" class="space-y-4 scroll-mt-28">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
-                <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[10px]">1</span>
+              <span class="text-xs font-black uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 font-mono flex items-center justify-center text-xs">1</span>
                 Elegí tu Servicio & Precios
               </span>
-              <span class="text-[11px] text-neutral-400">Paso 1 de 3</span>
+              <span class="text-[11px] font-mono text-neutral-500">Paso 1 de 3</span>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              ${SERVICES.map(svc => `
-                <button
-                  type="button"
-                  data-service-id="${svc.id}"
-                  class="service-select-btn text-left p-4 rounded-2xl border transition-all ${selectedService.id === svc.id ? 'border-amber-500 bg-amber-500/10 dark:bg-amber-500/15 ring-2 ring-amber-500/30' : 'border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900/50'}"
-                >
-                  <div class="flex items-start justify-between gap-2">
-                    <span class="text-2xl">${svc.icon}</span>
-                    ${svc.badge ? `
-                      <span class="px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase bg-amber-500 text-neutral-950 shadow-sm">
-                        ${svc.badge}
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+              ${SERVICES.map(svc => {
+                const isSelected = selectedService.id === svc.id;
+                return `
+                  <button
+                    type="button"
+                    data-service-id="${svc.id}"
+                    class="service-select-btn text-left p-5 rounded-2xl border transition-all duration-200 relative group cursor-pointer ${
+                      isSelected
+                        ? 'border-amber-500 bg-amber-500/[0.08] shadow-barber-selected scale-[1.02]'
+                        : 'border-neutral-800/90 hover:border-neutral-700 bg-[#141720]/80 hover:bg-[#181c27]'
+                    }"
+                  >
+                    <div class="flex items-start justify-between gap-2">
+                      <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-2xl">
+                        ${svc.icon}
+                      </div>
+                      ${svc.badge ? `
+                        <span class="px-2 py-0.5 rounded-full text-[9px] font-extrabold uppercase bg-amber-500 text-neutral-950 shadow-sm font-mono">
+                          ${svc.badge}
+                        </span>
+                      ` : ''}
+                    </div>
+                    <h4 class="font-display font-bold text-sm sm:text-base text-white mt-3 leading-snug">
+                      ${svc.name}
+                    </h4>
+                    <p class="text-[11px] text-neutral-400 mt-1 line-clamp-2 leading-relaxed">
+                      ${svc.description}
+                    </p>
+                    <div class="mt-4 pt-3 border-t border-neutral-800/80 flex items-center justify-between text-xs">
+                      <span class="font-mono font-black text-base text-amber-400">
+                        ${formatMoney(svc.price)}
                       </span>
-                    ` : ''}
-                  </div>
-                  <h4 class="font-bold text-sm text-neutral-900 dark:text-white mt-2 leading-snug">
-                    ${svc.name}
-                  </h4>
-                  <p class="text-[11px] text-neutral-500 dark:text-neutral-400 mt-1 line-clamp-2 leading-relaxed">
-                    ${svc.description}
-                  </p>
-                  <div class="mt-3 pt-2.5 border-t border-neutral-200/60 dark:border-neutral-800/80 flex items-center justify-between text-xs">
-                    <span class="font-mono font-black text-amber-600 dark:text-amber-400">
-                      ${formatMoney(svc.price)}
-                    </span>
-                    <span class="text-[10px] text-neutral-400">
-                      ⏱️ ${svc.duration}
-                    </span>
-                  </div>
-                </button>
-              `).join('')}
+                      <span class="text-[11px] text-neutral-400 font-mono">
+                        ⏱️ ${svc.duration}
+                      </span>
+                    </div>
+                  </button>
+                `;
+              }).join('')}
             </div>
           </div>
 
           <!-- PASO 2: ELEGIR BARBERO -->
-          <div class="space-y-3 pt-4 border-t border-neutral-100 dark:border-neutral-800">
+          <div class="space-y-4 pt-4 border-t border-neutral-800/80">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
-                <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[10px]">2</span>
+              <span class="text-xs font-black uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 font-mono flex items-center justify-center text-xs">2</span>
                 Elegí con quién atenderte
               </span>
-              <span class="text-[11px] text-neutral-400">Paso 2 de 3</span>
+              <span class="text-[11px] font-mono text-neutral-500">Paso 2 de 3</span>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              ${BARBERS.map(b => `
-                <button
-                  type="button"
-                  data-barber-id="${b.id}"
-                  class="barber-select-btn text-left p-3.5 rounded-2xl border transition-all ${selectedBarber.id === b.id ? 'border-amber-500 bg-amber-500/10 dark:bg-amber-500/15 ring-2 ring-amber-500/30' : 'border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900/50'}"
-                >
-                  <div class="w-9 h-9 rounded-xl bg-neutral-200 dark:bg-neutral-800 flex items-center justify-center text-lg mb-2">
-                    ${b.avatar}
-                  </div>
-                  <h5 class="font-bold text-xs text-neutral-900 dark:text-white leading-tight">
-                    ${b.name}
-                  </h5>
-                  <p class="text-[10px] text-neutral-500 dark:text-neutral-400 mt-0.5 line-clamp-1">
-                    ${b.specialty}
-                  </p>
-                </button>
-              `).join('')}
+              ${BARBERS.map(b => {
+                const isSelected = selectedBarber.id === b.id;
+                return `
+                  <button
+                    type="button"
+                    data-barber-id="${b.id}"
+                    class="barber-select-btn text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer ${
+                      isSelected
+                        ? 'border-amber-500 bg-amber-500/[0.08] shadow-barber-selected scale-[1.02]'
+                        : 'border-neutral-800/90 hover:border-neutral-700 bg-[#141720]/80 hover:bg-[#181c27]'
+                    }"
+                  >
+                    <div class="w-10 h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-xl mb-2.5">
+                      ${b.avatar}
+                    </div>
+                    <h5 class="font-bold text-xs sm:text-sm text-white leading-tight">
+                      ${b.name}
+                    </h5>
+                    <p class="text-[10px] text-neutral-400 mt-0.5 line-clamp-1 font-mono">
+                      ${b.specialty}
+                    </p>
+                  </button>
+                `;
+              }).join('')}
             </div>
           </div>
 
           <!-- PASO 3: DÍA Y HORARIO -->
-          <div class="space-y-3 pt-4 border-t border-neutral-100 dark:border-neutral-800">
+          <div class="space-y-4 pt-4 border-t border-neutral-800/80">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-black uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
-                <span class="w-5 h-5 rounded-full bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-[10px]">3</span>
+              <span class="text-xs font-black uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 font-mono flex items-center justify-center text-xs">3</span>
                 Elegí Día y Horario
               </span>
-              <span class="text-[11px] text-neutral-400">Paso 3 de 3</span>
+              <span class="text-[11px] font-mono text-neutral-500">Paso 3 de 3</span>
             </div>
 
             <!-- Selector de Día -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-              ${DAYS.map(d => `
-                <button
-                  type="button"
-                  data-day-id="${d.id}"
-                  class="day-select-btn p-3 rounded-xl border text-center transition-all ${selectedDay.id === d.id ? 'border-amber-500 bg-amber-500 text-neutral-950 font-bold shadow-md' : 'border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800'}"
-                >
-                  <span class="block text-xs">${d.label}</span>
-                  <span class="block text-[10px] opacity-80">${d.date}</span>
-                </button>
-              `).join('')}
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              ${DAYS.map(d => {
+                const isSelected = selectedDay.id === d.id;
+                return `
+                  <button
+                    type="button"
+                    data-day-id="${d.id}"
+                    class="day-select-btn p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                      isSelected
+                        ? 'border-amber-500 bg-amber-500 text-neutral-950 font-black shadow-amber-glow'
+                        : 'border-neutral-800 bg-[#141720] text-neutral-300 hover:border-neutral-700'
+                    }"
+                  >
+                    <span class="block text-xs font-bold">${d.label}</span>
+                    <span class="block text-[10px] opacity-80 mt-0.5 font-mono">${d.date}</span>
+                  </button>
+                `;
+              }).join('')}
             </div>
 
             <!-- Grilla de Horarios -->
             <div class="pt-2">
-              <label class="text-[11px] font-semibold text-neutral-500 dark:text-neutral-400 block mb-2">
+              <label class="text-[11px] font-semibold text-neutral-400 block mb-2 font-mono">
                 Horarios disponibles para ${selectedDay.label}:
               </label>
               <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-7 gap-2">
-                ${TIME_SLOTS.map(t => `
-                  <button
-                    type="button"
-                    data-time="${t}"
-                    class="time-select-btn py-2 px-1 text-center rounded-xl text-xs font-mono font-bold border transition-all ${selectedTime === t ? 'border-amber-500 bg-amber-500 text-neutral-950 shadow' : 'border-neutral-200 dark:border-neutral-800 hover:border-amber-500/60 text-neutral-800 dark:text-neutral-200 bg-neutral-50 dark:bg-neutral-900'}"
-                  >
-                    ${t}
-                  </button>
-                `).join('')}
+                ${TIME_SLOTS.map(t => {
+                  const isSelected = selectedTime === t;
+                  return `
+                    <button
+                      type="button"
+                      data-time="${t}"
+                      class="time-select-btn py-2.5 px-1 text-center rounded-xl text-xs font-mono font-bold border transition-all cursor-pointer ${
+                        isSelected
+                          ? 'border-amber-500 bg-amber-500 text-neutral-950 shadow-md font-extrabold scale-105'
+                          : 'border-neutral-800 hover:border-amber-500/50 text-neutral-300 bg-[#141720] hover:bg-[#181c27]'
+                      }"
+                    >
+                      ${t}
+                    </button>
+                  `;
+                }).join('')}
               </div>
             </div>
           </div>
 
-          <!-- RESUMEN EN TIEMPO REAL & BOTÓN WHATSAPP -->
-          <div class="pt-6 border-t border-neutral-200 dark:border-neutral-800 bg-neutral-100/60 dark:bg-neutral-900/60 -mx-6 -mb-6 sm:-mx-8 sm:-mb-8 p-6 sm:p-8 rounded-b-3xl space-y-5">
+          <!-- RESUMEN TICKET EN TIEMPO REAL & BOTÓN WHATSAPP -->
+          <div class="pt-6 border-t border-neutral-800 bg-gradient-to-b from-neutral-900/80 to-[#0A0C10] -mx-6 -mb-6 sm:-mx-8 sm:-mb-8 p-6 sm:p-8 rounded-b-3xl space-y-6">
             <div class="space-y-2">
-              <span class="text-[11px] font-extrabold uppercase tracking-widest text-neutral-400">
+              <span class="text-[11px] font-mono font-bold uppercase tracking-widest text-amber-400">
                 Resumen de tu Turno:
               </span>
-              <div class="flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+              <div class="flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
                 <div>
-                  <strong class="text-neutral-900 dark:text-white block font-bold text-sm sm:text-base">
+                  <strong class="font-display text-white block font-bold text-base sm:text-lg">
                     ${selectedService.name}
                   </strong>
-                  <span class="text-neutral-500 dark:text-neutral-400 text-xs">
-                    Con: <strong>${selectedBarber.name}</strong> • ${selectedDay.label} (${selectedDay.date}) a las <strong>${selectedTime} hs</strong>
+                  <span class="text-neutral-400 text-xs font-mono">
+                    Con: <strong class="text-amber-300">${selectedBarber.name}</strong> • ${selectedDay.label} (${selectedDay.date}) a las <strong class="text-amber-300">${selectedTime} hs</strong>
                   </span>
                 </div>
                 <div class="text-right">
-                  <span class="text-xl sm:text-2xl font-black text-amber-500 font-mono block">
+                  <span class="text-2xl sm:text-3xl font-black text-amber-400 font-mono block">
                     ${formatMoney(selectedService.price)}
                   </span>
-                  <span class="text-[10px] text-neutral-400">Duración: ${selectedService.duration}</span>
+                  <span class="text-[10px] text-neutral-400 font-mono">Duración: ${selectedService.duration}</span>
                 </div>
               </div>
             </div>
 
             <!-- Formulario con Nombre -->
             <form id="barber-booking-form" class="space-y-4">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div>
-                  <label class="text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 block mb-1">Tu Nombre y Apellido</label>
+                  <label class="text-[11px] font-semibold text-neutral-400 block mb-1">Tu Nombre y Apellido *</label>
                   <input
                     type="text"
                     id="client-name"
                     value="${customerName}"
                     placeholder="Ej: Marcelo Gómez"
                     required
-                    class="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-neutral-900 dark:text-white focus:outline-none focus:border-amber-500"
+                    class="w-full bg-[#141720] border border-neutral-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
                 <div>
-                  <label class="text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 block mb-1">Teléfono de contacto</label>
+                  <label class="text-[11px] font-semibold text-neutral-400 block mb-1">Teléfono (opcional)</label>
                   <input
                     type="tel"
                     id="client-phone"
                     value="${customerPhone}"
                     placeholder="Ej: 11 2345-6789"
-                    class="w-full bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 rounded-xl px-3.5 py-2.5 text-xs text-neutral-900 dark:text-white focus:outline-none focus:border-amber-500"
+                    class="w-full bg-[#141720] border border-neutral-800 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-amber-500"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                class="w-full py-4 px-6 rounded-2xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-black text-sm shadow-xl shadow-amber-500/20 transition-all active:scale-98 flex items-center justify-center gap-2 cursor-pointer"
+                class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-display font-black text-sm shadow-amber-glow transition-all hover:scale-[1.01] active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
               >
                 <span>💬</span>
                 <span>Confirmar Turno por WhatsApp</span>
               </button>
-              <p class="text-[11px] text-center text-neutral-500 dark:text-neutral-400">
-                Se te abrirá WhatsApp con el mensaje listo. ¡Te confirmamos el lugar en segundos!
+              <p class="text-[11px] text-center text-neutral-400">
+                Se te abrirá WhatsApp con el mensaje armado. ¡Confirmación en el acto sin trámites!
               </p>
             </form>
           </div>
@@ -502,52 +540,52 @@ function render() {
       <!-- SECCIÓN: NUESTRO EQUIPO -->
       <section id="barberos" class="max-w-6xl mx-auto px-4 sm:px-6 py-6 scroll-mt-24">
         <div class="text-center max-w-xl mx-auto mb-10 space-y-2">
-          <span class="text-xs font-extrabold uppercase tracking-widest text-amber-600 dark:text-amber-400">
+          <span class="text-xs font-mono font-extrabold uppercase tracking-widest text-amber-400">
             Profesionales
           </span>
-          <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-neutral-900 dark:text-white">
+          <h2 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-white">
             Nuestro Equipo
           </h2>
-          <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
+          <p class="text-xs sm:text-sm text-neutral-400">
             Barberos con trayectoria, capacitación continua y pasión por el detalle.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#13151D] border border-neutral-200/80 dark:border-neutral-800 space-y-4 text-center">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-3xl">
+          <div class="p-6 rounded-3xl bg-[#101218] border border-neutral-800 space-y-4 text-center">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-neutral-900 border border-amber-500/30 text-amber-400 flex items-center justify-center text-3xl shadow-sm">
               💈
             </div>
             <div>
-              <h4 class="font-bold text-base text-neutral-900 dark:text-white">Marcos "El Chino"</h4>
-              <span class="text-xs text-amber-500 font-semibold">Master Fade & Freestyle</span>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+              <h4 class="font-display font-bold text-base text-white">Marcos "El Chino"</h4>
+              <span class="text-xs text-amber-400 font-mono font-semibold">Master Fade & Freestyle</span>
+              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 Más de 8 años de experiencia en cortes urbanos, líneas perfectas y degradés a navaja limpia.
               </p>
             </div>
           </div>
 
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#13151D] border border-neutral-200/80 dark:border-neutral-800 space-y-4 text-center">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-3xl">
+          <div class="p-6 rounded-3xl bg-[#101218] border border-neutral-800 space-y-4 text-center">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-neutral-900 border border-amber-500/30 text-amber-400 flex items-center justify-center text-3xl shadow-sm">
               🧔
             </div>
             <div>
-              <h4 class="font-bold text-base text-neutral-900 dark:text-white">Gonzalo V.</h4>
-              <span class="text-xs text-amber-500 font-semibold">Especialista en Barbas</span>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+              <h4 class="font-display font-bold text-base text-white">Gonzalo V.</h4>
+              <span class="text-xs text-amber-400 font-mono font-semibold">Especialista en Barbas</span>
+              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 Técnica tradicional de navaja y toalla caliente. Asesoramiento en morfología facial y cuidado de barba.
               </p>
             </div>
           </div>
 
-          <div class="p-6 rounded-3xl bg-white dark:bg-[#13151D] border border-neutral-200/80 dark:border-neutral-800 space-y-4 text-center">
-            <div class="w-20 h-20 mx-auto rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-3xl">
+          <div class="p-6 rounded-3xl bg-[#101218] border border-neutral-800 space-y-4 text-center">
+            <div class="w-20 h-20 mx-auto rounded-2xl bg-neutral-900 border border-amber-500/30 text-amber-400 flex items-center justify-center text-3xl shadow-sm">
               ✂️
             </div>
             <div>
-              <h4 class="font-bold text-base text-neutral-900 dark:text-white">Tomás R.</h4>
-              <span class="text-xs text-amber-500 font-semibold">Texturas & Clásicos</span>
-              <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-2 leading-relaxed">
+              <h4 class="font-display font-bold text-base text-white">Tomás R.</h4>
+              <span class="text-xs text-amber-400 font-mono font-semibold">Texturas & Clásicos</span>
+              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 Perfeccionista de la tijera y cortes desmechados. Estilos clásicos europeos y peinados modernos.
               </p>
             </div>
@@ -557,38 +595,38 @@ function render() {
 
       <!-- SECCIÓN: UBICACIÓN & HORARIOS CON GOOGLE MAPS -->
       <section id="ubicacion" class="max-w-6xl mx-auto px-4 sm:px-6 py-6 scroll-mt-24">
-        <div class="bg-neutral-100 dark:bg-[#13151D] rounded-3xl p-6 sm:p-10 border border-neutral-200 dark:border-neutral-800 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="bg-[#101218] rounded-3xl p-6 sm:p-10 border border-neutral-800 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center shadow-2xl">
           <div class="space-y-6">
             <div>
-              <span class="text-xs font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">¿Dónde estamos?</span>
-              <h3 class="text-2xl sm:text-3xl font-black tracking-tight text-neutral-900 dark:text-white mt-1">
+              <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-400">¿Dónde estamos?</span>
+              <h3 class="font-display text-2xl sm:text-3xl font-black tracking-tight text-white mt-1">
                 El Club & Horarios
               </h3>
             </div>
 
-            <div class="space-y-4 text-xs sm:text-sm text-neutral-600 dark:text-neutral-300">
+            <div class="space-y-4 text-xs sm:text-sm text-neutral-300">
               <div class="flex items-start gap-3">
                 <span class="text-lg">📍</span>
                 <div>
-                  <strong class="text-neutral-900 dark:text-white block">Dirección</strong>
-                  <span>Av. Triunvirato 4120, Villa Urquiza, CABA</span>
+                  <strong class="text-white block font-bold">Dirección</strong>
+                  <span class="text-neutral-400">Av. Triunvirato 4120, Villa Urquiza, CABA</span>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <span class="text-lg">🕒</span>
                 <div>
-                  <strong class="text-neutral-900 dark:text-white block">Horarios de Atención</strong>
-                  <p>Martes a Sábados: 10:00 a 20:30 hs (Corrido)</p>
-                  <p class="text-neutral-400 mt-1">Domingos y Lunes cerrado por descanso.</p>
+                  <strong class="text-white block font-bold">Horarios de Atención</strong>
+                  <p class="text-neutral-400">Martes a Sábados: 10:00 a 20:30 hs (Corrido)</p>
+                  <p class="text-amber-500/90 text-xs mt-0.5">Domingos y Lunes cerrado por descanso.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <span class="text-lg">🎮</span>
                 <div>
-                  <strong class="text-neutral-900 dark:text-white block">Sala de Espera</strong>
-                  <span>PlayStation 5, café de especialidad, bebidas frías y WiFi 300MB libre.</span>
+                  <strong class="text-white block font-bold">Sala de Espera</strong>
+                  <span class="text-neutral-400">PlayStation 5, café de especialidad, bebidas frías y WiFi libre.</span>
                 </div>
               </div>
             </div>
@@ -596,7 +634,7 @@ function render() {
             <a
               href="https://maps.google.com/?q=Av.+Triunvirato+4120+Buenos+Aires"
               target="_blank"
-              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-xs font-bold transition-all active:scale-95 shadow-sm"
+              class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-neutral-950 text-xs font-bold transition-all active:scale-95 shadow-sm hover:bg-neutral-200"
             >
               <span>🗺️</span>
               <span>Abrir en Google Maps</span>
@@ -604,7 +642,7 @@ function render() {
           </div>
 
           <!-- Mapa Real Interactivo -->
-          <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden border border-neutral-300 dark:border-neutral-700 relative shadow-md bg-neutral-200 dark:bg-neutral-800">
+          <div class="h-80 sm:h-96 w-full rounded-2xl overflow-hidden border border-neutral-800 relative shadow-md bg-neutral-900">
             <iframe
               src="https://maps.google.com/maps?q=Av.+Triunvirato+4120,+Villa+Urquiza,+Buenos+Aires&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
@@ -622,36 +660,36 @@ function render() {
     </main>
 
     <!-- FOOTER COMERCIAL & CIERRE -->
-    <footer class="bg-white dark:bg-[#08090C] border-t border-neutral-200 dark:border-neutral-800 mt-20 pt-12 pb-8 px-4 sm:px-6 transition-colors">
+    <footer class="bg-[#050608] border-t border-neutral-800 mt-20 pt-12 pb-8 px-4 sm:px-6 transition-colors">
       <div class="max-w-6xl mx-auto space-y-8">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs text-neutral-600 dark:text-neutral-400">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-xs text-neutral-400">
           <div class="space-y-2">
-            <span class="text-base font-black tracking-tight text-neutral-900 dark:text-white block">La Hermandad Barber Club</span>
-            <p class="text-neutral-500">Cortes clásicos, degradés y cuidado de barba tradicional con sistema de turnos propio.</p>
+            <span class="font-display text-base font-black tracking-tight text-white block">La Hermandad Barber Club</span>
+            <p class="text-neutral-500">Cortes clásicos, degradés y cuidado de barba tradicional con sistema de turnos propio sin comisiones.</p>
           </div>
           <div>
-            <strong class="text-neutral-900 dark:text-white block mb-2">Horarios</strong>
+            <strong class="text-white block mb-2 font-bold">Horarios</strong>
             <p>Mar a Sáb: 10:00 a 20:30 hs</p>
-            <p>Con turno previo</p>
+            <p class="text-amber-400">Con turno previo</p>
           </div>
           <div>
-            <strong class="text-neutral-900 dark:text-white block mb-2">Contacto</strong>
+            <strong class="text-white block mb-2 font-bold">Contacto</strong>
             <p>Av. Triunvirato 4120, Villa Urquiza</p>
             <p>WhatsApp: +54 9 11 2335-1610</p>
           </div>
-          <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-neutral-800 dark:text-neutral-200 space-y-2">
-            <span class="font-bold block text-amber-700 dark:text-amber-400">¿Querés esta web para tu negocio?</span>
-            <p class="text-[11px]">Ideal para barberías, peluquerías, estética y consultorios sin pagar comisiones mensuales.</p>
+          <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-neutral-200 space-y-2">
+            <span class="font-bold block text-amber-400">¿Querés esta web para tu barbería?</span>
+            <p class="text-[11px] text-neutral-400">Permití que tus clientes reserven solos en 30 segundos sin intermediarios ni comisiones abusivas.</p>
             <a
               href="${HUB_URL}"
-              class="inline-block text-[11px] font-bold text-amber-600 dark:text-amber-400 underline"
+              class="inline-block text-[11px] font-bold text-amber-400 underline"
             >
               Consultar contratación →
             </a>
           </div>
         </div>
 
-        <div class="pt-8 border-t border-neutral-100 dark:border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-400">
+        <div class="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-neutral-500">
           <p>© 2026 La Hermandad • Demo Interactiva de Turnos Online.</p>
           <a href="${HUB_URL}" class="hover:text-neutral-200 underline">
             Volver a Soluciones Digitales

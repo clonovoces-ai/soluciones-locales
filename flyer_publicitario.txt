@@ -1,0 +1,85 @@
+================================================================================
+BRIEF Y ESPECIFICACIONES TÉCNICAS: FLYER PUBLICITARIO PARA COMERCIOS LOCALES
+Optimizado para diseño en Canva/Illustrator/Photoshop e IA generativa de imágenes
+================================================================================
+
+1. PARÁMETROS DEL PROYECTO
+--------------------------------------------------------------------------------
+• Objetivo: Vender servicio de digitalización y creación de webs/catálogos a negocios locales.
+• Público objetivo: Dueños de comercios de cercanía (almacenes, rotiserías, kioscos, cafeterías, dietéticas, fiambrerías).
+• Formato: Cuadrado 1:1 (Recomendado: 15x15 cm o 10x10 cm para imprimir 2 o 4 por hoja A4).
+• Estilo visual: Moderno, minimalista, estilo suizo / editorial.
+• Modo de color: Blanco y negro puro (100% monocromático, alto contraste, sin degradados grises para impresión láser económica).
+• Web Padre / Destino: sd.adrianschuster.com.ar
+• Elemento interactivo obligatorio: Espacio destacado para Código QR (mínimo 3x3 cm).
+
+
+2. ESTRUCTURA Y DISTRIBUCIÓN VISUAL (WIREFRAME)
+--------------------------------------------------------------------------------
+┌────────────────────────────────────────────────────────┐
+│ [ZONA SUPERIOR: GANCHO Y TÍTULO]                       │
+│ - Pre-encabezado sutil en mayúsculas pequeñas.         │
+│ - Título en tipografía Sans-Serif Black / ExtraBold.   │
+│ - Subtítulo directo enfocado en el beneficio.          │
+├──────────────────────────┬─────────────────────────────┤
+│ [ZONA MEDIA IZQUIERDA:   │ [ZONA MEDIA DERECHA:        │
+│  BENEFICIOS CLAVE]       │  ILUSTRACIÓN / MOCKUP]      │
+│                          │                             │
+│ - 3 viñetas con íconos   │ - Silueta vectorial nítida  │
+│   simples (check/flecha).│   de un smartphone con la   │
+│ - Textos de 2 líneas máx │   web y botón de WhatsApp.  │
+│   enfocados en dolores.  │                             │
+├──────────────────────────┴──────────────┬──────────────┤
+│ [ZONA INFERIOR: LLAMADO A LA ACCIÓN]    │ [RECUADRO QR]│
+│                                         │  ┌─────────┐ │
+│ - Indicación clara de escanear.         │  │ CÓDIGO  │ │
+│ - URL de la web padre bien legible.     │  │   QR    │ │
+│ - Teléfono / WhatsApp de contacto.      │  └─────────┘ │
+│                                         │ ESCANEÁ CON  │
+│                                         │  TU CÁMARA   │
+└─────────────────────────────────────────┴──────────────┘
+
+
+3. TEXTOS EXACTOS (COPYWRITING PERSUASIVO)
+--------------------------------------------------------------------------------
+
+[BLOQUE 1: CABECERA]
+• Pre-título: ¿TENÉS UN COMERCIO DE BARRIO?
+• Título Principal: SOLUCIONES DIGITALES PARA COMERCIOS LOCALES
+• Subtítulo: Llevá tu negocio al mundo digital sin pagar comisiones abusivas.
+
+[BLOQUE 2: BENEFICIOS PRINCIPALES]
+✔ Catálogo y Menú Digital
+  Tus clientes ven fotos y precios actualizados al instante, sin instalar ninguna app.
+
+✔ Pedidos directos a tu WhatsApp
+  Recibí el pedido ordenado con dirección, forma de pago y total calculado.
+
+✔ 0% Comisión por Venta
+  El 100% del dinero queda en tu negocio. Olvidate del 25% que retienen las apps.
+
+[BLOQUE 3: CIERRE Y LLAMADO A LA ACCIÓN (CTA)]
+• Acción: ¡Probá la demo en vivo desde tu celular!
+• Bajada: Escaneá el código QR con la cámara de tu teléfono y navegá las tiendas de prueba.
+• Web: sd.adrianschuster.com.ar
+• Contacto: WhatsApp: +54 9 11 2335-1610
+
+
+4. PROMPTS PARA GENERADOR DE IMÁGENES (MIDJOURNEY / DALL-E 3 / FLUX)
+--------------------------------------------------------------------------------
+
+[PROMPT EN INGLÉS - RECOMENDADO PARA MEJOR PRECISIÓN]
+"A professional minimalist graphic design vector layout for a business flyer, square 1:1 aspect ratio, pure black and white monochrome aesthetic, high contrast. In the center-right, a sleek modern smartphone mockup floating at a slight 3D perspective angle, displaying a clean local store digital catalog interface with product photo cards and a WhatsApp order button. Sharp clean lines, no messy gradients, no gray smudges, pure white background (#FFFFFF) with crisp black vector outlines (#000000). At the bottom right, a designated empty square bordered box with corner brackets ready for a QR code. Swiss modernist editorial layout, technical blueprint aesthetic, ultra-sharp vector details, print-ready 300 DPI style --ar 1:1 --no colors, gradients, grayscale, blur, realistic photos"
+
+[PROMPT EN ESPAÑOL]
+"Diseño gráfico minimalista y moderno para flyer publicitario cuadrado 1:1, monocromático en blanco y negro puro de alto contraste. Fondo blanco limpio sin sombras grises, líneas vectoriales negras bien definidas. En el centro a la derecha, mockup de un celular moderno mostrando un catálogo web con productos y carrito. En la esquina inferior derecha, un marco cuadrado nítido reservado para colocar un código QR. Estilo editorial suizo, sin colores ni degradados, optimizado para impresión láser nítida."
+
+
+5. CONSEJOS TÉCNICOS DE IMPRESIÓN Y RECORTE
+--------------------------------------------------------------------------------
+• Resolución mínima recomendada: 300 DPI (1800 x 1800 px para 15x15 cm).
+• Papel recomendado: Obra común de 80g o 90g (muy económico para tiradas grandes) o ilustración mate de 150g si se busca mayor rigidez.
+• Impresión en hoja A4:
+  - 15 x 15 cm: 1 por hoja o 2 ajustando márgenes.
+  - 10 x 10 cm: Entran 4 flyers exactos por hoja A4, ideal para repartir en mano a bajo costo.
+================================================================================

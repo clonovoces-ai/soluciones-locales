@@ -259,26 +259,26 @@ function render() {
     : SERVICES.filter(s => s.category === state.filterCategory);
 
   app.innerHTML = `
-    <!-- Barra Superior / Navbar -->
-    <nav class="sticky top-0 z-40 bg-white/95 dark:bg-[#0E0F14]/95 backdrop-blur-md border-b border-rose-100 dark:border-neutral-800/80 transition-colors">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+    <!-- Barra Superior / Floating Luxury Capsule Navbar -->
+    <header class="sticky top-3 z-40 px-4 sm:px-6 max-w-6xl mx-auto w-full">
+      <nav class="bg-white/85 dark:bg-[#151119]/85 backdrop-blur-xl border border-rose-200/60 dark:border-rose-950/80 rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 shadow-luxury transition-all">
         <!-- Logo / Marca -->
-        <a href="#" class="flex items-center gap-2.5 group min-w-0">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-rose-500 to-pink-400 text-white flex items-center justify-center text-xl shadow-md shadow-rose-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+        <a href="#" class="flex items-center gap-3 group min-w-0">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 via-rose-600 to-pink-400 text-white flex items-center justify-center text-lg shadow-luxury-glow group-hover:scale-105 transition-transform flex-shrink-0">
             💅
           </div>
           <div class="min-w-0">
-            <div class="flex items-center gap-1.5 min-w-0">
-              <span class="font-extrabold text-sm sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight truncate">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="font-serif-luxury font-bold text-base sm:text-lg tracking-tight text-neutral-900 dark:text-white leading-tight truncate">
                 ${businessName}
               </span>
               ${isCustom ? `
-                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 flex-shrink-0">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-rose-100/80 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800 flex-shrink-0">
                   Demo
                 </span>
               ` : ''}
             </div>
-            <span class="text-[10px] sm:text-[11px] text-neutral-400 block -mt-0.5 font-medium truncate">Nails & Beauty Studio • Turnos Online</span>
+            <span class="text-[10px] sm:text-[11px] text-rose-700/60 dark:text-rose-300/60 block -mt-0.5 font-medium truncate tracking-wide">Nails & Beauty Studio • Turnos Online</span>
           </div>
         </a>
 
@@ -286,21 +286,21 @@ function render() {
         <div class="flex items-center gap-2 sm:gap-3">
           <a
             href="#servicios"
-            class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
+            class="hidden md:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3.5 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
           >
             Servicios & Precios
           </a>
           <a
             href="#contacto"
-            class="hidden sm:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
+            class="hidden md:inline-block text-xs font-semibold text-neutral-600 dark:text-neutral-300 hover:text-rose-600 dark:hover:text-rose-400 px-3.5 py-1.5 rounded-full hover:bg-rose-50 dark:hover:bg-neutral-800 transition-colors"
           >
-            Ubicación & Contacto 📍
+            Ubicación 📍
           </a>
 
           <!-- Toggle Dark Mode -->
           <button
             id="theme-toggle-btn"
-            class="w-9 h-9 rounded-full bg-rose-50 dark:bg-neutral-800 hover:bg-rose-100 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
+            class="w-9 h-9 rounded-full bg-rose-50/80 dark:bg-neutral-800 hover:bg-rose-100 dark:hover:bg-neutral-700 text-neutral-700 dark:text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95 border border-rose-200/50 dark:border-neutral-700/50"
             title="Cambiar tema"
           >
             ${isDarkMode ? '☀️' : '🌙'}
@@ -310,111 +310,112 @@ function render() {
           <a
             href="https://wa.me/${BEAUTY_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacer una consulta sobre los turnos.`)}"
             target="_blank"
-            class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white text-xs font-bold shadow-md shadow-rose-500/25 transition-all active:scale-95"
+            class="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white text-xs font-bold shadow-luxury transition-all hover:scale-105 active:scale-95"
           >
             <span>💬</span>
             <span class="hidden sm:inline">WhatsApp</span>
           </a>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
 
     ${isCustom ? `
       <!-- Alerta flotante informativa para el dueño del local -->
-      <div class="bg-rose-500 text-white text-xs py-2 px-4 text-center font-medium shadow-inner flex items-center justify-center gap-2">
-        <span>✨</span>
-        <span>Boceto de demostración preparado especialmente para <strong>${businessName}</strong>.</span>
+      <div class="max-w-4xl mx-auto px-4 mt-6">
+        <div class="bg-gradient-to-r from-rose-500/10 via-pink-500/10 to-rose-500/10 border border-rose-300/40 dark:border-rose-800/50 rounded-2xl p-3 text-center text-xs text-rose-900 dark:text-rose-200 font-medium flex items-center justify-center gap-2">
+          <span>✨</span>
+          <span>Boceto de demostración interactivo preparado para <strong>${businessName}</strong>.</span>
+        </div>
       </div>
     ` : ''}
 
     <!-- Hero Section -->
-    <header class="relative py-12 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 overflow-hidden">
+    <header class="relative pt-12 pb-16 sm:py-20 px-4 sm:px-6 max-w-4xl mx-auto text-center space-y-6 overflow-hidden">
       <!-- Glow decorativo de fondo -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-rose-400/15 dark:bg-rose-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gradient-to-r from-rose-300/20 via-pink-300/20 to-purple-300/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800/80 shadow-sm">
-        <span>✨</span>
-        <span>Reservá tu turno en 30 segundos sin esperas</span>
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 border border-rose-200/80 dark:border-rose-800/80 shadow-luxury-sm">
+        <span class="text-rose-500 animate-pulse">✨</span>
+        <span>Experiencia de salón premium • Reservá en 30 segundos</span>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 dark:text-white tracking-tight leading-[1.15]">
-        Tus manos impecables, <br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-rose-400">
-          tu turno al instante.
-        </span>
+      <h1 class="font-serif-luxury text-3xl sm:text-5xl md:text-6xl font-extrabold text-neutral-900 dark:text-white tracking-tight leading-[1.12]">
+        Tus manos <span class="italic font-normal text-rose-600 dark:text-rose-400">impecables</span>, <br class="hidden sm:inline" />
+        tu turno <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 via-pink-500 to-rose-400 italic">al instante</span>.
       </h1>
 
-      <p class="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-        Elegí tu servicio favorito, seleccioná a tu especialista de confianza y agendá tu horario directo desde tu celular.
+      <p class="text-sm sm:text-base md:text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed font-normal">
+        Elegí tu tratamiento, seleccioná a tu profesional de confianza y agendá tu horario exclusivo directo a WhatsApp sin instalar aplicaciones.
       </p>
 
       <!-- Botones de Acción Hero -->
       <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
         <a
           href="#servicios"
-          class="px-6 py-3 rounded-2xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md active:scale-95"
+          class="px-7 py-3.5 rounded-full bg-white dark:bg-[#18141C] border border-rose-200 dark:border-neutral-700 text-neutral-900 dark:text-white font-bold text-xs sm:text-sm hover:border-rose-400 dark:hover:border-rose-500 transition-all shadow-luxury-sm active:scale-95"
         >
-          Ver Lista de Precios ↓
+          Ver Carta de Servicios ↓
         </a>
         <a
           href="#reservar"
-          class="px-6 py-3 rounded-2xl bg-gradient-to-r from-rose-500 to-pink-500 text-white font-bold text-xs sm:text-sm hover:opacity-95 transition-all shadow-md shadow-rose-500/25 active:scale-95"
+          class="px-7 py-3.5 rounded-full bg-gradient-to-r from-rose-500 via-rose-600 to-pink-500 text-white font-bold text-xs sm:text-sm hover:shadow-luxury-glow transition-all shadow-luxury hover:scale-105 active:scale-95"
         >
-          Agendar Turno Ahora ✨
+          Reservar Turno Ahora ✨
         </a>
       </div>
 
       <!-- Trust Badges -->
       <div class="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 font-medium">
-        <div class="flex items-center gap-1.5">
-          <span class="text-rose-500 font-bold text-base">✓</span>
-          <span>Esmaltes y geles premium</span>
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-300 flex items-center justify-center text-xs font-bold">✓</span>
+          <span>Esmaltes & geles hipoalergénicos</span>
         </div>
-        <div class="flex items-center gap-1.5">
-          <span class="text-rose-500 font-bold text-base">✓</span>
-          <span>Esterilización 100% quirúrgica</span>
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-300 flex items-center justify-center text-xs font-bold">✓</span>
+          <span>Esterilización médica en autoclave</span>
         </div>
-        <div class="flex items-center gap-1.5">
-          <span class="text-rose-500 font-bold text-base">✓</span>
-          <span>Confirmación a tu WhatsApp</span>
+        <div class="flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-300 flex items-center justify-center text-xs font-bold">✓</span>
+          <span>Confirmación directa por WhatsApp</span>
         </div>
       </div>
     </header>
 
     <!-- SECCIÓN: SERVICIOS Y LISTA DE PRECIOS -->
-    <section id="servicios" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
-      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8">
+    <section id="servicios" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-24 min-w-0">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+          <span class="text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400">Carta Exclusiva</span>
+          <h2 class="font-serif-luxury text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight mt-1">
             Nuestros Servicios & Precios
           </h2>
           <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400 mt-1">
-            Hacé clic en cualquier servicio para seleccionarlo en tu reserva.
+            Tocá cualquier servicio para sumarlo directamente a tu reserva de turno.
           </p>
         </div>
 
-        <!-- Filtros por categoría -->
-        <div class="flex items-center gap-1.5 bg-rose-50 dark:bg-neutral-800/80 p-1 rounded-2xl border border-rose-100 dark:border-neutral-700/60 text-xs font-semibold">
+        <!-- Filtros por categoría estilo pill capsular -->
+        <div class="flex items-center gap-1 bg-white dark:bg-[#18141C] p-1.5 rounded-full border border-rose-200/70 dark:border-neutral-800 shadow-luxury-sm text-xs font-semibold">
           <button
-            class="category-filter-btn px-3 py-1.5 rounded-xl transition-all ${state.filterCategory === 'todas' ? 'bg-white dark:bg-neutral-900 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-neutral-600 dark:text-neutral-400'}"
+            class="category-filter-btn px-3.5 py-1.5 rounded-full transition-all ${state.filterCategory === 'todas' ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm' : 'text-neutral-600 dark:text-neutral-400 hover:text-rose-600'}"
             data-category="todas"
           >
             Todos
           </button>
           <button
-            class="category-filter-btn px-3 py-1.5 rounded-xl transition-all ${state.filterCategory === 'unas' ? 'bg-white dark:bg-neutral-900 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-neutral-600 dark:text-neutral-400'}"
+            class="category-filter-btn px-3.5 py-1.5 rounded-full transition-all ${state.filterCategory === 'unas' ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm' : 'text-neutral-600 dark:text-neutral-400 hover:text-rose-600'}"
             data-category="unas"
           >
             💅 Uñas
           </button>
           <button
-            class="category-filter-btn px-3 py-1.5 rounded-xl transition-all ${state.filterCategory === 'pies' ? 'bg-white dark:bg-neutral-900 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-neutral-600 dark:text-neutral-400'}"
+            class="category-filter-btn px-3.5 py-1.5 rounded-full transition-all ${state.filterCategory === 'pies' ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm' : 'text-neutral-600 dark:text-neutral-400 hover:text-rose-600'}"
             data-category="pies"
           >
-            🦶 Pies
+            🦶 Spa Pies
           </button>
           <button
-            class="category-filter-btn px-3 py-1.5 rounded-xl transition-all ${state.filterCategory === 'mirada' ? 'bg-white dark:bg-neutral-900 text-rose-600 dark:text-rose-400 shadow-sm' : 'text-neutral-600 dark:text-neutral-400'}"
+            class="category-filter-btn px-3.5 py-1.5 rounded-full transition-all ${state.filterCategory === 'mirada' ? 'bg-gradient-to-r from-rose-500 to-pink-500 text-white shadow-sm' : 'text-neutral-600 dark:text-neutral-400 hover:text-rose-600'}"
             data-category="mirada"
           >
             👁️ Pestañas
@@ -428,47 +429,54 @@ function render() {
           const isSelected = state.selectedServiceId === s.id;
           return `
             <div
-              class="service-card cursor-pointer rounded-3xl p-5 border transition-all duration-200 relative flex flex-col justify-between ${
+              class="service-card cursor-pointer rounded-3xl p-6 border transition-all duration-200 relative flex flex-col justify-between group ${
                 isSelected
-                  ? 'bg-rose-50/70 dark:bg-rose-950/30 border-rose-400 dark:border-rose-500/80 shadow-md ring-2 ring-rose-400/30'
-                  : 'bg-white dark:bg-[#14151C] border-rose-100/80 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 shadow-sm'
+                  ? 'bg-rose-50/70 dark:bg-rose-950/25 border-rose-400 dark:border-rose-500/80 shadow-luxury-lg ring-2 ring-rose-400/30'
+                  : 'bg-white dark:bg-[#161219] border-rose-100/80 dark:border-neutral-800/80 hover:border-rose-300 dark:hover:border-rose-900/60 shadow-luxury-sm hover:shadow-luxury'
               }"
               data-id="${s.id}"
             >
               <div>
-                <div class="flex items-start justify-between gap-3 mb-2">
+                <div class="flex items-start justify-between gap-3 mb-2.5">
                   <div class="flex items-center gap-3">
-                    <span class="text-2xl sm:text-3xl">${s.icon}</span>
+                    <div class="w-12 h-12 rounded-2xl bg-rose-50 dark:bg-rose-950/50 border border-rose-100 dark:border-rose-900/40 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+                      ${s.icon}
+                    </div>
                     <div>
-                      <h3 class="font-bold text-sm sm:text-base text-neutral-900 dark:text-white leading-tight">
+                      <h3 class="font-serif-luxury font-bold text-base sm:text-lg text-neutral-900 dark:text-white leading-tight">
                         ${s.name}
                       </h3>
-                      <span class="text-[11px] text-neutral-400 font-medium">⏱️ ${s.duration}</span>
+                      <span class="inline-flex items-center gap-1 text-[11px] text-rose-600/80 dark:text-rose-400 font-semibold mt-0.5">
+                        ⏱️ ${s.duration}
+                      </span>
                     </div>
                   </div>
                   ${s.badge ? `
-                    <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
+                    <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 border border-rose-200 dark:border-rose-800">
                       ${s.badge}
                     </span>
                   ` : ''}
                 </div>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed mt-1">
+                <p class="text-xs text-neutral-600 dark:text-neutral-400 leading-relaxed mt-2 pl-1">
                   ${s.description}
                 </p>
               </div>
 
-              <div class="mt-4 pt-3 border-t border-rose-100/60 dark:border-neutral-800/80 flex items-center justify-between">
-                <span class="font-black text-base sm:text-lg text-rose-600 dark:text-rose-400">
-                  ${formatPrice(s.price)}
-                </span>
+              <div class="mt-5 pt-3.5 border-t border-rose-100/70 dark:border-neutral-800/80 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] uppercase font-bold tracking-wider text-neutral-400 block">Valor</span>
+                  <span class="font-serif-luxury font-black text-xl text-rose-600 dark:text-rose-400">
+                    ${formatPrice(s.price)}
+                  </span>
+                </div>
                 <button
-                  class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                  class="px-4 py-2 rounded-full text-xs font-bold transition-all ${
                     isSelected
-                      ? 'bg-rose-500 text-white shadow-sm'
-                      : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-rose-100 dark:hover:bg-neutral-700'
+                      ? 'bg-rose-500 text-white shadow-luxury-sm'
+                      : 'bg-rose-50 dark:bg-neutral-800 text-rose-700 dark:text-neutral-200 hover:bg-rose-500 hover:text-white'
                   }"
                 >
-                  ${isSelected ? '✓ Seleccionado' : 'Seleccionar'}
+                  ${isSelected ? '✓ Seleccionado' : 'Elegir Servicio'}
                 </button>
               </div>
             </div>
@@ -478,10 +486,10 @@ function render() {
     </section>
 
     <!-- SECCIÓN INTERACTIVA DE RESERVA -->
-    <section id="reservar" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
-      <div class="text-center max-w-xl mx-auto mb-8 space-y-1">
-        <span class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Paso a Paso</span>
-        <h2 class="text-2xl sm:text-3xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+    <section id="reservar" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-24 min-w-0">
+      <div class="text-center max-w-xl mx-auto mb-10 space-y-1">
+        <span class="text-xs font-bold uppercase tracking-widest text-rose-600 dark:text-rose-400">Paso a Paso</span>
+        <h2 class="font-serif-luxury text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
           Agendá tu Turno
         </h2>
         <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
@@ -495,19 +503,22 @@ function render() {
         <div class="lg:col-span-7 space-y-6">
           
           <!-- 1. Especialista -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm space-y-3">
-            <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              1. Elegí tu Profesional
-            </label>
-            <div class="grid grid-cols-2 sm:grid-cols-2 gap-2.5">
+          <div class="bg-white dark:bg-[#161219] p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 text-xs font-bold flex items-center justify-center">1</span>
+              <label class="text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                Elegí tu Profesional
+              </label>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-2 gap-3">
               ${SPECIALISTS.map(sp => {
                 const isSelected = state.selectedSpecialistId === sp.id;
                 return `
                   <button
-                    class="specialist-btn p-3 rounded-2xl border text-left transition-all flex items-center gap-3 ${
+                    class="specialist-btn p-3.5 rounded-2xl border text-left transition-all flex items-center gap-3 ${
                       isSelected
-                        ? 'bg-rose-50 dark:bg-rose-950/40 border-rose-500 text-rose-950 dark:text-rose-200 ring-2 ring-rose-400/20 shadow-sm'
-                        : 'border-neutral-200/80 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700'
+                        ? 'bg-rose-50/80 dark:bg-rose-950/40 border-rose-500 text-rose-950 dark:text-rose-200 ring-2 ring-rose-400/20 shadow-luxury-sm'
+                        : 'border-neutral-200/70 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 bg-neutral-50/40 dark:bg-[#18141C]'
                     }"
                     data-id="${sp.id}"
                   >
@@ -527,10 +538,13 @@ function render() {
           </div>
 
           <!-- 2. Fecha -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm space-y-3">
-            <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              2. Elegí el Día
-            </label>
+          <div class="bg-white dark:bg-[#161219] p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 text-xs font-bold flex items-center justify-center">2</span>
+              <label class="text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                Elegí el Día
+              </label>
+            </div>
             <div class="grid grid-cols-5 gap-2">
               ${upcomingDays.map(d => {
                 const isSelected = state.selectedDate === d.dateStr;
@@ -538,13 +552,13 @@ function render() {
                   <button
                     class="date-btn py-3 px-2 rounded-2xl border text-center transition-all flex flex-col items-center justify-center ${
                       isSelected
-                        ? 'bg-rose-500 text-white border-rose-500 shadow-md shadow-rose-500/25 scale-105'
-                        : 'border-neutral-200/80 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900/50 text-neutral-700 dark:text-neutral-300'
+                        ? 'bg-gradient-to-b from-rose-500 to-pink-600 text-white border-rose-500 shadow-luxury-glow scale-105'
+                        : 'border-neutral-200/70 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900/50 text-neutral-700 dark:text-neutral-300'
                     }"
                     data-date="${d.dateStr}"
                   >
-                    <span class="text-[10px] font-medium uppercase tracking-wider opacity-80">${d.dayName}</span>
-                    <span class="text-base sm:text-lg font-black my-0.5">${d.dayNum}</span>
+                    <span class="text-[10px] font-medium uppercase tracking-wider opacity-85">${d.dayName}</span>
+                    <span class="font-serif-luxury text-base sm:text-lg font-bold my-0.5">${d.dayNum}</span>
                     <span class="text-[10px] opacity-75">${d.month}</span>
                   </button>
                 `;
@@ -553,19 +567,22 @@ function render() {
           </div>
 
           <!-- 3. Horarios disponibles -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm space-y-3">
-            <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              3. Horarios Disponibles
-            </label>
+          <div class="bg-white dark:bg-[#161219] p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 text-xs font-bold flex items-center justify-center">3</span>
+              <label class="text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                Horarios Disponibles
+              </label>
+            </div>
             <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
               ${TIME_SLOTS.map(t => {
                 const isSelected = state.selectedTime === t;
                 return `
                   <button
-                    class="time-btn py-2.5 px-3 rounded-xl border text-center text-xs font-bold transition-all ${
+                    class="time-btn py-2.5 px-3 rounded-full border text-center text-xs font-bold transition-all ${
                       isSelected
-                        ? 'bg-rose-500 text-white border-rose-500 shadow-sm scale-105'
-                        : 'border-neutral-200/80 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 text-neutral-800 dark:text-neutral-200'
+                        ? 'bg-rose-500 text-white border-rose-500 shadow-luxury-sm scale-105'
+                        : 'border-neutral-200/70 dark:border-neutral-800 hover:border-rose-300 dark:hover:border-neutral-700 text-neutral-800 dark:text-neutral-200'
                     }"
                     data-time="${t}"
                   >
@@ -577,57 +594,60 @@ function render() {
           </div>
 
           <!-- 4. Datos del Cliente & Checkbox Retiro -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm space-y-4">
-            <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
-              4. Tus Datos
-            </label>
+          <div class="bg-white dark:bg-[#161219] p-6 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm space-y-4">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-600 dark:text-rose-400 text-xs font-bold flex items-center justify-center">4</span>
+              <label class="text-xs font-bold uppercase tracking-wider text-neutral-700 dark:text-neutral-300">
+                Tus Datos de Contacto
+              </label>
+            </div>
             
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
               <div>
-                <label class="block text-[11px] text-neutral-500 dark:text-neutral-400 mb-1">Tu Nombre y Apellido *</label>
+                <label class="block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 mb-1">Nombre y Apellido *</label>
                 <input
                   type="text"
                   id="client-name"
                   placeholder="Ej: Florencia Pérez"
                   value="${state.clientName}"
-                  class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
+                  class="w-full px-4 py-2.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
                 />
               </div>
 
               <div>
-                <label class="block text-[11px] text-neutral-500 dark:text-neutral-400 mb-1">Tu Teléfono (opcional)</label>
+                <label class="block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 mb-1">Teléfono / WhatsApp</label>
                 <input
                   type="tel"
                   id="client-phone"
                   placeholder="Ej: 11 4455-6677"
                   value="${state.clientPhone}"
-                  class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
+                  class="w-full px-4 py-2.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
                 />
               </div>
             </div>
 
             <!-- Checkbox Retiro previo (Super importante en manicuría) -->
-            <div class="p-3.5 rounded-2xl bg-rose-50/70 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/60 flex items-start gap-3">
+            <div class="p-4 rounded-2xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200/80 dark:border-rose-900/60 flex items-start gap-3">
               <input
                 type="checkbox"
                 id="needs-removal-checkbox"
                 ${state.needsRemoval ? 'checked' : ''}
-                class="mt-0.5 w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300"
+                class="mt-1 w-4 h-4 rounded text-rose-600 focus:ring-rose-500 border-rose-300 cursor-pointer"
               />
               <label for="needs-removal-checkbox" class="text-xs text-neutral-700 dark:text-neutral-300 cursor-pointer">
                 <span class="font-bold text-neutral-900 dark:text-white block">¿Tenés esmaltado previo de otro lugar para retirar?</span>
-                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Marcá esta opción para que la especialista reserve 20 minutos adicionales de preparación.</span>
+                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Marcá esta opción para reservar 20 minutos adicionales de preparación cuidada.</span>
               </label>
             </div>
 
             <div>
-              <label class="block text-[11px] text-neutral-500 dark:text-neutral-400 mb-1">Notas o referencias (opcional)</label>
+              <label class="block text-[11px] font-semibold text-neutral-600 dark:text-neutral-400 mb-1">Notas o referencias de diseño (opcional)</label>
               <input
                 type="text"
                 id="client-notes"
-                placeholder="Ej: Me gustaría diseño con francesitas finas"
+                placeholder="Ej: Me gustaría diseño con francesitas finas o glitter sutil"
                 value="${state.notes}"
-                class="w-full px-3.5 py-2.5 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
+                class="w-full px-4 py-2.5 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50/50 dark:bg-neutral-900 text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-2 focus:ring-rose-500"
               />
             </div>
           </div>
@@ -635,12 +655,15 @@ function render() {
 
         <!-- COLUMNA DERECHA: RESUMEN Y BOTÓN CONFIRMAR -->
         <div class="lg:col-span-5 sticky top-24">
-          <div class="bg-white dark:bg-[#14151C] p-6 rounded-3xl border border-rose-200/80 dark:border-rose-900/50 shadow-xl space-y-5">
+          <div class="bg-white dark:bg-[#161219] p-6 sm:p-7 rounded-3xl border border-rose-200/90 dark:border-rose-900/50 shadow-luxury-lg space-y-5">
             <div class="flex items-center justify-between border-b border-rose-100 dark:border-neutral-800 pb-4">
-              <h3 class="font-bold text-base text-neutral-900 dark:text-white">
-                Resumen de tu Turno
-              </h3>
-              <span class="text-xs font-bold text-rose-600 dark:text-rose-400">
+              <div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Resumen</span>
+                <h3 class="font-serif-luxury font-bold text-lg text-neutral-900 dark:text-white leading-tight">
+                  Tu Reserva Exclusiva
+                </h3>
+              </div>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300">
                 Paso Final
               </span>
             </div>
@@ -648,22 +671,22 @@ function render() {
             ${selectedService ? `
               <div class="space-y-3.5 text-xs">
                 <div class="flex items-start justify-between gap-2">
-                  <span class="text-neutral-500 dark:text-neutral-400">Servicio:</span>
+                  <span class="text-neutral-500 dark:text-neutral-400">Tratamiento:</span>
                   <div class="text-right">
                     <span class="font-bold text-neutral-900 dark:text-white block">${selectedService.name}</span>
-                    <span class="text-[10px] text-neutral-400">⏱️ ${selectedService.duration}</span>
+                    <span class="text-[10px] text-rose-600 dark:text-rose-400 font-semibold">⏱️ ${selectedService.duration}</span>
                   </div>
                 </div>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-neutral-500 dark:text-neutral-400">Especialista:</span>
+                  <span class="text-neutral-500 dark:text-neutral-400">Profesional:</span>
                   <span class="font-bold text-neutral-900 dark:text-white">
                     ${SPECIALISTS.find(sp => sp.id === state.selectedSpecialistId)?.name}
                   </span>
                 </div>
 
                 <div class="flex items-center justify-between">
-                  <span class="text-neutral-500 dark:text-neutral-400">Fecha:</span>
+                  <span class="text-neutral-500 dark:text-neutral-400">Fecha elegida:</span>
                   <span class="font-bold text-neutral-900 dark:text-white">
                     ${state.selectedDate}
                   </span>
@@ -683,29 +706,30 @@ function render() {
                   </span>
                 </div>
 
-                <div class="pt-4 border-t border-rose-100 dark:border-neutral-800 flex items-center justify-between text-base">
-                  <span class="font-bold text-neutral-900 dark:text-white">Total a abonar:</span>
-                  <span class="font-black text-xl text-rose-600 dark:text-rose-400">
+                <div class="pt-4 border-t border-rose-100/80 dark:border-neutral-800 flex items-center justify-between text-base">
+                  <span class="font-bold text-neutral-900 dark:text-white">Total estimado:</span>
+                  <span class="font-serif-luxury font-black text-2xl text-rose-600 dark:text-rose-400">
                     ${formatPrice(selectedService.price)}
                   </span>
                 </div>
               </div>
             ` : `
-              <div class="py-6 text-center text-xs text-neutral-400">
-                Elegí un servicio arriba para armar tu turno.
+              <div class="py-8 text-center text-xs text-neutral-400 space-y-1">
+                <span class="text-2xl block">💅</span>
+                <p>Elegí un servicio arriba para preparar tu turno.</p>
               </div>
             `}
 
             <div class="pt-2">
               <button
                 id="btn-confirm-booking"
-                class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 active:scale-95"
+                class="w-full py-4 px-6 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95"
               >
                 <span>💬</span>
                 <span>Confirmar Turno por WhatsApp</span>
               </button>
               <p class="text-[10px] text-center text-neutral-400 mt-2">
-                Te abrirá la conversación con todos los datos listos. No requiere descargar apps.
+                Abre la conversación con el mensaje listo. Sin formularios complejos ni registros.
               </p>
             </div>
           </div>
@@ -715,16 +739,16 @@ function render() {
     </section>
 
     <!-- SECCIÓN: CONTACTO, UBICACIÓN Y MAPA -->
-    <section id="contacto" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-20 border-t border-rose-100 dark:border-neutral-800 min-w-0">
+    <section id="contacto" class="w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 scroll-mt-24 border-t border-rose-100 dark:border-neutral-800/80 min-w-0">
       <div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800/80">
-          📍 Estamos cerca tuyo
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800/80">
+          📍 Visitanos
         </span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+        <h2 class="font-serif-luxury text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
           Ubicación, Horarios & Contacto
         </h2>
         <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
-          Vení a disfrutar de tu momento de cuidado y belleza en nuestro estudio en Recoleta o reservá tu turno online.
+          Vení a disfrutar de tu momento de cuidado y relax en nuestro estudio boutique o reservá tu turno online.
         </p>
       </div>
 
@@ -734,36 +758,36 @@ function render() {
         <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
           
           <!-- Dirección -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#161219] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-rose-50 dark:bg-neutral-800 text-rose-600 dark:text-rose-400 flex items-center justify-center text-xl flex-shrink-0">
               📍
             </div>
             <div>
-              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Dirección del Estudio</h3>
+              <h3 class="font-serif-luxury font-bold text-sm text-neutral-900 dark:text-white">Dirección del Salón</h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">Av. Santa Fe 1940, Piso 2, Recoleta, CABA</p>
               <a
                 href="https://www.google.com/maps/search/Av.+Santa+Fe+1940,+Recoleta,+CABA"
                 target="_blank"
                 class="inline-flex items-center gap-1 text-[11px] font-bold text-rose-600 dark:text-rose-400 hover:underline mt-2"
               >
-                <span>Cómo llegar en Google Maps</span>
+                <span>Ver en Google Maps</span>
                 <span>→</span>
               </a>
             </div>
           </div>
 
           <!-- Teléfono y WhatsApp -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#161219] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-neutral-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
               📞
             </div>
             <div>
-              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Teléfono & WhatsApp</h3>
+              <h3 class="font-serif-luxury font-bold text-sm text-neutral-900 dark:text-white">Teléfono & WhatsApp</h3>
               <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">+54 9 11 2335-1610</p>
               <a
                 href="https://wa.me/${BEAUTY_WHATSAPP}?text=${encodeURIComponent(`Hola ${businessName}! Quería hacerles una consulta sobre los turnos.`)}"
                 target="_blank"
-                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95 mt-2"
+                class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold shadow-sm transition-all active:scale-95 mt-2"
               >
                 <span>💬</span>
                 <span>Escribir por WhatsApp</span>
@@ -772,12 +796,12 @@ function render() {
           </div>
 
           <!-- Horarios -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#161219] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-pink-50 dark:bg-neutral-800 text-pink-600 dark:text-pink-400 flex items-center justify-center text-xl flex-shrink-0">
               ⏰
             </div>
             <div class="space-y-1 text-xs">
-              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Horarios de Atención</h3>
+              <h3 class="font-serif-luxury font-bold text-sm text-neutral-900 dark:text-white">Horarios de Atención</h3>
               <div class="flex justify-between gap-4 text-neutral-600 dark:text-neutral-400">
                 <span>Lunes a Viernes:</span>
                 <span class="font-bold text-neutral-900 dark:text-white">10:00 a 20:00 hs</span>
@@ -794,12 +818,12 @@ function render() {
           </div>
 
           <!-- Medios de Pago & Políticas -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#161219] p-5 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-purple-50 dark:bg-neutral-800 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl flex-shrink-0">
               💳
             </div>
             <div class="text-xs space-y-1">
-              <h3 class="font-bold text-sm text-neutral-900 dark:text-white">Formas de Pago & Políticas</h3>
+              <h3 class="font-serif-luxury font-bold text-sm text-neutral-900 dark:text-white">Formas de Pago & Políticas</h3>
               <p class="text-neutral-500 dark:text-neutral-400">
                 Aceptamos <strong>Efectivo (10% OFF)</strong>, Transferencia bancaria, Débito/Crédito y Mercado Pago.
               </p>
@@ -813,7 +837,7 @@ function render() {
 
         <!-- Columna Derecha: Mapa Google Maps Interactivo -->
         <div class="lg:col-span-7 flex flex-col">
-          <div class="bg-white dark:bg-[#14151C] p-3 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-sm h-full flex flex-col">
+          <div class="bg-white dark:bg-[#161219] p-3 rounded-3xl border border-rose-100/80 dark:border-neutral-800 shadow-luxury-sm h-full flex flex-col">
             <div class="relative w-full h-80 lg:h-full min-h-[360px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800">
               <iframe
                 title="Ubicación en Google Maps"
@@ -828,11 +852,11 @@ function render() {
               ></iframe>
 
               <!-- Card Flotante sobre el Mapa -->
-              <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#14151C]/95 backdrop-blur-md p-3.5 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 shadow-lg flex items-center justify-between gap-3">
+              <div class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-[#161219]/90 backdrop-blur-md p-4 rounded-2xl border border-rose-200/60 dark:border-neutral-700/80 shadow-luxury flex items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
                   <span class="text-2xl">💅</span>
                   <div>
-                    <h4 class="font-bold text-xs sm:text-sm text-neutral-900 dark:text-white leading-tight">
+                    <h4 class="font-serif-luxury font-bold text-xs sm:text-sm text-neutral-900 dark:text-white leading-tight">
                       ${businessName}
                     </h4>
                     <span class="text-[11px] text-neutral-500 dark:text-neutral-400">
@@ -843,7 +867,7 @@ function render() {
 
                 <a
                   href="#servicios"
-                  class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-[11px] shadow-sm transition-all whitespace-nowrap active:scale-95"
+                  class="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white font-bold text-xs shadow-sm transition-all whitespace-nowrap active:scale-95"
                 >
                   Pedir Turno
                 </a>
@@ -856,12 +880,12 @@ function render() {
     </section>
 
     <!-- FOOTER / BANNER DEL PROVEEDOR (ADRIÁN SCHUSTER) -->
-    <footer class="bg-white dark:bg-[#0A0B0E] border-t border-rose-100 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-16 text-center transition-colors">
+    <footer class="bg-white dark:bg-[#0C090E] border-t border-rose-100/80 dark:border-neutral-800 py-12 px-4 sm:px-6 mt-16 text-center transition-colors">
       <div class="max-w-xl mx-auto space-y-4">
         <div class="w-10 h-10 mx-auto rounded-2xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 flex items-center justify-center font-black text-sm shadow-sm">
           ⚡
         </div>
-        <h3 class="text-base font-bold text-neutral-900 dark:text-white">
+        <h3 class="font-serif-luxury text-base font-bold text-neutral-900 dark:text-white">
           ¿Tenés un Estudio de Uñas o Estética?
         </h3>
         <p class="text-xs text-neutral-500 dark:text-neutral-400 leading-relaxed">
@@ -872,14 +896,14 @@ function render() {
           <a
             href="${HUB_URL}"
             target="_blank"
-            class="px-4 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-800 dark:text-neutral-200 text-xs font-semibold transition-all"
+            class="px-4 py-2 rounded-full border border-neutral-300 dark:border-neutral-700 hover:border-neutral-400 dark:hover:border-neutral-600 text-neutral-800 dark:text-neutral-200 text-xs font-semibold transition-all"
           >
             Ver más Soluciones Digitales
           </a>
           <a
             href="https://wa.me/${BEAUTY_WHATSAPP}?text=${encodeURIComponent(`Hola Adrián! Vi la demo de turnos para Uñas y Estética (${businessName}) y quiero consultar para mi negocio.`)}"
             target="_blank"
-            class="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-all"
+            class="px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shadow-md transition-all"
           >
             💬 Consultar por WhatsApp
           </a>

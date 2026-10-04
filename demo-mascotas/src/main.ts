@@ -538,11 +538,11 @@ function render() {
 
   app.innerHTML = `
     <!-- Barra Superior / Navbar -->
-    <nav class="sticky top-0 z-40 bg-white/95 dark:bg-[#0E0F14]/95 backdrop-blur-md border-b border-amber-100 dark:border-neutral-800/80 transition-colors">
+    <nav class="sticky top-0 z-40 bg-white/95 dark:bg-[#0D0F15]/95 backdrop-blur-md border-b border-orange-100/70 dark:border-neutral-800/80 shadow-soft-sm transition-colors">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <!-- Logo / Marca -->
         <a href="#" class="flex items-center gap-2.5 group min-w-0">
-          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 text-white flex items-center justify-center text-xl shadow-md shadow-orange-500/20 group-hover:scale-105 transition-transform flex-shrink-0">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-orange-400 to-amber-500 text-white flex items-center justify-center text-2xl shadow-clay-btn transform -rotate-3 hover:rotate-0 transition-transform flex-shrink-0 border-2 border-white/60">
             🐾
           </div>
           <div class="min-w-0">
@@ -614,7 +614,7 @@ function render() {
             <span class="hidden sm:inline">WhatsApp</span>
           </a>
         </div>
-      </div>
+      </div></div>
     </nav>
 
     ${isCustom ? `
@@ -635,7 +635,7 @@ function render() {
         <span>Peluquería canina con turnos online + E-commerce de alimentos</span>
       </div>
 
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black text-neutral-900 dark:text-white tracking-tight leading-[1.15]">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-display font-black text-neutral-900 dark:text-white tracking-tight leading-[1.15]">
         Todo para tu mascota, <br class="hidden sm:inline" />
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-400">
           a un clic de distancia.
@@ -650,13 +650,13 @@ function render() {
       <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
         <a
           href="#peluqueria"
-          class="px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold text-xs sm:text-sm hover:opacity-95 transition-all shadow-md shadow-orange-500/25 active:scale-95"
+          class="px-7 py-3.5 rounded-2xl bg-gradient-to-b from-orange-400 to-orange-500 text-white font-display font-bold text-sm hover:from-orange-500 hover:to-orange-600 shadow-clay-btn active:translate-y-0.5 transition-all border-b-4 border-orange-600"
         >
           Pedir Turno de Peluquería 🛁
         </a>
         <a
           href="#tienda"
-          class="px-6 py-3 rounded-2xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 font-bold text-xs sm:text-sm hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-md active:scale-95"
+          class="px-7 py-3.5 rounded-2xl bg-white dark:bg-pet-darkcard text-neutral-800 dark:text-white font-display font-bold text-sm hover:bg-orange-50 dark:hover:bg-neutral-800 shadow-clay-pill active:translate-y-0.5 transition-all border-2 border-orange-200 dark:border-pet-darkborder"
         >
           Explorar Tienda Online 🛒
         </a>
@@ -683,11 +683,11 @@ function render() {
     <section id="peluqueria" class="w-full max-w-5xl mx-auto px-4 sm:px-6 py-12 scroll-mt-20 min-w-0">
       
       <!-- Paso 1: Tamaño de la mascota -->
-      <div class="bg-white dark:bg-[#14151C] p-6 sm:p-8 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-10 space-y-4">
+      <div class="bg-white dark:bg-[#151821] p-6 sm:p-8 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-soft-md mb-10 space-y-5 border-orange-100/80 dark:border-neutral-800">
         <div class="flex items-center justify-between">
           <div>
             <span class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Paso 1</span>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+            <h2 class="text-xl sm:text-2xl font-display font-extrabold text-neutral-900 dark:text-white tracking-tight">
               ¿De qué tamaño es tu mascota?
             </h2>
             <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
@@ -734,7 +734,7 @@ function render() {
       <!-- Paso 2: Selección de Servicio -->
       <div class="mb-8">
         <span class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400">Paso 2</span>
-        <h2 class="text-xl sm:text-2xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+        <h2 class="text-xl sm:text-2xl font-display font-extrabold text-neutral-900 dark:text-white tracking-tight">
           Elegí el Servicio para tu ${selectedSizeOpt?.name}
         </h2>
         <p class="text-xs text-neutral-500 dark:text-neutral-400 mt-0.5">
@@ -752,7 +752,7 @@ function render() {
               class="service-card cursor-pointer rounded-3xl p-5 border transition-all duration-200 relative flex flex-col justify-between ${
                 isSelected
                   ? 'bg-orange-50/70 dark:bg-orange-950/30 border-orange-400 dark:border-orange-500/80 shadow-md ring-2 ring-orange-400/30'
-                  : 'bg-white dark:bg-[#14151C] border-amber-100/80 dark:border-neutral-800 hover:border-orange-300 dark:hover:border-neutral-700 shadow-sm'
+                  : 'bg-white dark:bg-[#151821] border-amber-100/80 dark:border-neutral-800 hover:border-orange-300 dark:hover:border-neutral-700 shadow-sm'
               }"
               data-id="${s.id}"
             >
@@ -809,7 +809,7 @@ function render() {
         <div class="lg:col-span-7 space-y-6">
           
           <!-- Fecha -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm space-y-3">
+          <div class="bg-white dark:bg-[#151821] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-soft-sm space-y-3 border-orange-100/70 dark:border-neutral-800">
             <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
               3. Elegí el Día
             </label>
@@ -835,7 +835,7 @@ function render() {
           </div>
 
           <!-- Horarios disponibles -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm space-y-3">
+          <div class="bg-white dark:bg-[#151821] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-soft-sm space-y-3 border-orange-100/70 dark:border-neutral-800">
             <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
               4. Horarios Disponibles
             </label>
@@ -859,7 +859,7 @@ function render() {
           </div>
 
           <!-- Datos de la Mascota y Tutor -->
-          <div class="bg-white dark:bg-[#14151C] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm space-y-4">
+          <div class="bg-white dark:bg-[#151821] p-5 sm:p-6 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-soft-sm space-y-4 border-orange-100/70 dark:border-neutral-800">
             <label class="block text-xs font-bold uppercase tracking-wider text-neutral-500 dark:text-neutral-400">
               5. Datos de la Mascota y Tutor
             </label>
@@ -941,7 +941,7 @@ function render() {
 
         <!-- COLUMNA DERECHA: RESUMEN Y BOTÓN CONFIRMAR -->
         <div class="lg:col-span-5 sticky top-24">
-          <div class="bg-white dark:bg-[#14151C] p-6 rounded-3xl border border-orange-200/80 dark:border-orange-900/50 shadow-xl space-y-5">
+          <div class="bg-white dark:bg-[#151821] p-6 rounded-3xl border border-orange-200/80 dark:border-orange-900/50 shadow-xl space-y-5">
             <div class="flex items-center justify-between border-b border-amber-100 dark:border-neutral-800 pb-4">
               <h3 class="font-bold text-base text-neutral-900 dark:text-white flex items-center gap-2">
                 <span>📋</span>
@@ -1029,7 +1029,7 @@ function render() {
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80">
           🛍️ E-commerce Pet Shop con Carrito
         </span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+        <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-neutral-900 dark:text-white tracking-tight">
           Tienda Online & Delivery
         </h2>
         <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
@@ -1038,7 +1038,7 @@ function render() {
       </div>
 
       <!-- Barra de herramientas: Buscador y Categorías -->
-      <div class="w-full max-w-full bg-white dark:bg-[#14151C] p-4 sm:p-5 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-8 space-y-4 overflow-hidden min-w-0">
+      <div class="w-full max-w-full bg-white dark:bg-[#151821] p-4 sm:p-5 rounded-3xl border border-amber-100 dark:border-neutral-800 shadow-sm mb-8 space-y-4 overflow-hidden min-w-0">
         
         <!-- Buscador -->
         <div class="relative w-full">
@@ -1096,7 +1096,7 @@ function render() {
             const inCartQty = state.cart[p.id] || 0;
 
             return `
-              <div class="bg-white dark:bg-[#14151C] rounded-3xl p-5 border border-amber-100/80 dark:border-neutral-800 shadow-sm flex flex-col justify-between group hover:shadow-lg hover:border-orange-200 dark:hover:border-neutral-700 transition-all">
+              <div class="bg-white dark:bg-[#151821] rounded-3xl p-5 border border-amber-100/80 dark:border-neutral-800 shadow-sm flex flex-col justify-between group hover:shadow-lg hover:border-orange-200 dark:hover:border-neutral-700 transition-all">
                 <div>
                   <div class="flex items-center justify-between mb-3">
                     <span class="text-3xl p-2.5 rounded-2xl bg-amber-50 dark:bg-neutral-800/80 group-hover:scale-110 transition-transform">
@@ -1138,7 +1138,7 @@ function render() {
 
                   ${inCartQty === 0 ? `
                     <button
-                      class="btn-add-to-cart w-full py-2.5 px-3 rounded-xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-all"
+                      class="btn-add-to-cart w-full py-3 px-3 rounded-2xl bg-gradient-to-b from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white font-display font-bold text-xs flex items-center justify-center gap-1.5 shadow-clay-btn border-b-3 border-orange-600 active:translate-y-0.5 active:border-b-0 transition-all"
                       data-id="${p.id}"
                     >
                       <span>🛒</span>
@@ -1169,7 +1169,7 @@ function render() {
           }).join('')}
         </div>
       ` : `
-        <div class="text-center py-16 bg-white dark:bg-[#14151C] rounded-3xl border border-dashed border-neutral-300 dark:border-neutral-800 space-y-2">
+        <div class="text-center py-16 bg-white dark:bg-[#151821] rounded-3xl border border-dashed border-neutral-300 dark:border-neutral-800 space-y-2">
           <span class="text-3xl block">🔍</span>
           <h4 class="font-bold text-sm text-neutral-700 dark:text-neutral-300">No encontramos productos con ese nombre</h4>
           <p class="text-xs text-neutral-400">Probá con otra palabra o seleccioná otra categoría.</p>
@@ -1319,7 +1319,7 @@ function render() {
                     </span>
                   </div>
                 ` : ''}
-                <div class="flex justify-between text-base font-extrabold text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-neutral-800">
+                <div class="flex justify-between text-base font-display font-extrabold text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-neutral-800">
                   <span>Total:</span>
                   <span class="text-orange-600 dark:text-orange-400 text-lg">
                     ${formatPrice(cartSubtotal + deliveryCost)}
@@ -1363,7 +1363,7 @@ function render() {
         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-100 dark:bg-orange-950/60 text-orange-800 dark:text-orange-300 border border-orange-200 dark:border-orange-800/80">
           📍 Estamos cerca tuyo
         </span>
-        <h2 class="text-2xl sm:text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
+        <h2 class="text-2xl sm:text-4xl font-display font-extrabold text-neutral-900 dark:text-white tracking-tight">
           Ubicación, Horarios & Contacto
         </h2>
         <p class="text-xs sm:text-sm text-neutral-500 dark:text-neutral-400">
@@ -1377,7 +1377,7 @@ function render() {
         <div class="lg:col-span-5 space-y-4 flex flex-col justify-between">
           
           <!-- Dirección -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#151821] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-orange-50 dark:bg-neutral-800 text-orange-600 dark:text-orange-400 flex items-center justify-center text-xl flex-shrink-0">
               📍
             </div>
@@ -1396,7 +1396,7 @@ function render() {
           </div>
 
           <!-- Teléfono y WhatsApp -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#151821] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-emerald-50 dark:bg-neutral-800 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl flex-shrink-0">
               📞
             </div>
@@ -1415,7 +1415,7 @@ function render() {
           </div>
 
           <!-- Horarios -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#151821] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-amber-50 dark:bg-neutral-800 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl flex-shrink-0">
               ⏰
             </div>
@@ -1437,7 +1437,7 @@ function render() {
           </div>
 
           <!-- Medios de Pago & Envíos -->
-          <div class="bg-white dark:bg-[#14151C] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
+          <div class="bg-white dark:bg-[#151821] p-5 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm flex items-start gap-4">
             <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-neutral-800 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl flex-shrink-0">
               💳
             </div>
@@ -1456,7 +1456,7 @@ function render() {
 
         <!-- Columna Derecha: Mapa Google Maps Interactivo -->
         <div class="lg:col-span-7 flex flex-col">
-          <div class="bg-white dark:bg-[#14151C] p-3 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm h-full flex flex-col">
+          <div class="bg-white dark:bg-[#151821] p-3 rounded-3xl border border-amber-100/80 dark:border-neutral-800 shadow-sm h-full flex flex-col">
             <div class="relative w-full h-80 lg:h-full min-h-[360px] rounded-2xl overflow-hidden border border-neutral-200 dark:border-neutral-800">
               <iframe
                 title="Ubicación en Google Maps"
@@ -1471,7 +1471,7 @@ function render() {
               ></iframe>
 
               <!-- Card Flotante sobre el Mapa -->
-              <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#14151C]/95 backdrop-blur-md p-3.5 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 shadow-lg flex items-center justify-between gap-3">
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 dark:bg-[#151821]/95 backdrop-blur-md p-3.5 rounded-2xl border border-neutral-200/80 dark:border-neutral-700/80 shadow-lg flex items-center justify-between gap-3">
                 <div class="flex items-center gap-2.5">
                   <span class="text-2xl">🐾</span>
                   <div>

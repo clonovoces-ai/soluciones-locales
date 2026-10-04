@@ -6,10 +6,10 @@
     <title>Patitas & Co. • Pet Shop & Peluquería Canina</title>
     <meta name="description" content="Peluquería canina, baño spa, alimentos balanceados y atención veterinaria. Reservá tu turno online en 30 segundos." />
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Varela Round & Plus Jakarta Sans (Boutique Soft & Friendly Pet Style) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Varela+Round&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -20,20 +20,38 @@
           extend: {
             fontFamily: {
               sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+              display: ['"Varela Round"', '"Plus Jakarta Sans"', 'sans-serif'],
             },
             colors: {
-              amber: {
-                50: '#fffbeb',
-                100: '#fef3c7',
-                200: '#fde68a',
-                300: '#fcd34d',
-                400: '#fbbf24',
-                500: '#f59e0b',
-                600: '#d97706',
-                700: '#b45309',
-                800: '#92400e',
-                900: '#78350f',
+              brand: {
+                50: '#fff7ed',
+                100: '#ffedd5',
+                200: '#fed7aa',
+                300: '#fdba74',
+                400: '#fb923c',
+                500: '#f97316',
+                600: '#ea580c',
+                700: '#c2410c',
+                800: '#9a3412',
+                900: '#7c2d12',
+              },
+              pet: {
+                peach: '#FFF3EB',
+                cream: '#FFF9F5',
+                mint: '#E6F9F0',
+                minttext: '#0D9488',
+                lavender: '#F3E8FF',
+                darkbg: '#0F121C',
+                darkcard: '#181C2A',
+                darkborder: '#272F45'
               }
+            },
+            boxShadow: {
+              'clay-card': '0 10px 25px -4px rgba(249, 115, 22, 0.12), inset 0 2px 4px rgba(255, 255, 255, 0.9), 0 2px 6px -1px rgba(0, 0, 0, 0.05)',
+              'clay-card-dark': '0 12px 30px -4px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.08)',
+              'clay-btn': '0 6px 16px -2px rgba(249, 115, 22, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0,0,0,0.06)',
+              'clay-pill': '0 4px 12px -2px rgba(0, 0, 0, 0.06), inset 0 2px 4px rgba(255, 255, 255, 0.8)',
+              'clay-active': '0 8px 20px -3px rgba(249, 115, 22, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.6)',
             }
           }
         }
@@ -47,22 +65,24 @@
       body {
         font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
         -webkit-font-smoothing: antialiased;
-        letter-spacing: -0.01em;
+      }
+      h1, h2, h3, .font-display {
+        font-family: 'Varela Round', 'Plus Jakarta Sans', sans-serif;
       }
       /* Custom minimal scrollbar */
       ::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
       }
       ::-webkit-scrollbar-track {
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #fed7aa;
+        background: #fdba74;
         border-radius: 9999px;
       }
       .dark ::-webkit-scrollbar-thumb {
-        background: #432818;
+        background: #374151;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -71,9 +91,12 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+      .clay-pill-active {
+        box-shadow: 0 4px 14px -1px rgba(249, 115, 22, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4);
+      }
     </style>
   </head>
-  <body class="bg-[#FAF8F5] dark:bg-[#0E0F14] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-orange-500 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
+  <body class="bg-pet-cream dark:bg-pet-darkbg text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-brand-500 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
     <div id="app" class="flex-grow flex flex-col w-full overflow-x-hidden min-w-0"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>

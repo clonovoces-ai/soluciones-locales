@@ -6,10 +6,10 @@
     <title>Glow & Co. • Nails & Beauty Studio</title>
     <meta name="description" content="Estudio de uñas esculpidas, kapping gel, manicuría rusa, nail art y lifting de pestañas. Reservá tu turno online en 30 segundos." />
     
-    <!-- Google Fonts: Plus Jakarta Sans -->
+    <!-- Google Fonts: Playfair Display (Serif Luxury) + Plus Jakarta Sans (Modern Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,22 +19,38 @@
         theme: {
           extend: {
             fontFamily: {
+              serif: ['"Playfair Display"', 'Georgia', 'serif'],
               sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             },
             colors: {
               rose: {
-                50: '#fff1f2',
-                100: '#ffe4e6',
-                200: '#fecdd3',
-                300: '#fda4af',
-                400: '#fb7185',
-                500: '#f43f5e',
-                600: '#e11d48',
-                700: '#be123c',
-                800: '#9f1239',
+                50: '#fff1f4',
+                100: '#ffe4e8',
+                200: '#fecdd6',
+                300: '#fda4b8',
+                400: '#fb7195',
+                500: '#f43f6e',
+                600: '#e11d52',
+                700: '#be1241',
+                800: '#9f123b',
                 900: '#881337',
-                950: '#4c0519',
+                950: '#4c051a',
+              },
+              luxury: {
+                cream: '#FDFBF9',
+                blush: '#FFF5F7',
+                card: '#FFFFFF',
+                darkbg: '#0F0C11',
+                darkcard: '#18141C',
+                darkborder: '#29202E'
               }
+            },
+            boxShadow: {
+              'luxury-sm': '0 2px 10px -2px rgba(225, 29, 82, 0.06)',
+              'luxury': '0 8px 30px -4px rgba(225, 29, 82, 0.08), 0 2px 10px -2px rgba(0, 0, 0, 0.02)',
+              'luxury-lg': '0 18px 45px -8px rgba(225, 29, 82, 0.15)',
+              'luxury-glow': '0 0 25px rgba(244, 63, 110, 0.25)',
+              'inner-luxury': 'inset 0 1px 2px rgba(255, 255, 255, 0.6)'
             }
           }
         }
@@ -50,6 +66,9 @@
         -webkit-font-smoothing: antialiased;
         letter-spacing: -0.01em;
       }
+      .font-serif-luxury {
+        font-family: 'Playfair Display', Georgia, serif;
+      }
       /* Custom minimal scrollbar */
       ::-webkit-scrollbar {
         width: 6px;
@@ -59,11 +78,11 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #fecdd3;
+        background: #fecdd6;
         border-radius: 9999px;
       }
       .dark ::-webkit-scrollbar-thumb {
-        background: #3f2228;
+        background: #392534;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -72,9 +91,12 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+      .gold-shimmer {
+        background: linear-gradient(135deg, #fdf2f8 0%, #fff 50%, #fdf2f8 100%);
+      }
     </style>
   </head>
-  <body class="bg-[#FAF7F8] dark:bg-[#0E0F14] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-rose-500 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
+  <body class="bg-[#FCF9FA] dark:bg-[#0F0C11] text-neutral-900 dark:text-neutral-100 min-h-screen flex flex-col selection:bg-rose-500 selection:text-white transition-colors duration-200 overflow-x-hidden w-full">
     <div id="app" class="flex-grow flex flex-col w-full overflow-x-hidden min-w-0"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
