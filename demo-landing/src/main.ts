@@ -184,27 +184,27 @@ function render() {
 
     <!-- Barra Superior / Floating Culinary Capsule Navbar -->
     <header class="sticky top-3 z-40 px-4 sm:px-6 max-w-6xl mx-auto w-full">
-      <nav class="bg-[#181412]/90 backdrop-blur-xl border border-wood-border rounded-2xl sm:rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 shadow-2xl transition-all">
+      <nav class="bg-white/90 dark:bg-[#181412]/90 backdrop-blur-xl border border-neutral-200/80 dark:border-wood-border rounded-2xl sm:rounded-full px-4 sm:px-6 h-16 flex items-center justify-between gap-4 shadow-xl dark:shadow-2xl transition-all">
         <!-- Logo & Identidad -->
         <a href="#" class="flex items-center gap-3 group min-w-0">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 text-amber-400 border border-amber-500/40 flex items-center justify-center text-xl shadow-ember-glow group-hover:scale-105 transition-transform flex-shrink-0">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 text-amber-500 dark:text-amber-400 border border-amber-500/40 flex items-center justify-center text-xl shadow-ember-glow group-hover:scale-105 transition-transform flex-shrink-0">
             🔥
           </div>
           <div class="min-w-0">
-            <span class="font-serif-culinary font-bold text-base sm:text-xl tracking-tight text-white block leading-tight truncate">
+            <span class="font-serif-culinary font-bold text-base sm:text-xl tracking-tight text-neutral-900 dark:text-white block leading-tight truncate">
               ${businessName}
             </span>
-            <span class="text-[10px] sm:text-[11px] text-amber-400/80 font-medium tracking-wide uppercase block truncate">
+            <span class="text-[10px] sm:text-[11px] text-amber-600 dark:text-amber-400/80 font-medium tracking-wide uppercase block truncate">
               ${hasCustomDemo ? 'Carta Digital & Menú Online' : 'Bodegón & Horno a Leña'}
             </span>
           </div>
         </a>
 
         <!-- Enlaces Desktop -->
-        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-300">
-          <a href="#carta" class="hover:text-amber-400 transition-colors">Nuestra Carta</a>
-          <a href="#experiencia" class="hover:text-amber-400 transition-colors">La Experiencia</a>
-          <a href="#ubicacion" class="hover:text-amber-400 transition-colors">Horarios & Ubicación</a>
+        <nav class="hidden md:flex items-center gap-6 text-xs font-semibold text-neutral-600 dark:text-neutral-300">
+          <a href="#carta" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Nuestra Carta</a>
+          <a href="#experiencia" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">La Experiencia</a>
+          <a href="#ubicacion" class="hover:text-amber-600 dark:hover:text-amber-400 transition-colors">Horarios & Ubicación</a>
         </nav>
 
         <!-- Acciones -->
@@ -212,7 +212,7 @@ function render() {
           <!-- Switch Dark Mode -->
           <button
             id="landing-theme-toggle"
-            class="w-9 h-9 rounded-xl bg-neutral-900 border border-neutral-800 hover:border-neutral-700 text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95"
+            class="w-9 h-9 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 hover:border-neutral-300 dark:hover:border-neutral-700 text-neutral-700 dark:text-neutral-300 flex items-center justify-center text-sm transition-all active:scale-95 cursor-pointer"
             title="Cambiar tema"
           >
             ${isDarkMode ? '☀️' : '🌙'}
@@ -221,7 +221,7 @@ function render() {
           <!-- Botón de Reserva Directa WhatsApp -->
           <a
             href="#reserva"
-            class="px-4 py-2 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-neutral-950 font-bold text-xs shadow-ember-glow transition-all active:scale-95 flex items-center gap-1.5"
+            class="px-4 py-2 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-white font-bold text-xs shadow-ember-glow transition-all active:scale-95 flex items-center gap-1.5"
           >
             <span>🍷</span>
             <span>Reservar Mesa</span>
@@ -241,18 +241,18 @@ function render() {
               <span>Abierto hoy • Mediodía 12:00 a 16:00 | Noche 19:30 a 01:00</span>
             </div>
 
-            <h1 class="font-serif-culinary text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-[1.12]">
-              Cocina de fuegos, masa madre y <span class="italic font-normal text-amber-400">momentos compartidos</span>.
+            <h1 class="font-serif-culinary text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-neutral-900 dark:text-white leading-[1.12]">
+              Cocina de fuegos, masa madre y <span class="italic font-normal text-amber-600 dark:text-amber-400">momentos compartidos</span>.
             </h1>
 
-            <p class="text-sm sm:text-base text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Un homenaje a los grandes bodegones porteños con materias primas de estación, carnes maduradas al quebracho blanco y pizzas artesanales con 48 hs de fermentación lenta.
             </p>
 
             <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3">
               <a
                 href="#carta"
-                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-white text-neutral-950 font-bold text-xs text-center shadow-lg hover:bg-neutral-200 transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-neutral-900 dark:bg-white text-white dark:text-neutral-950 font-bold text-xs text-center shadow-lg hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>📖</span>
                 <span>Explorar la Carta Digital</span>
@@ -260,7 +260,7 @@ function render() {
 
               <a
                 href="#reserva"
-                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-neutral-950 font-bold text-xs text-center shadow-ember-glow transition-all active:scale-95 flex items-center justify-center gap-2"
+                class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-ember-500 to-amber-500 hover:from-ember-400 hover:to-amber-400 text-white font-bold text-xs text-center shadow-ember-glow transition-all active:scale-95 flex items-center justify-center gap-2"
               >
                 <span>🍷</span>
                 <span>Reservar Mesa Online</span>
@@ -268,18 +268,18 @@ function render() {
             </div>
 
             <!-- Badges de Confianza Local -->
-            <div class="pt-4 grid grid-cols-3 gap-3 border-t border-wood-border">
+            <div class="pt-4 grid grid-cols-3 gap-3 border-t border-neutral-200 dark:border-wood-border">
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-amber-400 font-mono">4.9 ★</span>
-                <span class="text-[11px] text-neutral-400">+450 opiniones Google</span>
+                <span class="block text-xl sm:text-2xl font-black text-amber-600 dark:text-amber-400 font-mono">4.9 ★</span>
+                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">+450 opiniones Google</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-white font-mono">100%</span>
-                <span class="text-[11px] text-neutral-400">Horno a leña propio</span>
+                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">100%</span>
+                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Horno a leña propio</span>
               </div>
               <div class="text-center lg:text-left">
-                <span class="block text-xl sm:text-2xl font-black text-white font-mono">0 Intermediarios</span>
-                <span class="text-[11px] text-neutral-400">Atención directa</span>
+                <span class="block text-xl sm:text-2xl font-black text-neutral-900 dark:text-white font-mono">0 Intermediarios</span>
+                <span class="text-[11px] text-neutral-500 dark:text-neutral-400">Atención directa</span>
               </div>
             </div>
           </div>
@@ -427,15 +427,15 @@ function render() {
 
       <!-- SECCIÓN: RESERVA DE MESA ONLINE (INTERACTIVA) -->
       <section id="reserva" class="max-w-4xl mx-auto px-4 sm:px-6 py-12 scroll-mt-24">
-        <div class="bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-neutral-800 relative overflow-hidden space-y-8">
+        <div class="bg-neutral-900 dark:bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-900 dark:to-neutral-950 text-white rounded-3xl p-6 sm:p-10 shadow-2xl border border-neutral-800 relative overflow-hidden space-y-8">
           <div class="max-w-xl space-y-2">
             <span class="text-xs font-extrabold uppercase tracking-widest text-amber-400">
               Viví la Experiencia
             </span>
-            <h2 class="text-2xl sm:text-3xl font-black tracking-tight">
+            <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">
               Reservá tu Mesa al Instante
             </h2>
-            <p class="text-xs sm:text-sm text-neutral-400">
+            <p class="text-xs sm:text-sm text-neutral-300">
               Elegí las opciones y confirmá tu reserva directo por WhatsApp en un solo toque, sin intermediarios ni registros molestos.
             </p>
           </div>

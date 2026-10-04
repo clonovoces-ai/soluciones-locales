@@ -27,9 +27,9 @@ function render() {
     if (isCustomDomain()) {
       if (slug === 'unas') return 'https://unas.adrianschuster.com.ar';
       if (slug === 'barberia') return 'https://turnos.adrianschuster.com.ar';
-      if (slug === 'mascotas') return 'https://mascotas.adrianschuster.com.ar';
-      if (slug === 'ecommerce') return 'https://catalogo.adrianschuster.com.ar';
-      if (slug === 'landing') return 'https://gastronomia.adrianschuster.com.ar';
+      if (slug === 'mascotas') return 'https://petshop.adrianschuster.com.ar';
+      if (slug === 'ecommerce') return 'https://ecommerce.adrianschuster.com.ar';
+      if (slug === 'landing') return 'https://landing.adrianschuster.com.ar';
     }
     return `http://${window.location.hostname}:${localPort}`;
   };
