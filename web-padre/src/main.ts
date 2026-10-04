@@ -298,32 +298,6 @@ function render() {
             <span>→</span>
           </div>
         </a>
-
-        <!-- Card Consulta a Medida -->
-        <div class="p-5 rounded-3xl bg-gradient-to-br from-blue-900/40 via-indigo-900/40 to-neutral-900 border border-blue-500/30 flex flex-col justify-between shadow-xl">
-          <div class="space-y-3">
-            <div class="w-12 h-12 rounded-2xl bg-blue-500/20 text-blue-300 flex items-center justify-center text-2xl">
-              💡
-            </div>
-            <div>
-              <span class="text-[10px] uppercase font-bold text-blue-400 tracking-wider">Personalizado</span>
-              <h3 class="text-base font-bold text-white mt-0.5">
-                ¿Querés una demo con tu local?
-              </h3>
-              <p class="text-xs text-neutral-300 mt-1.5 leading-relaxed">
-                Te preparo un boceto interactivo exclusivo con el nombre, fotos y servicios de tu negocio sin cargo.
-              </p>
-            </div>
-          </div>
-          <a
-            href="https://wa.me/${WHATSAPP_CONSULTA}?text=${encodeURIComponent('Hola Adrián! Me gustaría ver un boceto interactivo para mi negocio.')}"
-            target="_blank"
-            class="mt-4 pt-3 border-t border-blue-500/30 flex items-center justify-between text-xs font-bold text-blue-300 hover:text-white transition-colors"
-          >
-            <span>Pedir mi boceto gratis</span>
-            <span>→</span>
-          </a>
-        </div>
       </div>
     </section>
 
